@@ -11,8 +11,7 @@ use App\Http\Controllers\lec_requestController;
 use App\Http\Controllers\stud_ansController;
 use App\Http\Controllers\stud_gradeController;
 use App\Http\Controllers\loginController;
-use App\Models\lec_request;
-use App\Models\question_set;
+
 
 /*
 |--------------------------------------------------------------------------

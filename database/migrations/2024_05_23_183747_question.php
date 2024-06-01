@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('ans_b')->nullable();
             $table->string('ans_c')->nullable();
             $table->string('ans_d')->nullable();
+            $table->string('feedback')->nullable();
             $table->unsignedBigInteger('qs_id'); 
             $table->foreign('qs_id')->references('id')->on('question_set')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();

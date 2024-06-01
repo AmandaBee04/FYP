@@ -45,6 +45,7 @@ class questionController extends Controller
         $ques->ans_b = $req->ans_b;
         $ques->ans_c = $req->ans_c;
         $ques->ans_d = $req->ans_d;
+        $ques->feedback = $req->feedback;
         $ques->qs_id = $req->qs_id;
 
         $existingQS = question_set::find($req->qs_id);

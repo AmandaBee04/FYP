@@ -17,6 +17,7 @@ class question extends Model
         'ans_b',
         'ans_c',
         'ans_d',
+        'feedback',
         'qs_id'
     ];
     protected $table = 'question';

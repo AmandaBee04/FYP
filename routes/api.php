@@ -11,6 +11,8 @@ use App\Http\Controllers\lec_requestController;
 use App\Http\Controllers\stud_ansController;
 use App\Http\Controllers\stud_gradeController;
 use App\Http\Controllers\loginController;
+use App\Models\lec_request;
+use App\Models\question_set;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,7 +43,7 @@ Route::get("/getLecRequest", [lec_requestController::class, 'getLecRequest']);
 
 Route::get("/getStudAns", [stud_ansController::class, 'getStudAns']);
 
-Route::get("/getStudGrade", [stud_gradeController::class, 'getStudGrade']);
+Route::get("/grades/{qs_id}", [stud_gradeController::class, 'getStudGrade']);
 
 Route::post('/login', [loginController::class, 'login']);
 
@@ -50,3 +52,9 @@ Route::post('/addLec', [lecturerController::class, 'addLec']);
 Route::post('/addStud', [studentController::class, 'addStud']);
 
 Route::post('/addSub', [subjectController::class, 'addSub']);
+
+Route::post('/addQS', [question_setController::class, 'addQS']);
+
+Route::post('/addQues', [questionController::class, 'addQues']);
+
+Route::post('/addLecReq', [lec_requestController::class, 'addLecReq']);

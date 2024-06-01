@@ -7,5 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class stud_grade extends Model
 {
+    
+    public function questionSet()
+    {
+        return $this->belongsTo(question_set::class, 'qs_id');
+    }
+
+    protected $table = 'stud_grade';
     use HasFactory;
 }

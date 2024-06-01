@@ -54,7 +54,6 @@ class studentController extends Controller
 
         if($result)
             return response()->json(['message' => 'Student added successfully!'], 201);
-            
         else
             return response()->json(['message' => 'Student not added! Please try again!'], 400);
     }

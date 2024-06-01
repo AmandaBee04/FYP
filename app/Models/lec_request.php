@@ -7,5 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class lec_request extends Model
 {
+    protected $fillable =[
+        'id', 
+        'subject',
+        'message',
+        'lec_id'
+    ];
+    protected $table = 'request';
     use HasFactory;
 }

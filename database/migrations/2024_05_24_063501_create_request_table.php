@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('request', function (Blueprint $table) {
             $table->id(); 
-            $table->string('request')->nullable(); 
-            $table->string('reason')->nullable();
+            $table->string('subject')->nullable(); 
+            $table->string('message')->nullable();
             $table->string('lec_id');
             $table->foreign('lec_id')->references('lec_id')->on('lecturer')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps(); // Adds created_at and updated_at columns

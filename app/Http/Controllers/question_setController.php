@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\question_set;
+use App\Models\subject;
 
 class question_setController extends Controller
 {
@@ -25,11 +26,15 @@ class question_setController extends Controller
         $qs->total_mark = $req->total_mark;
         $qs->sub_id = $req->sub_id;
 
+        $existingSub = subject::find($req->sub_id);
+        if (!$existingSub) {
+            return response()->json(['message' => 'Subject not found!'], 404);
+        }
+
         $result = $qs->save();
 
         if($result)
             return response()->json(['message' => 'Question set added successfully!'], 201);
-            
         else
             return response()->json(['message' => 'Question set not added! Please try again!'], 400);
     }

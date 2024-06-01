@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('question_set', function (Blueprint $table) {
             $table->id(); 
-            $table->string('qs_name', 255)->nullable(); 
-            $table->string('type', 15)->nullable();
+            $table->string('qs_name')->nullable(); 
+            $table->string('type')->nullable();
             $table->integer('time')->nullable();
             $table->date('due_date')->nullable();
             $table->boolean('assign')->nullable(); 

@@ -20,5 +20,6 @@ class stud_gradeController extends Controller
 
         return response()->json($grades, 200);
     }
+    // test
 
 }

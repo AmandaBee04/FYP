@@ -9,12 +9,12 @@ use App\Models\question_set;
 
 class questionController extends Controller
 {
-    function getQuestion()
+    public function getQuestion()
     {
         return question::all();
     }
 
-    function addQues(Request $req)
+    public function addQues(Request $req)
     {
         // $validatedData = $req->validate([
         //     'id' => 'required|integer',

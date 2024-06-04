@@ -13,7 +13,7 @@ class lec_requestController extends Controller
         return lec_request::all();
     }
 
-    function addLecReq(Request $req)
+    public function addLecReq(Request $req)
     {
 
         $lec_req = new lec_request();
@@ -34,4 +34,5 @@ class lec_requestController extends Controller
         else
             return response()->json(['message' => 'Request not sent! Please try again!'], 400);
     }
+
 }

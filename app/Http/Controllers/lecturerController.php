@@ -7,7 +7,7 @@ use App\Models\lecturer;
 
 class lecturerController extends Controller
 {
-    function getLecturer($lec_id = null, $lec_name = null)
+    public function getLecturer($lec_id = null, $lec_name = null)
     {
         if($lec_id)
         {
@@ -45,4 +45,22 @@ class lecturerController extends Controller
         else
             return response()->json(['message' => 'Lecturer not added! Please try again!'], 400);
     }
+
+    public function updateLec(Request $req)
+    {
+        $lec = lecturer::find($req->lec_id);
+        $lec->lec_name = $req->lec_name;
+        if ($req->lec_password) {
+            $lec->lec_password = bcrypt($req->lec_password);
+        }
+        $lec->lec_email = $req->lec_email;
+        
+        $result = $lec->save();
+        
+        if($result)
+            return response()->json(['message' => 'Lecturer updated successfully!'], 201);
+        else
+            return response()->json(['message' => 'Lecturer not updated! Please try again!'], 400);
+    }
+
 }

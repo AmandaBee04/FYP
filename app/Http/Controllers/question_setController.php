@@ -8,12 +8,12 @@ use App\Models\subject;
 
 class question_setController extends Controller
 {
-    function getQuestionSet()
+    public function getQuestionSet()
     {
         return question_set::all();
     }
 
-    function addQS(Request $req)
+    public function addQS(Request $req)
     {
 
         $qs = new question_set;

@@ -8,7 +8,7 @@ use App\Models\lecturer;
 
 class subjectController extends Controller
 {
-    function getSubject($sub_id = null, $sub_name = null)
+    public function getSubject($sub_id = null, $sub_name = null)
     {
         if($sub_id)
         {
@@ -24,7 +24,7 @@ class subjectController extends Controller
         }
     }
 
-    function addSub(Request $req)
+    public function addSub(Request $req)
     {   
         // $validatedData = $req->validate([
         //     'sub_id' => 'required|string|unique:subject',
@@ -47,5 +47,24 @@ class subjectController extends Controller
             return response()->json(['message' => 'Subject added successfully!'], 201);
         else
             return response()->json(['message' => 'Subject not added! Please try again!'], 400);
+    }
+
+    public function updateSub(Request $req)
+    {
+        $sub = subject::find($req->sub_id);
+        $sub->sub_name = $req->sub_name;
+        $sub->lec_id = $req->lec_id;
+
+        $existingLec = lecturer::find($req->lec_id);
+        if (!$existingLec) {
+            return response()->json(['message' => 'Lecturer not found!'], 404);
+        }
+        
+        $result = $sub->save();
+        // $result = lecturer::create($validatedData);
+        if($result)
+            return response()->json(['message' => 'Subject updated successfully!'], 201);
+        else
+            return response()->json(['message' => 'Subject not updated! Please try again!'], 400);
     }
 }

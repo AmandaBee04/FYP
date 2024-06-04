@@ -9,7 +9,7 @@ use App\Models\question_set;
 
 class stud_gradeController extends Controller
 {
-    function getStudGrade($qs_id)
+    public function getStudGrade($qs_id)
     {
         $questionSet = question_set::find($qs_id);
         if (!$questionSet) {

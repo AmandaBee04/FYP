@@ -7,7 +7,7 @@ use App\Models\stud_ans;
 
 class stud_ansController extends Controller
 {
-    function getStudAns()
+    public function getStudAns()
     {
         return stud_ans::all();
     }

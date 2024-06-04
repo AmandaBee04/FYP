@@ -11,7 +11,7 @@ use App\Http\Controllers\lec_requestController;
 use App\Http\Controllers\stud_ansController;
 use App\Http\Controllers\stud_gradeController;
 use App\Http\Controllers\loginController;
-
+use App\Models\lecturer;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,3 +57,9 @@ Route::post('/addQS', [question_setController::class, 'addQS']);
 Route::post('/addQues', [questionController::class, 'addQues']);
 
 Route::post('/addLecReq', [lec_requestController::class, 'addLecReq']);
+
+Route::put('/updateLec', [lecturerController::class, 'updateLec']);
+
+Route::put('/updateSub', [lecturerController::class, 'updateSub']);
+
+Route::put('/updateStud', [lecturerController::class, 'updateStud']);

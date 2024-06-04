@@ -8,7 +8,7 @@ use App\Models\subject;
 
 class studentController extends Controller
 {
-    function getStudent($stud_id = null, $stud_name = null)
+    public function getStudent($stud_id = null, $stud_name = null)
     {
         if($stud_id)
         {
@@ -24,7 +24,7 @@ class studentController extends Controller
         }
     }
 
-    function addStud(Request $req)
+    public function addStud(Request $req)
     {
         // $validatedData = $req->validate([
         //     'stud_id' => 'required|string|unique:student',
@@ -56,5 +56,25 @@ class studentController extends Controller
             return response()->json(['message' => 'Student added successfully!'], 201);
         else
             return response()->json(['message' => 'Student not added! Please try again!'], 400);
+    }
+
+    public function updateStud(Request $req)
+    {
+        $stud = student::find($req->stud_id);
+        $stud->stud_name = $req->stud_name;
+        if ($req->stud_password) {
+            $stud->stud_password = bcrypt($req->stud_password);
+        }
+        $stud->stud_email = $req->stud_email;
+        $stud->programme = $req->programme;
+        $stud->faculty = $req->faculty;
+        $stud->sub_id = $req->sub_id;
+        
+        $result = $stud->save();
+        
+        if($result)
+            return response()->json(['message' => 'Student updated successfully!'], 201);
+        else
+            return response()->json(['message' => 'Student not updated! Please try again!'], 400);
     }
 }

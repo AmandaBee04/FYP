@@ -56,11 +56,27 @@ class lecturerController extends Controller
         $lec->lec_email = $req->lec_email;
         
         $result = $lec->save();
-        
+
         if($result)
             return response()->json(['message' => 'Lecturer updated successfully!'], 201);
         else
             return response()->json(['message' => 'Lecturer not updated! Please try again!'], 400);
+    }
+
+    public function deleteLec($lec_id)
+    {
+        $lec = lecturer::find($lec_id);
+
+        if (!$lec) {
+            return response()->json(['message' => 'Lecturer not found!'], 404);
+        }
+
+        $result = $lec->delete();
+
+        if($result)
+            return response()->json(['message' => 'Lecturer deleted successfully!'], 200);
+        else
+            return response()->json(['message' => 'Lecturer not deleted! Please try again!'], 400);
     }
 
 }

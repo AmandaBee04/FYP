@@ -10,7 +10,7 @@ class stud_grade extends Model
     
     public function questionSet()
     {
-        return $this->belongsTo(question_set::class, 'qs_id');
+        return $this->belongsTo(question_set::class, 'id');
     }
 
     protected $table = 'stud_grade';

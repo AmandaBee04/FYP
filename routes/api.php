@@ -12,6 +12,8 @@ use App\Http\Controllers\stud_ansController;
 use App\Http\Controllers\stud_gradeController;
 use App\Http\Controllers\loginController;
 use App\Models\lecturer;
+use App\Models\student;
+use App\Models\subject;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,38 +30,48 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get("/getQuestion", [questionController::class, 'getQuestion']);
+Route::get("/question/getQuestion", [questionController::class, 'getQuestion']);
 
-Route::get("/getQuestionSet", [question_setController::class, 'getQuestionSet']);
+Route::get("/questionaa_set/getQuestionSet", [question_setController::class, 'getQuestionSet']);
 
-Route::get("/getLecturer", [lecturerController::class, 'getLecturer']);
+Route::get("/lecturer/getLecturer", [lecturerController::class, 'getLecturer']);
 
-Route::get("/getStudent", [studentController::class, 'getStudent']);
+Route::get("/student/getStudent", [studentController::class, 'getStudent']);
 
-Route::get("/getSubject", [subjectController::class, 'getSubject']);
+Route::get("/subject/getSubject", [subjectController::class, 'getSubject']);
 
-Route::get("/getLecRequest", [lec_requestController::class, 'getLecRequest']);
+Route::get("/request/getLecRequest", [lec_requestController::class, 'getLecRequest']);
 
-Route::get("/getStudAns", [stud_ansController::class, 'getStudAns']);
+Route::get("/stud_ans/getStudAns", [stud_ansController::class, 'getStudAns']);
 
-Route::get("/grades/{qs_id}", [stud_gradeController::class, 'getStudGrade']);
+Route::get("/student/grades/{id}", [stud_gradeController::class, 'getStudGrade']);
 
 Route::post('/login', [loginController::class, 'login']);
 
-Route::post('/addLec', [lecturerController::class, 'addLec']);
+Route::post('/lecturer/addLec', [lecturerController::class, 'addLec']);
 
-Route::post('/addStud', [studentController::class, 'addStud']);
+Route::post('/student/addStud', [studentController::class, 'addStud']);
 
-Route::post('/addSub', [subjectController::class, 'addSub']);
+Route::post('/subject/addSub', [subjectController::class, 'addSub']);
 
-Route::post('/addQS', [question_setController::class, 'addQS']);
+Route::post('/question_set/addQS', [question_setController::class, 'addQS']);
 
-Route::post('/addQues', [questionController::class, 'addQues']);
+Route::post('/question/addQues', [questionController::class, 'addQues']);
 
-Route::post('/addLecReq', [lec_requestController::class, 'addLecReq']);
+Route::post('/request/addLecReq', [lec_requestController::class, 'addLecReq']);
 
-Route::put('/updateLec', [lecturerController::class, 'updateLec']);
+Route::put('/lecturer/updateLec', [lecturerController::class, 'updateLec']);
 
-Route::put('/updateSub', [lecturerController::class, 'updateSub']);
+Route::put('/subject/updateSub', [subjectController::class, 'updateSub']);
 
-Route::put('/updateStud', [lecturerController::class, 'updateStud']);
+Route::put('/student/updateStud', [studentController::class, 'updateStud']);
+
+Route::delete('/student/delete/{stud_id}', [studentController::class, 'deleteStud']);
+
+Route::delete('/subject/delete/{sub_id}', [subjectController::class, 'deleteSub']);
+
+Route::delete('/lecturer/delete/{lec_id}', [lecturerController::class, 'deleteLec']);
+
+Route::delete('/deleteQues/delete/{id}', [questionController::class, 'deleteQues']);
+
+Route::delete('/deleteQS/delete/{id}', [question_setController::class, 'deleteQS']);

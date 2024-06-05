@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\lec_request;
 use App\Models\lecturer;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\NewRequestEmail;
 
 class lec_requestController extends Controller
 {
@@ -28,11 +30,13 @@ class lec_requestController extends Controller
         }
 
         $result = $lec_req->save();
-
-        if($result)
+        
+        if($result) {
+            Mail::to('AM0001@mmu.edu.my')->send(new NewRequestEmail($lec_req));
             return response()->json(['message' => 'Request sent!'], 201);
-        else
+        } else {
             return response()->json(['message' => 'Request not sent! Please try again!'], 400);
+        }
     }
 
 }

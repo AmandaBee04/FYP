@@ -20,7 +20,7 @@ class question_set extends Model
     
     public function grades()
     {
-        return $this->hasMany(stud_grade::class, 'qs_id');
+        return $this->hasMany(stud_grade::class, 'id');
     }
 
     protected $table = 'question_set';

@@ -38,4 +38,22 @@ class question_setController extends Controller
         else
             return response()->json(['message' => 'Question set not added! Please try again!'], 400);
     }
+
+    public function deleteQS($id)
+    {
+        $qs = question_set::find($id);
+
+        if(!$qs)
+        {
+            return response()->json(['message' => 'Question set not found!'], 404);
+        }
+
+        $result = $qs->delete();
+
+        if($result)
+            return response()->json(['message' => 'Question set deleted successfully!'], 200);
+        else
+            return response()->json(['message' => 'Question set not deleted! Please try again!'], 400);
+
+    }
 }

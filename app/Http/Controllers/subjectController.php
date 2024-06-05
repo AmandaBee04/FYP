@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\subject;
 use App\Models\lecturer;
+use App\Models\student;
 
 class subjectController extends Controller
 {
@@ -20,7 +21,7 @@ class subjectController extends Controller
         }
         else
         {
-            return subject::all();
+            return ['subjects' => subject::all(), 'students' => student::all()];
         }
     }
 
@@ -66,5 +67,21 @@ class subjectController extends Controller
             return response()->json(['message' => 'Subject updated successfully!'], 201);
         else
             return response()->json(['message' => 'Subject not updated! Please try again!'], 400);
+    }
+
+    public function deleteSub($sub_id)
+    {
+        $sub = subject::find($sub_id);
+
+        if (!$sub) {
+            return response()->json(['message' => 'Subject not found!'], 404);
+        }
+
+        $result = $sub->delete();
+
+        if($result)
+            return response()->json(['message' => 'Subject deleted successfully!'], 200);
+        else
+            return response()->json(['message' => 'Subject not deleted! Please try again!'], 400);
     }
 }

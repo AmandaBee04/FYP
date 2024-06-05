@@ -77,4 +77,20 @@ class studentController extends Controller
         else
             return response()->json(['message' => 'Student not updated! Please try again!'], 400);
     }
+
+    public function deleteStud($stud_id)
+    {
+        $stud = student::find($stud_id);
+
+        if (!$stud) {
+            return response()->json(['message' => 'Student not found!'], 404);
+        }
+
+        $result = $stud->delete();
+
+        if($result)
+            return response()->json(['message' => 'Student deleted successfully!'], 200);
+        else
+            return response()->json(['message' => 'Student not deleted! Please try again!'], 400);
+    }
 }

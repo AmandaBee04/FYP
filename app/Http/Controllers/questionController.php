@@ -60,4 +60,20 @@ class questionController extends Controller
         else
             return response()->json(['message' => 'Question not added! Please try again!'], 400);
     }
+
+    public function deleteQues($id)
+    {
+        $ques = question::find($id);
+
+        if (!$ques) {
+            return response()->json(['message' => 'Question not found!'], 404);
+        }
+
+        $result = $ques->delete();
+
+        if($result)
+            return response()->json(['message' => 'Question deleted successfully!'], 200);
+        else
+            return response()->json(['message' => 'Question not deleted! Please try again!'], 400);
+    }
 }

@@ -13,6 +13,5 @@ class stud_grade extends Model
         return $this->belongsTo(question_set::class, 'id');
     }
 
-    protected $table = 'stud_grade';
     use HasFactory;
 }

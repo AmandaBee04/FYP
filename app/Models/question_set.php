@@ -23,6 +23,5 @@ class question_set extends Model
         return $this->hasMany(stud_grade::class, 'id');
     }
 
-    protected $table = 'question_set';
     use HasFactory;
 }

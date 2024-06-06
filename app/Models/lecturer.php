@@ -19,7 +19,6 @@ class lecturer extends Model
     ];
 
     use HasFactory;
-    protected $table = 'lecturer';
     protected $primaryKey = 'lec_id';
     public $timestamps = false;
 

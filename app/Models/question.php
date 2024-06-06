@@ -20,7 +20,6 @@ class question extends Model
         'feedback',
         'qs_id'
     ];
-    protected $table = 'question';
 
     use HasFactory;
 }

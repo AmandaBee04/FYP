@@ -21,8 +21,12 @@ class student extends Model
         'stud_password'
     ];
 
+    public function students()
+    {
+        return $this->hasMany(subject_taken::class, 'stud_id');
+    }
+
     use HasFactory;
-    protected $table = 'student';
     protected $primaryKey = 'stud_id';
     public $timestamps = false;
 }

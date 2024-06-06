@@ -12,9 +12,13 @@ class subject extends Model
         'sub_name',
         'lec_id'
     ];
+
+    public function subjects()
+    {
+        return $this->hasMany(subject_taken::class, 'sub_id');
+    }
     
     use HasFactory;
-    protected $table = 'subject';
     protected $primaryKey = 'sub_id';
     public $timestamps = false;
 }

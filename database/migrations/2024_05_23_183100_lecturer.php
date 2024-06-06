@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('lecturer', function (Blueprint $table) {
+        Schema::create('lecturers', function (Blueprint $table) {
             $table->string('lec_id')->primary();
             $table->string('lec_name')->nullable();
             $table->string('lec_password')->nullable();

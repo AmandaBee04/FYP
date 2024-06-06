@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\student;
 use App\Models\subject;
+use App\Models\subject_taken;
 
 class studentController extends Controller
 {
@@ -24,7 +25,7 @@ class studentController extends Controller
         }
     }
 
-    public function addStud(Request $req)
+    public function addStud(Request $req, student $student)
     {
         // $validatedData = $req->validate([
         //     'stud_id' => 'required|string|unique:student',
@@ -44,6 +45,15 @@ class studentController extends Controller
         $stud->programme = $req->programme;
         $stud->faculty = $req->faculty;
         $stud->sub_id = $req->sub_id;
+        $result = $stud->save();
+        
+        if($req->has('sub_id'))
+        {
+            $subjectTaken = new subject_taken;
+            $subjectTaken->stud_id = $req->stud_id;
+            $subjectTaken->sub_id = $req->input('sub_id');
+            $subjectTaken->save();
+        }
 
         $existingSub = subject::find($req->sub_id);
         if (!$existingSub) {
@@ -68,14 +78,28 @@ class studentController extends Controller
         $stud->stud_email = $req->stud_email;
         $stud->programme = $req->programme;
         $stud->faculty = $req->faculty;
-        $stud->sub_id = $req->sub_id;
         
         $result = $stud->save();
-        
+
+        if($req->has('sub_id'))
+        {
+            $subjectTaken = new subject_taken;
+            $subjectTaken->stud_id = $stud->stud_id;
+            $subjectTaken->sub_id = $req->input('sub_id');
+            $subjectTaken->save();
+        }
+
+        $result = $stud->save();
+
         if($result)
+        {
             return response()->json(['message' => 'Student updated successfully!'], 201);
+        }
         else
+        {
             return response()->json(['message' => 'Student not updated! Please try again!'], 400);
+        }
+            
     }
 
     public function deleteStud($stud_id)

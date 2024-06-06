@@ -11,15 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('stud_ans', function (Blueprint $table) {
+        Schema::create('stud_anss', function (Blueprint $table) {
             $table->id(); 
             $table->string('answer')->nullable();
             $table->string('remark')->nullable(); 
             $table->string('feedback')->nullable();
             $table->string('stud_id');
             $table->unsignedBigInteger('ques_id');
-            $table->foreign('stud_id')->references('stud_id')->on('student')->onDelete('cascade')->onUpdate('cascade'); 
-            $table->foreign('ques_id')->references('id')->on('question')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('stud_id')->references('stud_id')->on('students')->onDelete('cascade')->onUpdate('cascade'); 
+            $table->foreign('ques_id')->references('id')->on('questions')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

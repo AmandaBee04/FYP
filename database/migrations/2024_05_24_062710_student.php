@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('student', function (Blueprint $table) {
+        Schema::create('students', function (Blueprint $table) {
             $table->string('stud_id')->primary(); 
             $table->string('stud_name')->nullable();
             $table->string('stud_password')->nullable();
@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('programme')->nullable();
             $table->string('faculty')->nullable();
             $table->string('sub_id');
-            $table->foreign('sub_id')->references('sub_id')->on('subject')->onDelete('cascade')->onUpdate('cascade');;
+            $table->foreign('sub_id')->references('sub_id')->on('subjects')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

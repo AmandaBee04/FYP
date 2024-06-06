@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('request', function (Blueprint $table) {
+        Schema::create('lec_requests', function (Blueprint $table) {
             $table->id(); 
             $table->string('subject')->nullable(); 
             $table->string('message')->nullable();
             $table->string('lec_id');
-            $table->foreign('lec_id')->references('lec_id')->on('lecturer')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('lec_id')->references('lec_id')->on('lecturers')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps(); // Adds created_at and updated_at columns
         });
     }

@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('question_set', function (Blueprint $table) {
+        Schema::create('question_sets', function (Blueprint $table) {
             $table->id(); 
             $table->string('qs_name')->nullable(); 
             $table->string('type')->nullable();
@@ -20,7 +20,7 @@ return new class extends Migration
             $table->boolean('assign')->nullable(); 
             $table->integer('total_mark')->nullable(); 
             $table->string('sub_id');
-            $table->foreign('sub_id')->references('sub_id')->on('subject')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('sub_id')->references('sub_id')->on('subjects')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

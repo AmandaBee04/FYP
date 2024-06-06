@@ -11,11 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('subjects', function (Blueprint $table) {
-            $table->string('sub_id')->primary();
-            $table->string('sub_name')->nullable();
-            $table->string('lec_id');
-            $table->foreign('lec_id')->references('lec_id')->on('lecturers')->onDelete('cascade')->onUpdate('cascade');
+        Schema::create('subject_takens', function (Blueprint $table) {
+            $table->id();
+            $table->string('stud_id');
+            $table->string('sub_id');
         });
     }
 
@@ -24,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('student_subject');
     }
 };

@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('question', function (Blueprint $table) {
+        Schema::create('questions', function (Blueprint $table) {
             $table->id(); 
             $table->string('question')->nullable();
             $table->string('instruction')->nullable();
@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('ans_d')->nullable();
             $table->string('feedback')->nullable();
             $table->unsignedBigInteger('qs_id'); 
-            $table->foreign('qs_id')->references('id')->on('question_set')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('qs_id')->references('id')->on('question_sets')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

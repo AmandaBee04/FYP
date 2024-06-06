@@ -13,6 +13,5 @@ class lec_request extends Model
         'message',
         'lec_id'
     ];
-    protected $table = 'request';
     use HasFactory;
 }

@@ -22,7 +22,7 @@ class NewRequestEmail extends Mailable
     public function __construct($lec_req)
     {
         $this->lec_req = $lec_req;
-        $this->url = url('/requests/' . $this->lec_req->id);
+        $this->url = url('/requests/getLecRequest');
     }
 
     /**
@@ -64,20 +64,6 @@ class NewRequestEmail extends Mailable
                         'lec_req' => $this->lec_req,
                         'url' => $this->url
                     ]);
-    
-
-        // $url = url('/requests/' . $this->lec_req->id);
-
-        // $message = "A new request has been sent by the lecturer:\n\n";
-        // $message .= "Lecturer ID: " . $this->lec_req->lec_id . "\n";
-        // $message .= "Subject: " . $this->lec_req->subject . "\n";
-        // $message .= "Message: " . $this->lec_req->message . "\n\n";
-        // $message .= "Click the following link to view the request:\n";
-        // $message .= $url;
-                
-        // return $this->from('admin@example.com')
-        //     ->subject('New Request')
-        //     ->text($message);
     }
 
 }

@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('questions', function (Blueprint $table) {
             $table->id(); 
             $table->string('question')->nullable();
-            $table->string('instruction')->nullable();
+            $table->integer('marks')->nullable();
             $table->string('picture')->nullable();
             $table->string('correct_ans')->nullable();
             $table->string('ans_a')->nullable();

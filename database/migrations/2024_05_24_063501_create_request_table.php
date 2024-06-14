@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('subject')->nullable(); 
             $table->string('message')->nullable();
             $table->string('lec_id');
-            $table->foreign('lec_id')->references('lec_id')->on('lecturers')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('lec_id')->references('id')->on('lecturers')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps(); // Adds created_at and updated_at columns
         });
     }

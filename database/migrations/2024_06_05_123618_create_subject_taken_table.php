@@ -15,6 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('stud_id');
             $table->string('sub_id');
+
+            $table->foreign('stud_id')->references('stud_id')->on('students')->onDelete('cascade');
+            $table->foreign('sub_id')->references('id')->on('subjects')->onDelete('cascade');
         });
     }
 
@@ -23,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('student_subject');
+        Schema::dropIfExists('subject_takens');
     }
 };

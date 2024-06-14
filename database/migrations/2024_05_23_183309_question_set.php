@@ -19,8 +19,13 @@ return new class extends Migration
             $table->date('due_date')->nullable();
             $table->boolean('assign')->nullable(); 
             $table->integer('total_mark')->nullable(); 
+            $table->string('assignLec_id')->nullable();
+            $table->string('lec_id');
             $table->string('sub_id');
-            $table->foreign('sub_id')->references('sub_id')->on('subjects')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('assignLec_id')->references('id')->on('lecturers')->onDelete('set null');
+            $table->foreign('lec_id')->references('id')->on('lecturers')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('sub_id')->references('id')->on('subjects')->onDelete('cascade')->onUpdate('cascade');
+
             $table->timestamps();
         });
     }

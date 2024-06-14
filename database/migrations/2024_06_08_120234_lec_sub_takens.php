@@ -11,11 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('subjects', function (Blueprint $table) {
-            $table->string('id')->primary();
-            $table->string('name')->nullable();
+        Schema::create('lec_sub_takens', function (Blueprint $table) {
+            $table->id();
             $table->string('lec_id');
-            $table->foreign('lec_id')->references('id')->on('lecturers')->onDelete('cascade')->onUpdate('cascade');
+            $table->string('sub_id');
+
+            $table->foreign('lec_id')->references('id')->on('lecturers')->onDelete('cascade');
+            $table->foreign('sub_id')->references('id')->on('subjects')->onDelete('cascade');
         });
     }
 
@@ -24,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('lec_sub_takens');
     }
 };

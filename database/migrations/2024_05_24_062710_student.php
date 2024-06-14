@@ -18,8 +18,9 @@ return new class extends Migration
             $table->string('stud_email')->unique();
             $table->string('programme')->nullable();
             $table->string('faculty')->nullable();
+            $table->string('profile_picture')->nullable();
             $table->string('sub_id');
-            $table->foreign('sub_id')->references('sub_id')->on('subjects')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('sub_id')->references('id')->on('subjects')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

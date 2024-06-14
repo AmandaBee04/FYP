@@ -8,17 +8,26 @@ use Illuminate\Database\Eloquent\Model;
 class subject extends Model
 {
     protected $fillable =[
-        'sub_id', 
-        'sub_name',
+        'id', 
+        'name',
         'lec_id'
     ];
 
-    public function subjects()
+    public function subject_taken()
     {
         return $this->hasMany(subject_taken::class, 'sub_id');
     }
+
+    public function lecturer()
+    {
+        return $this->belongsTo(Lecturer::class);
+    }
+
+    public function questionSet()
+    {
+        return $this->hasMany(question_set::class, 'sub_id');
+    }
     
     use HasFactory;
-    protected $primaryKey = 'sub_id';
     public $timestamps = false;
 }

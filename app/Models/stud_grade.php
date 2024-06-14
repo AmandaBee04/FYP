@@ -7,10 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class stud_grade extends Model
 {
+    protected $fillable =[
+        'id', 
+        'grade',
+        'score',
+        'studAns_id'
+    ];
     
-    public function questionSet()
+    public function stud_ans()
     {
-        return $this->belongsTo(question_set::class, 'id');
+        return $this->belongsTo(stud_ans::class, 'id');
     }
 
     use HasFactory;

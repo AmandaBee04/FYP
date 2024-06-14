@@ -8,18 +8,33 @@ use Illuminate\Database\Eloquent\Model;
 class lecturer extends Model
 {
     protected $fillable =[
-        'lec_id', 
-        'lec_name',
-        'lec_password',
-        'lec_email'
+        'id', 
+        'name',
+        'password',
+        'profile_picture',
+        'email'
     ];
 
     protected $hidden = [
-        'lec_password'
+        'password'
     ];
 
+    public function subjects()
+    {
+        return $this->hasMany(Subject::class);
+    }
+
+    public function lecRequest()
+    {
+        return $this->hasMany(lec_request::class, 'id');
+    }
+
+    public function questionSet()
+    {
+        return $this->hasMany(question_set::class, 'id');
+    }
+    
     use HasFactory;
-    protected $primaryKey = 'lec_id';
     public $timestamps = false;
 
 }

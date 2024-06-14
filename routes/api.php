@@ -62,13 +62,13 @@ Route::put('/subject/updateSub', [subjectController::class, 'updateSub']);
 Route::delete('/subject/delete/{id}', [subjectController::class, 'deleteSub']);
 
 
-//QUESTION SET
-Route::get('/question_set/myQuestionSets', [question_setController::class, 'myQuestionSet']);
+//QUESTION SET (done checking YEAHHHH)
+Route::get('/lecturer/{id}/question_set/myQuestionSets', [question_setController::class, 'myQuestionSets']);
 Route::get('/question_set/getAllQuestionSets', [question_setController::class, 'getAllQuestionSets']);
 Route::get('/lecturer/{lec_id}/question_set/getAssignedQuestionSets', [question_setController::class, 'getAssignedQuestionSets']);
 Route::post('/question_set/addQS', [question_setController::class, 'addQS']);
-Route::put('/question_set/updateQS', [question_setController::class, 'updateQS']);
-Route::delete('/deleteQS/delete/{id}', [question_setController::class, 'deleteQS']);
+Route::put('//lecturer/{id}/question_set/updateQS', [question_setController::class, 'updateQS']);
+Route::delete('/question_set/delete/{id}', [question_setController::class, 'deleteQS']);
 
 //QUESTION
 Route::get('/question_set/{id}/question/getQuestion', [questionController::class, 'getQuestion']);

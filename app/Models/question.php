@@ -10,7 +10,7 @@ class question extends Model
     protected $fillable =[
         'id', 
         'question',
-        'instruction',
+        'marks',
         'picture',
         'correct_ans',
         'ans_a',
@@ -20,6 +20,16 @@ class question extends Model
         'feedback',
         'qs_id'
     ];
+
+    public function questionSet()
+    {
+        return $this->belongsTo(question_set::class);
+    }
+
+    public function studAns()
+    {
+        return $this->hasMany(stud_ans::class);
+    }
 
     use HasFactory;
 }

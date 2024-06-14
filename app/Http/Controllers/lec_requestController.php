@@ -10,11 +10,13 @@ use App\Mail\NewRequestEmail;
 
 class lec_requestController extends Controller
 {
+    //admin get all request
     public function getLecRequest()
     {
         return lec_request::all();
     }
 
+    //lecturer add request
     public function addLecReq(Request $req)
     {
 

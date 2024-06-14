@@ -13,5 +13,11 @@ class lec_request extends Model
         'message',
         'lec_id'
     ];
+
+    public function lecRequest()
+    {
+        return $this->belongsTo(lecturer::class, 'lec_id'); 
+    }
+
     use HasFactory;
 }

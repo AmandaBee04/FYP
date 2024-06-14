@@ -3,26 +3,68 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 use App\Models\lecturer;
 
 class lecturerController extends Controller
 {
-    public function getLecturer($lec_id = null, $lec_name = null)
+    //admin get lecturer list, if provide lec_id or name, it will give you revelant lecturer, else display all
+    public function getLecturer($param = null)
     {
-        if($lec_id)
+        $lec = null;
+
+        if(is_null($param))
         {
-            return lecturer::find($lec_id);
+            $lec = DB::table('lecturers')->select('id', 'name', 'email', 'profile_picture')->get();
         } 
-        else if($lec_name)
+        else if(strpos($param, 'MU') === 0)
         {
-            return lecturer::where('lec_name', $lec_name)->first();
+            $lec = DB::table('lecturers')->where('id', 'like', '%' . $param . '%')->select('id', 'name', 'email', 'profile_picture')->get();
         } 
         else 
         {
-            return lecturer::all();
+            $lec = DB::table('lecturers')->where('name', 'like', '%' . $param . '%')->select('id', 'name', 'email', 'profile_picture')->get();
+        }
+
+        if($lec->isEmpty())
+        {
+            return response()->json(['message' => 'No lecturer yet..'], 200);
+        }
+        else
+        {
+            return response()->json($lec, 200);
         }
     }
 
+    //lecturer profile
+    public function getLecProfile($id)
+    {
+        $lec = DB::table('lecturers')->where('id', $id)->first();
+
+        if (!$lec) {
+            return response()->json(['message' => 'Lecturer not found'], 404);
+        }
+
+        $name = $lec->name;
+        $email = $lec->email;
+        $profile_picture = $lec->profile_picture;
+
+        $subjects = DB::table('subjects')
+        ->where('lec_id', $id)
+        ->select('subjects.*') 
+        ->get();
+
+        return response()->json([
+            'id' => $id,
+            'name' => $name,
+            'email' => $email,
+            'profile_pic' => $profile_picture,
+            'taught_subjects' => $subjects
+        ], 200);
+    }
+
+    //admin add lecturer
     public function addLec(Request $req)
     {
         // $validatedData = $req->validate([
@@ -33,10 +75,23 @@ class lecturerController extends Controller
         // ]);
         
         $lec = new lecturer;
-        $lec->lec_id = $req->lec_id;
-        $lec->lec_name = $req->lec_name;
-        $lec->lec_password = bcrypt($req->lec_password);
-        $lec->lec_email = $req->lec_email;
+        $lec->id = $req->id;
+        $lec->name = $req->name;
+        $lec->password = bcrypt($req->password);
+        $lec->email = $req->email;
+        
+        if ($req->hasFile('profile_picture')) 
+        {
+            $file = $req->file('profile_picture');
+            $filePath = $file->store('profile_pictures/lecturers', 'public'); 
+    
+            // Generate a URL to the stored picture
+            $imgName = basename($filePath);
+            $linkToImg = asset('/storage/profile_pictures/lecturers/'.$imgName);
+    
+            // Store the URL in the lecturer model
+            $lec->profile_picture = $linkToImg;
+        }
         
         $result = $lec->save();
         // $result = lecturer::create($validatedData);
@@ -46,14 +101,29 @@ class lecturerController extends Controller
             return response()->json(['message' => 'Lecturer not added! Please try again!'], 400);
     }
 
+    //admin update lecturer
     public function updateLec(Request $req)
     {
-        $lec = lecturer::find($req->lec_id);
-        $lec->lec_name = $req->lec_name;
-        if ($req->lec_password) {
-            $lec->lec_password = bcrypt($req->lec_password);
+        $id = $req->id;
+        $lec = Lecturer::where('id', $id)->first();
+        $lec->name = $req->name;
+        if ($req->password) {
+            $lec->password = bcrypt($req->password);
         }
-        $lec->lec_email = $req->lec_email;
+        $lec->email = $req->email;
+
+        if ($req->hasFile('profile_picture')) 
+        {
+            $file = $req->file('profile_picture');
+            $filePath = $file->store('profile_pictures/lecturers', 'public'); 
+    
+            // Generate a URL to the stored picture
+            $imgName = basename($filePath);
+            $linkToImg = asset('/storage/profile_pictures/lecturers/'.$imgName);
+    
+            // Store the URL in the lecturer model
+            $lec->profile_picture = $linkToImg;
+        }
         
         $result = $lec->save();
 
@@ -63,9 +133,33 @@ class lecturerController extends Controller
             return response()->json(['message' => 'Lecturer not updated! Please try again!'], 400);
     }
 
-    public function deleteLec($lec_id)
+    //lecturer change password
+    public function updateLecPassword(Request $req, $id)
     {
-        $lec = lecturer::find($lec_id);
+
+        $lec = DB::table('lecturers')->where('id', $id)->first();
+
+        if (Hash::check($req->old_password, $lec->password)) 
+        {
+            DB::table('lecturers')
+                ->where('id', $id)
+                ->update(['password' => bcrypt($req->new_password)]);
+
+            // Return a success message
+            return response()->json(['message' => 'Password updated successfully'], 201);
+        } 
+        else 
+        {
+            // Return an error message
+            return response()->json(['message' => 'Old password does not match'], 400);
+        }
+
+    }
+
+    //admin delete lecturer
+    public function deleteLec($id)
+    {
+        $lec = lecturer::find($id);
 
         if (!$lec) {
             return response()->json(['message' => 'Lecturer not found!'], 404);

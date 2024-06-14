@@ -14,6 +14,7 @@ class student extends Model
         'stud_email',
         'programme',
         'faculty',
+        'profile_picture',
         'sub_id'
     ];
 
@@ -21,7 +22,7 @@ class student extends Model
         'stud_password'
     ];
 
-    public function students()
+    public function subject_taken()
     {
         return $this->hasMany(subject_taken::class, 'stud_id');
     }

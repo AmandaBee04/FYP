@@ -14,12 +14,12 @@ class subject_taken extends Model
         'stud_id' 
     ];
 
-    public function stud()
+    public function student()
     {
         return $this->belongsTo(student::class, 'stud_id');
     }
 
-    public function sub()
+    public function subject()
     {
         return $this->belongsTo(subject::class, 'sub_id');
     }

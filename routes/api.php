@@ -63,27 +63,28 @@ Route::delete('/subject/delete/{id}', [subjectController::class, 'deleteSub']);
 
 
 //QUESTION SET (done checking YEAHHHH)
-Route::get('/lecturer/{id}/question_set/myQuestionSets', [question_setController::class, 'myQuestionSets']);
 Route::get('/question_set/getAllQuestionSets', [question_setController::class, 'getAllQuestionSets']);
+Route::get('/lecturer/{id}/question_set/myQuestionSets', [question_setController::class, 'myQuestionSets']);
 Route::get('/lecturer/{lec_id}/question_set/getAssignedQuestionSets', [question_setController::class, 'getAssignedQuestionSets']);
 Route::post('/question_set/addQS', [question_setController::class, 'addQS']);
 Route::put('//lecturer/{id}/question_set/updateQS', [question_setController::class, 'updateQS']);
 Route::delete('/question_set/delete/{id}', [question_setController::class, 'deleteQS']);
 
-//QUESTION
+//QUESTION (done checking YEAHHHH)
 Route::get('/question_set/{id}/question/getQuestion', [questionController::class, 'getQuestion']);
-Route::post('/question/addQues', [questionController::class, 'addQues']);
-Route::put('/question/updateQues', [questionController::class, 'updateQues']);
-Route::delete('/deleteQues/delete/{id}', [questionController::class, 'deleteQues']);
+Route::post('/question_set/{id}/question/addQues', [questionController::class, 'addQues']);
+Route::put('/question_set/{id}/question/updateQues', [questionController::class, 'updateQues']);
+Route::delete('/question_set/{qs_id}/question/delete/{id}', [questionController::class, 'deleteQues']);
 
-//LEC_REQUEST
+//LEC_REQUEST (done checking YEAHHHH)
 Route::get('/request/getLecRequest', [lec_requestController::class, 'getLecRequest']);
 Route::post('/request/addLecReq', [lec_requestController::class, 'addLecReq']);
 
-//STUD_ANS
+//STUD_ANS (done checking YEAHHHH)
 Route::get('/student/{stud_id}/question_set/{qs_id}/stud_ans/getStudAns', [stud_ansController::class, 'getStudAns']);
 Route::get('/student/{stud_id}/question_set/{qs_id}/marked_questions', [stud_ansController::class, 'getMarkedQuestions']);
-Route::put('/question_set/{id}/studAns/{stud_id}', [stud_ansController::class, 'markedStudAns']);
+Route::post('/student/{stud_id}/question/{id}', [stud_ansController::class, 'addStudAns']);
+Route::put('/student/{stud_id}/question/{id}/studAns', [stud_ansController::class, 'markedStudAns']);
 
 //STUD_GRADE
 Route::get('/student/{id}/grades', [stud_gradeController::class, 'getStudGrade']);

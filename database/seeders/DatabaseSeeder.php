@@ -220,8 +220,31 @@ class DatabaseSeeder extends Seeder
             "ans_b" => "6",
             "ans_c" => "8",
             "ans_d" => "7",
-	    "feedback" => "",
+	        "feedback" => "",
             "qs_id" => "1"
+        ]);
+
+        question::create([
+            "id" => "2",
+            "question" => "What is C++",
+            "marks" => 2,
+            "picture" => "",
+            "correct_ans" => "ans_d",
+            "ans_a" => "I don't know",
+            "ans_b" => "C++ is C++",
+            "ans_c" => "C++ is same as C",
+            "ans_d" => "C++ is an object-oriented language.",
+	        "feedback" => "",
+            "qs_id" => "2"
+        ]);
+
+        stud_ans::create([
+            "id" => "1",
+            "answer" => "ans_b",
+            "feedback" => "good",
+            "marks" => 2,
+            "stud_id" => "12212001",
+            "ques_id" => "1"
         ]);
 
         lec_request::create([

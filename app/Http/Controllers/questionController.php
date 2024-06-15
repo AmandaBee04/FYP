@@ -13,23 +13,24 @@ class questionController extends Controller
     //display all question by question set
     public function getQuestion($qs_id)
     {
-        $questions = DB::table('questions')
+        $ques = DB::table('questions')
         ->where('qs_id', $qs_id)
+        ->select('id', 'question', 'marks', 'picture', 'correct_ans', 'ans_a', 'ans_b', 'ans_c', 'ans_d')
         ->get();
 
-        if ($questions->isEmpty()) 
+        if ($ques->isEmpty()) 
         {
             return response()->json(['message' => 'No question found, please add new question']);
         } 
 
         else 
         {
-            return response()->json([$questions], 201);
+            return response()->json($ques, 200);
         }
     }
 
     //lecturer add question
-    public function addQues(Request $req)
+    public function addQues(Request $req, $qs_id)
     {
         // $validatedData = $req->validate([
         //     'id' => 'required|integer',
@@ -55,14 +56,14 @@ class questionController extends Controller
         $ques->ans_c = $req->ans_c;
         $ques->ans_d = $req->ans_d;
         $ques->feedback = $req->feedback;
-        $ques->qs_id = $req->qs_id;
+        $ques->qs_id = $qs_id;
 
         if ($req->hasFile('picture')) {
             $file = $req->file('questions');
             $filePath = $file->store('question/pictures', 'public'); 
         }
 
-        $existingQS = question_set::find($req->qs_id);
+        $existingQS = question_set::find($qs_id);
         if (!$existingQS) {
             return response()->json(['message' => 'Question set not found!'], 404);
         }
@@ -76,9 +77,9 @@ class questionController extends Controller
     }
 
     //lecturer update question
-    public function updateQues(Request $req)
+    public function updateQues(Request $req, $qs_id)
     {
-        $ques = question::find($req->id);
+        $ques = question::find($qs_id);
         if (!$ques) {
             return response()->json(['message' => 'Question not found!'], 404);
         }
@@ -92,7 +93,7 @@ class questionController extends Controller
         $ques->ans_c = $req->ans_c;
         $ques->ans_d = $req->ans_d;
         $ques->feedback = $req->feedback;
-        $ques->qs_id = $req->qs_id;
+        $ques->qs_id = $qs_id;
 
         if ($req->hasFile('picture')) {
             $file = $req->file('questions');
@@ -100,7 +101,7 @@ class questionController extends Controller
             $ques->picture = $filePath;
         }
 
-        $existingQS = question_set::find($req->qs_id);
+        $existingQS = question_set::find($qs_id);
         if (!$existingQS) {
             return response()->json(['message' => 'Question set not found!'], 404);
         }

@@ -226,6 +226,20 @@ class DatabaseSeeder extends Seeder
 
         question::create([
             "id" => "2",
+            "question" => "4 + 4 = ?",
+            "marks" => 2,
+            "picture" => "",
+            "correct_ans" => "ans_c",
+            "ans_a" => "0",
+            "ans_b" => "6",
+            "ans_c" => "8",
+            "ans_d" => "7",
+	        "feedback" => "",
+            "qs_id" => "1"
+        ]);
+
+        question::create([
+            "id" => "3",
             "question" => "What is C++",
             "marks" => 2,
             "picture" => "",
@@ -247,6 +261,39 @@ class DatabaseSeeder extends Seeder
             "ques_id" => "1"
         ]);
 
+        stud_ans::create([
+            "id" => "2",
+            "answer" => "ans_b",
+            "feedback" => "good",
+            "marks" => 2,
+            "stud_id" => "12212002",
+            "ques_id" => "1"
+        ]);
+
+        stud_ans::create([
+            "id" => "3",
+            "answer" => "ans_c",
+            "feedback" => "",
+            "stud_id" => "12212001",
+            "ques_id" => "2"
+        ]);
+
+        stud_grade::create([
+            "id" => "1",
+            "grade" => "A",
+            "score" => "100",
+            "stud_id" => "12212001",
+            "qs_id" => "1"
+        ]);
+
+        stud_grade::create([
+            "id" => "2",
+            "grade" => "A",
+            "score" => "100",
+            "stud_id" => "12212002",
+            "qs_id" => "1"
+        ]);
+
         lec_request::create([
             "id" => "1",
             "subject" => "Request new subject",
@@ -265,5 +312,7 @@ class DatabaseSeeder extends Seeder
             "stud_id" => "12212002",
             "sub_id" => "CMA4223"
         ]);
+
+
     }
 }

@@ -26,8 +26,12 @@ class stud_ansController extends Controller
                     ->join('stud_ans', 'questions.id', '=', 'stud_ans.ques_id')
                     ->where('questions.qs_id', $qs_id)
                     ->where('stud_ans.stud_id', $stud_id)
-                    ->select('stud_ans.answer', 'stud_ans.marks', 'stud_ans.stud_id') 
-                    ->get();
+                    ->select(
+                        'questions.question', // Include the question field
+                        'stud_ans.answer',
+                        'stud_ans.marks',
+                        'stud_ans.stud_id'
+                    ) ->get();
 
         if ($answers->isEmpty()) {
             return response()->json(['message' => 'Student hasn\'t answered the questions yet'], 404);

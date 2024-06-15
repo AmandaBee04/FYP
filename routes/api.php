@@ -86,6 +86,6 @@ Route::get('/student/{stud_id}/question_set/{qs_id}/marked_questions', [stud_ans
 Route::post('/student/{stud_id}/question/{id}', [stud_ansController::class, 'addStudAns']);
 Route::put('/student/{stud_id}/question/{id}/studAns', [stud_ansController::class, 'markedStudAns']);
 
-//STUD_GRADE
+//STUD_GRADE (done checking YEAHHHH)
 Route::get('/student/{id}/grades', [stud_gradeController::class, 'getStudGrade']);
 Route::get('/subject/{sub_id}/getStudentResult', [stud_gradeController::class, 'getStudentResult']);

@@ -25,21 +25,25 @@ class LoginController extends Controller
         $password = $credentials['password'];
 
         // Determine the guard and fields based on the ID format using strpos
+        $role = '';
         if (is_numeric($id)) {
             // Numerical ID - Student
             $guard = 'students';
             $emailField = 'id';
             $passwordField = 'password';
+            $role = 'student';
         } elseif (strpos($id, 'MU') === 0) {
             // ID starts with MU - Lecturer
             $guard = 'lecturers';
             $emailField = 'id';
             $passwordField = 'password';
+            $role = 'lecturer';
         } elseif (strpos($id, 'AD') === 0) {
             // ID starts with AD - Admin
             $guard = 'admins';
             $emailField = 'id';
             $passwordField = 'password';
+            $role = 'admin';
         } else {
             return response(['error' => 'Invalid ID format'], Response::HTTP_UNPROCESSABLE_ENTITY);
         }
@@ -74,7 +78,7 @@ class LoginController extends Controller
         // Create the cookie with the JWT (optional)
         $cookie = cookie('jwt', $jwt, 60); // Cookie expires in 60 minutes
 
-        // Return the JWT in the response body
-        return response(['message' => 'Login successful', 'jwt' => $jwt])->withCookie($cookie);
+        // Return the JWT and role in the response body
+        return response(['message' => 'Login successful', 'jwt' => $jwt, 'role' => $role])->withCookie($cookie);
     }
 }

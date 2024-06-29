@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\lec_request;
 use App\Models\lecturer;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\NewRequestEmail;
 
@@ -14,6 +15,23 @@ class lec_requestController extends Controller
     public function getLecRequest()
     {
         return lec_request::all();
+    }
+
+    //lecturer get sent request
+    public function getRequest($id)
+    {
+        $lec_req = null;
+
+        $lec_req = DB::table('lec_requests')->where('lec_id' , $id)->get();
+        
+        if($lec_req->isEmpty())
+        {
+            return response()->json(['message' => 'No request yet..'], 200);
+        }
+        else
+        {
+            return response()->json($lec_req, 200);
+        }
     }
 
     //lecturer add request

@@ -78,6 +78,7 @@ Route::delete('/question_set/{qs_id}/question/delete/{id}', [questionController:
 
 //LEC_REQUEST (done checking YEAHHHH)
 Route::get('/request/getLecRequest', [lec_requestController::class, 'getLecRequest']);
+Route::get('lecturer/{id}/request',[lec_requestController::class, 'getRequest']);
 Route::post('/request/addLecReq', [lec_requestController::class, 'addLecReq']);
 
 //STUD_ANS (done checking YEAHHHH)

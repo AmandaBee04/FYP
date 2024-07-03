@@ -1,0 +1,206 @@
+body {
+    background-image: url(../../assets/Admin_Images/MainpageBackground2.png);
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+}
+
+@font-face {
+    font-family: 'Caveat';
+    src: url(../../Fonts/Caveat-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: 'Zootopia';
+    src: url(../../Fonts/ZootopiaJposterscomar-qJ80.ttf);
+}
+
+@font-face {
+    font-family: 'Pacifico';
+    src: url(../../Fonts/Pacifico-Regular.ttf);
+}
+
+h1
+{
+    color:black;
+    font-family: Caveat;
+}
+
+.lqb-holder
+{
+    display: flex;
+    align-self: center;
+}
+
+.lqb-container
+{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    height: 85vh;
+    width: 70vw;
+}
+
+.lqb-header
+{
+    text-align: center;
+    height: 8vh;
+}
+
+.lqb-above
+{
+    display: flex;
+    flex-direction: row;
+    height: 7vh;
+    width: 72vw;
+}
+
+.lqb-linktoRequest
+{
+    position:relative;
+    display: flex;
+    flex-direction: column;
+    width: 30vw;
+    padding-top: 4vh;
+    padding-left: 17px;
+}
+
+.lqb-space
+{
+    width: 100%;
+}
+
+.lqb-linktoRequest a
+{
+    color: #1679AB;
+}
+
+.lqb-linktoQuizCreation
+{
+    display: flex;
+    border-radius: 7px;
+    width: 15vw;
+    padding: 1vh;
+    background-color: black;
+    color: white;
+    justify-content: center;
+    align-self: center;
+    align-items: baseline;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.lqb-linktoQuizCreation a, .lqb-linktoQuizCreation a:hover
+{
+    color: white;
+}
+
+
+.lqb-bank
+{
+    position: relative;
+    height: 80vh;
+    width: 69vw;
+    padding-left: 1.5vw;
+    padding-top: 1vh;
+    padding-right: 1.5vw;
+    background: #FFFFFF;
+    border: 1px solid #ACACAC;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    white-space: nowrap;
+    scrollbar-width: none;
+    scrollbar-color: #D1D8C5 #F1F1F1;
+
+}
+
+.lqb-subjectcontainer
+{
+    display: flex;
+    flex-direction: column;
+    padding: 1vh;
+    height: 32vh;
+    width: max-content;
+    padding-bottom: 1.5vh;
+}
+
+.lqb-subjectname, .lqb-SubjectNameCode
+{
+    text-align: left;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2.3vh;
+    padding-bottom: 1vh;
+}
+
+.lqb-QuizChapters
+{
+    display: flex;
+    flex-direction: row;
+    width: 68vw;
+    gap: 3vw;
+    height: 27vh;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    padding-bottom: 0.5vh;
+    scrollbar-color: lightgrey white;
+}
+
+.lqb-quizzes
+{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 14.5vw;
+    border: 1pt solid grey;
+    flex-shrink: 0;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+
+.lqb-quizupper
+{
+    display: flex;
+    flex-direction: column;
+    height: 13.5vh;
+    align-items: end;
+    padding-right: 0.5vw;
+    padding-top: 1vh;
+    background-image: url(../../assets/Lecturer_Images/HtmlBackground.png);
+    background-size: contain;
+    background-position: center;
+    background-size: 18vw;  
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.lqb-quizlower
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.lqb-quizchaptername
+{
+    text-align: left;
+    padding-left: 0.5vw;
+    color: black;
+    font-size: 2.5vh;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.lqb-quizAuthor
+{
+    text-align: left;
+    color: #A6A6A6;
+    padding-left: 0.5vw;
+}
+
+.lqb-QuiznoQuestions
+{
+    text-align: right;
+    color: #A6A6A6;
+    padding-right: 0.5vw;
+}

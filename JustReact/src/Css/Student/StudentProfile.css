@@ -1,0 +1,287 @@
+.profile-image-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .profile-image {
+    border-radius: 100px;
+    width: 100px; /* Adjust the size as needed */
+    height: 100px; /* Adjust the size as needed */
+  }
+  
+  body {
+      background-image: url('../../assets/Student_Images/MainpageBackground2.png');
+      background-size: cover;
+      height: 100vh;
+      width: 100vw;
+  }
+  
+  @font-face {
+      font-family: "Zootopia";
+      src: url(../../Fonts/ZootopiaJposterscomar-qJ80.ttf);
+  }
+  
+  @font-face {
+      font-family: "Caveat";
+      src: url(../../Fonts/Caveat-VariableFont_wght.ttf);
+  }
+  
+  @font-face {
+      font-family: "Pacifico";
+      src: url(../../Fonts/Pacifico-Regular.ttf);
+  }
+  
+  .sp-container
+  {
+      display: flex;
+      flex-direction: column;
+      align-self: center;
+      height: 84vh;
+  
+  }
+  
+  .sp-upper
+  {
+      color: black;
+      font-family: Caveat;
+      font-size: 4rem;
+      display: flex;
+      padding: 1vh;
+  
+  }
+  
+  .sp-lower
+  {
+      display: flex;
+      flex-direction: row;
+      height: 100vh;
+      width: 70.91vw;   
+  }
+  
+  .sp-leftcolumn-up hr
+  {
+      width: 12vw;
+  }
+  
+  .sp-leftcolumn-down
+  {
+      display: flex;
+      flex-direction: column;
+      padding: 0px;
+  }
+  
+  .sp-leftcolumn-up span
+  {
+      font-size: 1.5rem;
+  }
+  
+  .sp-leftcolumn-down h1
+  {
+      font-family: Caveat;
+      font-size: 1.5rem;
+      color:black;
+      text-align: center;  
+  }
+  
+  .sp-lowerleft
+  {
+      border: 0.5pt grey solid;
+      border-radius: 1vh;
+      width: 23vw;
+      height: 56vh;
+  }
+  
+  .sp-lowerleft .StuIcon
+  {
+      height: 100px;
+      width: 100px;
+      color: #FEAE6F;
+  
+  }
+  
+  .sp-lowerleft .StuIcon::after
+  {
+      height: 100px;
+      width: 100px;
+      color: #FEAE6F;
+      border-radius: 100px;
+  }
+  
+  .sp-lowerright
+  {  
+      display: flex;
+      flex-direction: column;
+      width: 100vw;
+      padding-left: 6vw;
+  }
+  
+  .sp-lowerupperright
+  {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      height: 22vh;
+  
+  }
+  
+  .upper
+  {
+      display:flex;
+      flex-direction: column;
+      border: 0.5pt grey solid;
+      border-radius: 1vh;
+  }
+  
+  .sp-Enrolledsubjectscontainer
+  {
+      display: flex;
+      flex-direction: column;
+      padding-top: 3vh;
+  }
+  
+  .sp-lowerupperright h1
+  {
+      display: block;
+      color: black;
+      font-family: caveat;
+      text-align: left;
+      padding-left: 5vw;
+      font-size: 2rem;
+  }
+  
+  .sp-emailaddress 
+  {
+      display: flex;
+      flex-direction: column;
+      padding-left: 13vw;
+      font-size: 2rem; 
+  }
+  
+  .sp-lowerupperright button
+  {
+      width: 10vw;
+      height: 5vh;
+      margin: 0vh 0vw 3vh 40vw;
+      background-color: black;
+      justify-content: center;
+      box-shadow: 3px 3px 8px 0px black;
+      font-size: 1rem;
+  }
+  
+  .sp-lowerupperright button:hover
+  {
+      width: 10vw;
+      height: 5vh;
+      margin: 0vh 0vw 3vh 40vw;
+      background-color: white;
+      justify-content: center;
+      box-shadow: 3px 3px 8px 0px black;
+      font-size: 1rem;
+      color: black;
+      transition: ease-in 0.35s;
+  }
+  
+  .sp-lowerlowerright
+  {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      padding-left: 1vw;
+      border: 1pt grey solid;
+      border-radius: 1vh;
+      height: 30vh;  
+  }
+  
+  .sp-lowerlowerright h1
+  {
+      display: block;
+      color: black;
+      font-family: caveat;
+      text-align: left;
+      padding-left: 4vw;
+      font-size: 2rem;
+  }
+  
+  .sp-lowerlowerright
+  {
+      font-size: 0.6rem;
+      font-family: Caveat;
+      color: black;
+  }
+  
+  .sp-linkstosubjects
+  {
+      display: flex;
+      flex-direction: column;
+      font-size: 1.5rem;
+      color:blue;
+  }
+  
+  label
+  {
+      color:black;
+      font-family: Pacifico;
+      text-align: left;
+      padding-left: 10px;
+  }
+  
+  .sp-holder 
+  {
+      display: flex;
+      flex-direction: column;
+      align-self: center;
+  }
+  
+  .sp-lowerupperright button
+  {
+      width: 10vw;
+      height: 5vh;
+      margin: 0vh 0vw 3vh 40vw;
+      background-color: #FEAE6F;
+      border: none;
+      color: black;
+      justify-content: center;
+      font-size: 1rem;
+      outline: none;
+  }
+  
+  .sp-lowerupperright button:hover
+  {
+      margin: 0vh 0vw 0vh 40vw;
+      background-color:black;
+      font-size: 1rem;
+      color:  #FEAE6F;
+      transition: ease-in 0.35s;
+      outline: none;
+  }
+  
+  .sp-leftcolumn-down button
+  {
+      width: 10vw;
+      background-color: #FEAE6F;
+      margin-left: 1vw;
+      margin-top: 2vh;
+      color: black;
+      margin-left: 1vw;
+      border-radius: 0px;
+      box-shadow: none;
+      border: none;
+  }
+  
+  .sp-leftcolumn-down button:hover
+  {
+      width: 10vw;
+      background-color: #FFF;
+      color: black;
+      margin-left: 1vw;
+      border-radius: 0px;
+      box-shadow: 2px 2px;
+      border: none;
+      outline: none;
+  }
+
+  .sp-leftcolumn-down button:focus
+  {
+      border: none;
+      outline: none;
+  }

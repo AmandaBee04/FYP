@@ -1,0 +1,169 @@
+body {
+    background-image: url(../../lassets/Admin_Images/MainpageBackground2.png);
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+}
+
+@font-face {
+    font-family: 'Caveat';
+    src: url(../../Fonts/Caveat-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: 'Zootopia';
+    src: url(../../Fonts/ZootopiaJposterscomar-qJ80.ttf);
+}
+
+@font-face {
+    font-family: 'Pacifico';
+    src: url(../../Fonts/Pacifico-Regular.ttf);
+}
+
+.lvmcq-holder {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+
+.lvmcq-container {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+
+.lvmcq-rightside {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    position: absolute;
+    top: 8vh;
+    left: 25vw;
+    width: 75vw;
+    height: 92vh;
+    background-image: url(../../assets/Lecturer_Images/FromBackGround.png);
+    background-size: cover;
+    background-size: 180vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    white-space: nowrap;
+    scrollbar-color: lightgrey transparent;
+}
+
+.lvmcq-questioncontainer {
+    display: flex;
+    flex-direction: column;
+    padding-top: 6vh;
+    padding-left: 5vw;
+    gap: 10vh;
+}
+
+.lvmcq-question {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 60vw;
+    height: 70vh;
+    background: #FFFFFF;
+    border-width: 1px 1px 1px 1px;
+    border-style: solid;
+    border-color: lightgrey;
+    border-radius: 7px 7px 7px 7px;
+}
+
+.lvmcq-questionNo {
+    color: black;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    width: auto;
+    height: auto;
+    padding: 2vh;
+    gap: 0.4vw;
+    font-size: 2rem;
+    font-family: 'Times New Roman', Times, serif;
+    border-bottom: 1pt solid lightgrey;
+    padding-left: 3vw;
+}
+
+.questionName
+{
+    color: black;
+    padding-top: 0vh;
+    font-size: 2rem;
+    font-family: 'Times New Roman', Times, serif;
+    padding-left: 3vw;
+}
+
+.lvmcq-answers {
+    display: flex;
+    flex-direction: column;
+    padding: 2vh;
+}
+
+.Answer label{
+    display: flex;
+    padding: 1.4vh;
+    font-size: 1.5rem;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.lvmcq-answerdiv {
+    display: flex;
+    flex-direction: row;
+    padding: 4vh;
+    gap: 10vh;
+}
+
+
+.lvmcq-answers-container {
+    display: block;
+    position: relative;
+    padding-left: 45px;
+    margin-bottom: px;
+    font-size: 22px;
+    user-select: none;
+}
+
+.lvmcq-answers-container input {
+    position: absolute;
+    opacity: 0;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 1.3vh;
+    left: 0;
+    height: 35px;
+    width: 35px;
+    background-color: #eee;
+    border-radius: 25px;
+}
+
+.lvmcq-answers-container input:checked ~ .checkmark {
+    background-color: green;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.lvmcq-answers-container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.lvmcq-answers-container .checkmark:after {
+    left: 13px;
+    top: 10px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}

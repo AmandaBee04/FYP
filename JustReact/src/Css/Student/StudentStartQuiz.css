@@ -1,0 +1,155 @@
+body {
+    background-image: url(../../assets/Student_Images/MainpageBackground2.png);
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+}
+
+@font-face {
+    font-family: 'Caveat';
+    src: url(../../Fonts/Caveat-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: 'Zootopia';
+    src: url(../../Fonts/ZootopiaJposterscomar-qJ80.ttf);
+}
+
+@font-face {
+    font-family: 'Pacifico';
+    src: url(../../Fonts/Pacifico-Regular.ttf);
+}
+
+.holder
+{
+    display: flex;
+    align-self: center;
+    height: 75vh;
+}
+
+.ssq-container
+{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    align-items: center;
+    gap: 8vh;
+}
+
+.ssq-subject
+{
+    display: flex;
+    height: 35vh;
+    width: 70vw;
+    background-image: url(../../assets/Student_Images/background.png);
+
+    border-radius: 1vh;    background-size: cover; 
+    background-size: 70vh;
+    background-size: 46vw;
+    background-position:center ;
+    border: 1px solid #b9b6b6;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.ssq-SubjectName
+{
+    display: block;
+    font-family: 'Zootopia';
+    font-size: 1.5rem;
+    color: black;
+    width: 100%; 
+    padding: 2vh 2vw; 
+    text-align: left;
+}
+
+.ssq-middle
+{
+    display: flex;
+    flex-direction: row;
+    height: 15vh;
+    align-items: center;
+    width: 50vw;
+    background-color: white;
+    border: 1px solid #9e9e9e;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.64));
+}
+
+.ssq-label
+{
+    text-align: left;
+    padding-left: 1vw;
+    color: black;
+    font-size: 1.2rem;
+    font-family: fantasy;
+}
+
+.ssq-middle1
+{
+    display: flex;
+    flex-direction: column;
+    width: 14vw ;
+    gap: 1vh;
+    text-align: left;
+
+}
+
+.ssq-middle2
+{
+    display: flex;
+    flex-direction: column;
+    width: 14vw ;
+    gap: 1vh;
+    text-align: left;
+
+}
+
+.ssq-middle3
+{
+    display: flex;
+    flex-direction: column;
+    width: 14vw ;
+    gap: 1vh;
+    text-align: left;
+
+}
+
+.TypeOfQuiz span, .TimeLimit span, .ssq-TotalMarks span
+{
+    color: #868585;
+    padding-left: 1vw;
+    font-size: 1.7rem;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.ssq-lower
+{
+    text-align: center;
+}
+
+.ssq-lower button
+{
+    height: 7vh;
+    width: 15vw;
+    background-color: white;
+    color: #FC9F6A;
+    font-size: 1.3rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border: 4px solid #FC9F6A;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)) drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 7px;
+    outline: none;
+}
+
+.ssq-lower button:hover
+{
+    height: 7vh;
+    width: 15vw;
+    background-color: white;
+    color: #FC9F6A;
+    font-size: 1.3rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border: 4px solid #FC9F6A;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)) drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 7px;
+    outline: none;
+}

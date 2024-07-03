@@ -1,0 +1,197 @@
+body
+{
+    background-image: url('../../assets/Admin_Images/MainpageBackground2.png');
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+}
+
+@font-face {
+    font-family: "Zootopia";
+    src: url(../../Fonts/ZootopiaJposterscomar-qJ80.ttf);
+}
+
+@font-face {
+    font-family: "Caveat";
+    src: url(../../Fonts/Caveat-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: "Pacifico";
+    src: url(../../Fonts/Pacifico-Regular.ttf);
+}
+
+.lcq-header
+{
+    font-family: "Caveat";
+    padding-top: 1.5vh;
+    padding-bottom: 1.5vh;
+}
+
+.lcq-holder
+{
+    display: flex;
+    align-self: center;
+}
+
+.lcq-container
+{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    height: 90vh;
+    width: 70vw;
+}
+
+.lcq-form
+{
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    padding: 3vh;
+    width: auto;
+    height: 70vh;
+    border: 1px solid #D9D9D9;
+    background-image: url(../../assets/Lecturer_Images/FromBackGround.png);
+    background-size: cover;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)) drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 10px;
+
+}
+
+.lcr-inner
+{
+    display: flex;
+    flex-direction: row;
+    gap: 8.5vw;
+}
+
+.lcq-leftside
+{
+    padding: 2vh;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.lcq-rightside
+{
+    padding: 2vh;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.lcq-Ques
+{
+    font-size: 3.3vh;
+    padding: 2vh;
+    text-align: left;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+
+.lcq-Ques select
+{
+    padding: 1vh;
+    width: 25vw;
+    height: 5vh;
+    background-color: white;
+    color: black;
+    font-size: 1rem;
+    border-style: solid;
+    border-color: #D1D1D1;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
+
+}
+
+.lcq-Ques .input
+{
+    padding-left: 1vw;
+    width: 23.7vw;
+    height: 5vh;
+    background-color: white;
+    color: black;
+    font-size: 1rem;
+    border-style: solid;
+    border-color: #D1D1D1;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
+}
+
+.lcq-Ques label, .lcq-Ques2
+{
+    padding-left: 0vw;
+    width: 23.7vw;
+    height: 5vh;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: black;
+    font-size: 1.8rem;
+}
+
+.lcq-Ques2
+{
+    display: flex;
+    flex-direction: row;
+    font-size: 1.8rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 2vh;
+    text-align: left;
+    gap: 1vw;
+}
+
+.assigninput
+{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding-left: 0vw;
+    font-size: 3.5vh;
+}
+
+input.assigninput
+{
+    height: 3vh;
+    width: 3vw;
+    margin: 1vh 0vw 0vh -1vw;
+}
+
+.confirmbtn
+{
+    margin: 3vh 18vw 0vh 1vw;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+input[type=number]::-webkit-inner-spin-button 
+{
+    -webkit-appearance: none;
+    cursor: pointer;
+    display: block;
+    width: 10px;
+    text-align: center;
+    position: relative;
+    background: transparent;
+}
+
+input[type=number]::-webkit-inner-spin-button::before,
+input[type=number]::-webkit-inner-spin-button::after 
+{
+    content: "";
+    position: absolute;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 10px solid #777;
+}
+
+input[type=number]::-webkit-inner-spin-button::before
+{
+    top: 7px;
+}
+
+input[type=number]::-webkit-inner-spin-button::after 
+{
+    bottom: 7px;
+    transform: rotate(180deg);
+}
+

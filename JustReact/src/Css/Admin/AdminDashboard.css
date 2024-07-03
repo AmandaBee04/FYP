@@ -1,0 +1,77 @@
+body {
+    background-image: url(../../assets/Admin_Images/MainpageBackground2.png);
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+}
+
+.ad-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+    height: auto;
+    width: auto;
+}
+
+.ad-upper
+{
+    display: flex;
+    padding: 3vh 0vh 0vw 0vw;
+}
+
+.category
+{
+    display: flex;
+    flex-direction: row;
+    gap: 5.5vw;
+}
+
+.box
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0.9;
+    background-color: white;
+    border-radius: 1.8vh;
+    border: 1px solid #bfbfbf;
+    box-shadow: 0.9vh 0.6vw 1vh rgba(0, 0, 0, .25);
+    height: 30vh;
+    width: 14.8vw;
+}
+
+.box img
+{
+    height: 22vh; 
+    width: 11vw;
+}
+
+.lower
+{
+    display: flex;
+    gap: 12vh;
+    padding: 7vh 0vw 0vh 0vw;
+}
+
+.lower img
+{
+    height: 40vh;
+    width: 35.5vw;
+
+}
+
+.responsive
+{
+    display: flex;
+    flex-direction: row;
+    gap: 12vh;
+
+}
+
+span
+{
+    color: black;
+    font-family: Caveat;
+    font-size: 3.5vh;
+}

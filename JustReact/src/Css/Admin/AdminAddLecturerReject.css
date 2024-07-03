@@ -1,0 +1,102 @@
+.aalr-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.aalr-popup {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 25vw;
+    height: 30vh;
+    background: white;
+    border-radius: 10px;
+    padding-top: 0;
+    z-index: 1000; /* Ensure the popup is above the overlay */
+}
+
+.aalr-show-popup {
+    display: flex; /* Use flex to show the overlay and center the popup */
+}
+
+.aalr-close {
+    position: absolute;
+    top: -60px;
+    right: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 35px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: black;
+    font-size: 20px;
+    cursor: pointer;
+    color: white;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 0px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: none;
+    outline: none;
+}
+
+.aalr-close:focus {
+    border: none;
+    outline: none;
+}
+
+.aalr-close:hover {
+    border: none;
+    outline: none;
+    background-color: red;
+}
+
+
+.aalr-popup h2 {
+    font-family: 'Times New Roman', Times, serif;
+    padding-top: 4vh;
+}
+
+.aalr-buttons {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    font-family: 'Times New Roman', Times, serif;
+    left: 30%;
+    top: 10vh;
+    margin: auto;
+    border: none;
+    outline: none;
+}
+
+.aalr-buttons button,
+.aalr-buttons button:focus {
+    border: none;
+    outline: none;
+}
+
+.aalr-yes-btn{
+    width: 10vw;
+    font-size: 1.5rem;
+}
+
+.aalr-buttons button:hover {
+    background: #db8341;
+    transition: ease-in 0.3s;
+    color: white;
+  }
+  

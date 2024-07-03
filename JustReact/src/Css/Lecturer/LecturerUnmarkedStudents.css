@@ -1,0 +1,215 @@
+body {
+    background-image: url(../../lassets/Admin_Images/MainpageBackground2.png);
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+}
+
+@font-face {
+    font-family: 'Caveat';
+    src: url(../../Fonts/Caveat-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: 'Zootopia';
+    src: url(../../Fonts/ZootopiaJposterscomar-qJ80.ttf);
+}
+
+@font-face {
+    font-family: 'Pacifico';
+    src: url(../../Fonts/Pacifico-Regular.ttf);
+}
+
+.lus-holder
+{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+
+.lus-container
+{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+
+.lus-rightside
+{
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    position: absolute;
+    top: 8vh;
+    left: 25vw;
+    width: 75vw;
+    height: 92vh;
+    background-image: url(../../assets/Lecturer_Images/FromBackGround.png);
+    background-size: cover;
+    background-size: 180vh;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+.lus-rightside h2
+{
+    font-family: 'Times New Roman', Times, serif;
+    text-align: left;
+    padding-left: 8vw;
+    padding-top: 3.5vh;
+    text-decoration: underline;
+}
+
+.lus-gradescontainer
+{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 65vw;
+    height: 70vh;
+    left: 5vw;
+    top: 12vh;
+    border-radius: 20px;
+    background-color: white;
+    border: 1px solid #D9D9D9;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.64));
+}
+
+.lus-upper-row
+{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    padding: 2vh;
+    font-size: 1.2rem;
+    color: grey;
+    font-family: 'Times New Roman', Times, serif;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4);
+}
+
+.lus-tag1
+{
+    padding-left: 1.5vw;
+    width: 8vw;
+    display: flex;
+}
+
+.lus-tag2
+{
+    width: 12vw;
+    display: flex;
+}
+
+.lus-tag3
+{
+    width: 14vw;
+    display: flex;
+}
+
+.lus-tag4
+{
+    width: 13vw;
+    display: flex;
+}
+
+.lus-tag5
+{
+    width: 7vw;
+    display: flex;
+}
+
+.lus-tag6
+{
+    width: auto;
+    display: flex;
+}
+
+.lus-lower-row
+{
+    display: flex;
+    flex-direction: column;
+    height: 60vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    white-space: nowrap;
+    scrollbar-color: lightgrey transparent;
+}
+
+.lus-grades
+{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    padding: 2vh;
+    font-size: 1.2rem;
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+    box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.3);
+}
+
+.lus-studentid
+{
+    padding-left: 1.5vw;
+    width: 8vw;
+    display: flex;;
+}
+
+
+.lus-studentname
+{
+    width: 12vw;
+    display: flex;
+}
+
+.lus-studentemail
+{
+    width: 14vw;
+    display: flex;
+}
+
+.lus-studentprogramme
+{
+    width: 13vw;
+    display: flex;
+}
+
+.lus-studentfaculty
+{
+    width: 5vw;
+    display: flex;
+}
+
+.lus-studentview
+{
+    display: flex;
+    margin: auto;
+}
+
+.lus-studentview {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+    height: 3vh;
+    width: 10%;
+
+}
+
+.lus-studentview button {
+    background-color: black;
+    position: relative;
+    border: none;
+    cursor: pointer;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+    margin: auto;
+}
+
+.lus-studentview button:hover {
+    background-color: grey;
+}
+

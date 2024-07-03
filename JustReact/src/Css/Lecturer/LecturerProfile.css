@@ -1,0 +1,245 @@
+body
+{
+    background-image: url('../../assets/Admin_Images/MainpageBackground2.png');
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+}
+
+@font-face {
+    font-family: "Zootopia";
+    src: url(../../Fonts/ZootopiaJposterscomar-qJ80.ttf);
+}
+
+@font-face {
+    font-family: "Caveat";
+    src: url(../../Fonts/Caveat-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: "Pacifico";
+    src: url(../../Fonts/Pacifico-Regular.ttf);
+}
+
+.lp-holder
+{
+    align-self: center;
+}
+
+.lp-container
+{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    height: 84vh;
+    width: 80vw;
+}
+
+.lp-upper
+{
+    color: black;
+    font-family: Caveat;
+    font-size: 4rem;
+    display: flex;
+    padding: 1vh;
+
+}
+
+.lp-lower
+{
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    width: 70.91vw;   
+}
+
+.lp-leftcolumn-up hr
+{
+    width: 12vw;
+}
+
+.lp-leftcolumn-down
+{
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+}
+
+.lp-leftcolumn-down h1
+{
+    font-family: Caveat;
+    font-size: 1.5rem;
+    color:black;
+    padding: 10px;
+    text-align: left;  
+}
+
+.lp-leftcolumn-down button
+{
+    width: 10vw;
+    background-color: #FEAE6F;
+    color: black;
+    margin-left: 1vw;
+    border-radius: 0px;
+    box-shadow: none;
+}
+
+.lp-leftcolumn-down button:hover
+{
+    
+    width: 10vw;
+    background-color: #FFF;
+    color: black;
+    margin-left: 1vw;
+    border-radius: 0px;
+    box-shadow: 2px 2px;
+    border: 1px solid black;
+}
+
+.lp-lowerleft
+{
+    border: 0.5pt grey solid;
+    border-radius: 1vh;
+    width: 23vw;
+    height: 56vh;
+}
+
+.LecIcon
+{
+    height: 100px;
+    width: 100px;
+    color: #FEAE6F;
+    border-radius: 1000px;
+}
+
+.lp-lowerright
+{  
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    padding-left: 6vw;
+}
+
+.lp-lowerupperright
+{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    height: 22vh;
+
+}
+
+.upper
+{
+    display:flex;
+    flex-direction: column;
+    border: 0.5pt grey solid;
+    border-radius: 1vh;
+}
+
+.lp-Enrolledsubjectscontainer
+{
+    display: flex;
+    flex-direction: column;
+    padding-top: 3vh;
+}
+
+.lp-lowerupperright h1
+{
+    display: block;
+    color: black;
+    font-family: caveat;
+    text-align: left;
+    padding-left: 5vw;
+    font-size: 2rem;
+}
+
+
+.lp-emailaddress 
+{
+    display: flex;
+    flex-direction: column;
+    padding-left: 13vw;
+    font-size: 2rem; 
+}
+
+.lp-lowerupperright button
+{
+    width: 10vw;
+    height: 5vh;
+    margin: 0vh 0vw 3vh 40vw;
+    background-color: #FEAE6F;
+    border: none;
+    color: black;
+    justify-content: center;
+    font-size: 1rem;
+    outline: none;
+}
+
+.lp-lowerupperright button:hover
+{
+    margin: 0vh 0vw 0vh 40vw;
+    background-color:black;
+    font-size: 1rem;
+    color:  #FEAE6F;
+    transition: ease-in 0.35s;
+    outline: none;
+}
+
+.lp-leftcolumn-down button
+{
+    width: 10vw;
+    background-color: #FEAE6F;
+    margin-left: 1vw;
+    margin-top: 2vh;
+    color: black;
+    margin-left: 1vw;
+    border-radius: 0px;
+    box-shadow: none;
+    border: none;
+}
+
+.lp-leftcolumn-down button:hover
+{
+    width: 10vw;
+    background-color: #FFF;
+    color: black;
+    margin-left: 1vw;
+    border-radius: 0px;
+    box-shadow: 2px 2px;
+    border: none;
+    outline: none;
+}
+
+.lp-leftcolumn-down button:focus
+{
+    border: none;
+    outline: none;
+}
+
+
+.lp-lowerlowerright
+{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding-left: 1vw;
+    border: 1pt grey solid;
+    border-radius: 1vh;
+    height: 30vh;
+}
+
+.lp-lowerlowerright h1
+{
+    display: block;
+    color: black;
+    font-family: caveat;
+    text-align: left;
+    padding-left: 4vw;
+    font-size: 2rem;
+}
+
+.lp-linkstosubjects
+{
+    color:blue;
+}

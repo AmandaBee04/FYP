@@ -1,0 +1,197 @@
+body {
+    background-image: url(../../assets/Admin_Images/MainpageBackground2.png);
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+}
+
+@font-face {
+    font-family: 'Caveat';
+    src: url(../../Fonts/Caveat-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: 'Zootopia';
+    src: url(../../Fonts/ZootopiaJposterscomar-qJ80.ttf);
+}
+
+@font-face {
+    font-family: 'Pacifico';
+    src: url(../../Fonts/Pacifico-Regular.ttf);
+}
+
+h1
+{
+    display: flex;
+    color:black;
+    font-family: Caveat;
+    align-items: center;
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+    margin-bottom: 0;
+}
+
+.aess-container
+{
+    display: flex;
+    flex-direction: column;
+    gap: 3vh;
+}
+
+.aess-form
+{
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+    padding: 4vh;
+    background-color: white;
+    height: 60vh;
+    width: 60vw;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 1vh;
+
+}
+
+.aess-leftside
+{
+    display: flex;
+    flex-direction: column;
+    width: 20vw;
+
+}
+
+.aess-rightside
+{
+    display: flex;
+    flex-direction: column;
+    padding: 1.5vh;
+    width: 45vw;
+}
+
+.aess-label
+{
+    padding-bottom: 1.8vh;
+}
+
+.aess-inputs
+{
+    padding-left: 2vw;
+    padding-bottom: 3.5vh;
+}
+
+
+.aess-Name
+{
+    display: flex;
+    flex-direction: column;
+    font-size: 1.3rem;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 2vh;
+}
+
+.aess-i-Name
+{
+    display: flex;
+    background-color: white;
+    color: black;
+    padding-top: 0.5vh;
+    padding-bottom: 0.3vh;
+    height: 5vh;
+    width: 45vw;
+    font-size: 1.5rem;
+    font-family: 'Times New Roman', Times, serif;
+    border: none;
+    outline: none;
+}
+
+.aess-i-Name:focus
+{
+    outline: none;
+}
+
+.aess-Email
+{
+    display: flex;
+    flex-direction: column;
+    font-size: 1.3rem;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 2vh;
+}
+
+.aess-i-Email
+{
+    display: flex;
+    background-color: white;
+    color: black;
+    padding-left: 1vw;
+    height: 5vh;
+    width: 40vw;
+    font-size: 1rem;
+    border-radius: 0.8vh;
+    border-style: solid;
+    border-color: #D1D1D1;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
+    outline: none;
+}
+
+.aess-i-Email:focus
+{
+    outline: none;
+}
+
+.aess-Password
+{
+    display: flex;
+    flex-direction: column;
+    font-size: 1.3rem;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 2vh;
+
+}
+
+.aess-i-Password
+{
+    display: flex;
+    background-color: white;
+    color: black;
+    padding-left: 1vw;
+    height: 5vh;
+    width: 10vw;
+    font-size: 1rem;
+    border-radius: 0.8vh;
+    border-style: solid;
+    border-color: #D1D1D1;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
+    outline: none;
+}
+
+.aess-i-Password:focus
+{
+    outline: none;
+}
+
+
+.aess-btn 
+{
+    display: inline;
+    text-align: right;
+    margin-top: 19vh;
+}
+
+.aess-btn button
+{
+    border: 1px solid #000000;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
+    border-radius: 7px;
+    width: 10vw;
+    outline: none;
+    border: none;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.aess-btn button:focus
+{
+    outline: none;
+    border: none;
+}

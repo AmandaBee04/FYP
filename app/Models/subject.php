@@ -7,6 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class subject extends Model
 {
+    protected $primaryKey = 'id'; // Specify that 'id' is the primary key
+    protected $keyType = 'string'; // Specify that the primary key is a string
+    public $incrementing = false;
+
     protected $fillable =[
         'id', 
         'name',
@@ -20,12 +24,12 @@ class subject extends Model
 
     public function lecturer()
     {
-        return $this->belongsTo(Lecturer::class);
+        return $this->belongsTo(Lecturer::class, 'lec_id');
     }
 
     public function questionSet()
     {
-        return $this->hasMany(question_set::class, 'sub_id');
+        return $this->hasMany(question_set::class, 'id');
     }
     
     use HasFactory;

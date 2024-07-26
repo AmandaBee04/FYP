@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('stud_id');
             $table->string('sub_id');
 
-            $table->foreign('stud_id')->references('stud_id')->on('students')->onDelete('cascade');
+            $table->foreign('stud_id')->references('id')->on('students')->onDelete('cascade');
             $table->foreign('sub_id')->references('id')->on('subjects')->onDelete('cascade');
         });
     }

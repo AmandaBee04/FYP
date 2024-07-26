@@ -144,6 +144,8 @@ return [
         // 'store' => 'redis',
     ],
 
+    'jwt_key' => env('JWT_SECRET'),
+
     /*
     |--------------------------------------------------------------------------
     | Autoloaded Service Providers

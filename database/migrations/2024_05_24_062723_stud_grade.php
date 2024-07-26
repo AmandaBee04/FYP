@@ -15,10 +15,11 @@ return new class extends Migration
             $table->id();
             $table->string('grade')->nullable();
             $table->integer('score')->nullable();
+            $table->string('stud_id'); 
             $table->unsignedBigInteger('qs_id');
-            $table->string('stud_id');
+            $table->boolean('marked')->nullable();
+            $table->foreign('stud_id')->references('id')->on('students')->onDelete('cascade')->onUpdate('cascade'); 
             $table->foreign('qs_id')->references('id')->on('question_sets')->onDelete('cascade')->onUpdate('cascade'); 
-            $table->foreign('stud_id')->references('stud_id')->on('students')->onDelete('cascade')->onUpdate('cascade'); 
             $table->timestamps();
         });
     }

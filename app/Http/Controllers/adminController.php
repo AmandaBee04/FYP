@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use App\Models\admin;
+use Illuminate\Support\Facades\Log;
 
 class adminController extends Controller
 {
@@ -124,26 +125,39 @@ class adminController extends Controller
     //admin change password
     public function updateAdminPassword(Request $req, $id)
     {
-
+        // Find the admin by ID
         $admin = DB::table('admins')->where('id', $id)->first();
 
-        if (Hash::check($req->old_password, $admin->password)) 
-        {
-            DB::table('admins')
-                ->where('id', $req->id)
-                ->update(['password' => bcrypt($req->new_password)]);
-
-            // Return a success message
-            return response()->json(['message' => 'Password updated successfully'], 201);
-        } 
-        else 
-        {
-            // Return an error message
-            return response()->json(['message' => 'Old password does not match'], 400);
+        if (!$admin) {
+            return response()->json(['message' => 'Admin not found'], 404);
         }
 
+        // Check if the old password matches the current password
+        if (Hash::check($req->old_password, $admin->password)) {
+            // Log that the old password matched
+            Log::info('Old password matched for admin ID: ' . $id);
+
+            // Update the password
+            $updated = DB::table('admins')
+                ->where('id', $id)
+                ->update(['password' => bcrypt($req->new_password)]);
+
+            // Log the update status
+            if ($updated) {
+                Log::info('Password updated successfully for admin ID: ' . $id);
+                return response()->json(['message' => 'Password updated successfully'], 201);
+            } else {
+                Log::error('Failed to update password for admin ID: ' . $id);
+                return response()->json(['message' => 'Failed to update password'], 500);
+            }
+        } else {
+            // Log the failed password check
+            Log::warning('Old password does not match for admin ID: ' . $id);
+            return response()->json(['message' => 'Old password does not match'], 400);
+        }
     }
 
+    
     //admin delete admin
     public function deleteAdmin($id)
     {
@@ -160,5 +174,37 @@ class adminController extends Controller
         else
             return response()->json(['message' => 'Admin not deleted! Please try again!'], 400);
     }
+
+    public function uploadAdminPicture(Request $request, $id)
+{
+    $request->validate([
+        'profile_picture' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+    ]);
+
+    $admin = Admin::find($id);
+
+    if (!$admin) {
+        return response()->json(['message' => 'Admin not found'], 404);
+    }
+
+    if ($request->hasFile('profile_picture')) {
+        $file = $request->file('profile_picture');
+        $filePath = $file->store('profile_pictures/admin', 'public');
+
+        // Generate a URL to the stored picture
+        $imgName = basename($filePath);
+        $linkToImg = asset('storage/profile_pictures/admin/' . $imgName);
+
+        // Store the URL in the admin model
+        $admin->profile_picture = $linkToImg;
+        $admin->save();
+
+        return response()->json(['message' => 'Profile picture uploaded successfully!', 'profile_picture' => $linkToImg], 200);
+    }
+
+    return response()->json(['message' => 'Profile picture upload failed!'], 400);
+}
+    
+
 
 }

@@ -5,73 +5,43 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\stud_ans;
-
+use App\Models\student;
+use App\Models\question_set;
+use App\Models\question;
 
 class stud_ansController extends Controller
 {
-    //lecturer get student answer by stud_id and question_set id
+    //lecturer get student answer
     public function getStudAns($stud_id, $qs_id)
     {
-        $student = DB::table('students')->where('stud_id', $stud_id)->first();
+        $student = student::find($stud_id);
         if (!$student) {
             return response()->json(['message' => 'Student not found!'], 404);
         }
 
-        $questionSet = DB::table('question_sets')->where('id', $qs_id)->first(['qs_name', 'total_mark']); 
+        $questionSet = question_set::find($qs_id);
         if (!$questionSet) {
             return response()->json(['message' => 'Question set not found!'], 404);
         }
 
-        $answers = DB::table('questions')
-                    ->join('stud_ans', 'questions.id', '=', 'stud_ans.ques_id')
-                    ->where('questions.qs_id', $qs_id)
-                    ->where('stud_ans.stud_id', $stud_id)
-                    ->select(
-                        'questions.question', // Include the question field
-                        'stud_ans.answer',
-                        'stud_ans.marks',
-                        'stud_ans.stud_id'
-                    ) ->get();
+        $questions = question::where('qs_id', $qs_id)->get();
 
-        if ($answers->isEmpty()) {
-            return response()->json(['message' => 'Student hasn\'t answered the questions yet'], 404);
-        }
-        else
-        {
-            return response()->json([
-                'question_set_name' => $questionSet->qs_name,
-                'total_mark' => $questionSet->total_mark,
-                'stud_answers' => $answers
-            ], 200);
-        }
-    }
-
-    //student input answer
-    public function addStudAns(Request $req, $stud_id, $id)
-    {
-        $existingAnswer = stud_ans::where('stud_id', $stud_id)->where('ques_id', $id)->first();
-
-        if ($existingAnswer) {
-            return response()->json(['message' => 'You have already attempted the answer for this question!'], 404);
+        $answers = [];
+        foreach ($questions as $question) {
+            $answer = stud_ans::where('stud_id', $stud_id)->where('ques_id', $question->id)->get();
+            if ($answer) {
+                $answers[] = $answer;
+            }
         }
 
-        $studAns = new stud_ans;
-        $studAns->answer = $req->answer;
-        $studAns->stud_id = $stud_id;
-        $studAns->ques_id = $id;
+        return response()->json(['student' => $student, 'question_set' => $questionSet, 'stud_answers' => $answers], 200);
 
-        $result = $studAns->save();
-
-        if($result)
-            return response()->json(['message' => 'Answer submitted successfully!'], 201);
-        else
-            return response()->json(['message' => 'Answer not submitted! Please try again!'], 400);
     }
 
     //lecturer marking student written question
     public function markedStudAns(Request $req, $stud_id, $ques_id)
     {
-        $studAns = stud_ans::where('stud_id', $stud_id)->where('ques_id', $ques_id)->first();
+        $studAns = stud_ans::where('stud_id', $stud_id)->where('ques_id', $ques_id)->get();
         if (!$studAns) {
             return response()->json(['message' => 'Student answer not found!'], 404);
         }
@@ -80,10 +50,6 @@ class stud_ansController extends Controller
 
         if ($req->has('feedback')) {
             $studAns->feedback = $req->input('feedback');
-        }
-        else
-        {
-            $studAns->feedback = NULL;
         }
 
         $result = $studAns->save();
@@ -98,31 +64,44 @@ class stud_ansController extends Controller
     public function getMarkedQuestions($stud_id, $qs_id)
     {
         $markedQuestions = DB::table('stud_ans')
-            ->join('question_sets', 'stud_ans.ques_id', '=', 'question_sets.id')
-            ->join('questions', 'stud_ans.ques_id', '=', 'questions.id') 
-            ->where('stud_ans.stud_id', $stud_id)
+            ->join('question_sets', 'stud_anss.ques_id', '=', 'question_sets.id')
+            ->where('stud_anss.stud_id', $stud_id)
             ->where('question_sets.id', $qs_id)
-            ->whereNotNull('stud_ans.marks')
-            ->select(
-                'stud_ans.ques_id',
-                'stud_ans.marks',
-                'stud_ans.feedback',
-                'questions.question', 
-                'questions.ans_a', 
-                'questions.ans_b', 
-                'questions.ans_c',
-                'questions.ans_d', 
-                'questions.correct_ans'
-            )
+            ->whereNotNull('stud_anss.marks')
+            ->select('stud_anss.ques_id', 'stud_anss.marks', 'stud_anss.feedback')
             ->get();
-    
+
         if ($markedQuestions->isEmpty()) 
         {
             return response()->json(['message' => 'No marked questions found!'], 400);
         }
+
         else 
         {
-            return response()->json($markedQuestions, 200);
+            return response()->json($markedQuestions, 201);
         }
     }
+
+    public function updateStudAns(Request $request, $stud_id, $ques_id)
+{
+    $validatedData = $request->validate([
+        'feedback' => 'nullable|string',
+        'marks' => 'required|numeric',
+    ]);
+
+    $studAns = stud_ans::where('stud_id', $stud_id)
+        ->where('ques_id', $ques_id)
+        ->first();
+
+    if (!$studAns) {
+        return response()->json(['message' => 'Answer not found!'], 404);
+    }
+
+    $studAns->update([
+        'feedback' => $validatedData['feedback'],
+        'marks' => $validatedData['marks'],
+    ]);
+
+    return response()->json(['message' => 'Answer updated successfully', 'data' => $studAns], 200);
+}
 }

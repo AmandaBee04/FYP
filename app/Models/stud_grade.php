@@ -11,12 +11,19 @@ class stud_grade extends Model
         'id', 
         'grade',
         'score',
-        'studAns_id'
+        'stud_id',
+        'qs_id',
+        'marked',
     ];
     
-    public function stud_ans()
+    public function student()
     {
-        return $this->belongsTo(stud_ans::class, 'id');
+        return $this->belongsTo(student::class, 'stud_id');
+    }
+
+    public function question_set()
+    {
+        return $this->belongsTo(question_set::class, 'qs_id');
     }
 
     use HasFactory;

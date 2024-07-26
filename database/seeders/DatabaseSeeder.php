@@ -120,9 +120,9 @@ class DatabaseSeeder extends Seeder
         ]);
 
         student::create([
-            "stud_id" => "12212001",
+            "id" => "12212001",
             "stud_name" => "Prego Pregi",
-            "stud_password" => bcrypt('Prego001'),
+            "password" => bcrypt('Prego001'),
             "stud_email" => "12212001@student.mmu.edu.my",
             "programme" => "Diploma in Information Technology",
             "faculty" => "FCI",
@@ -131,9 +131,9 @@ class DatabaseSeeder extends Seeder
         ]);
 
         student::create([
-            "stud_id" => "12212002",
+            "id" => "12212002",
             "stud_name" => "Yappi",
-            "stud_password" => bcrypt('Yappi002'),
+            "password" => bcrypt('Yappi002'),
             "stud_email" => "12212002@student.mmu.edu.my",
             "programme" => "Diploma in Information Technology",
             "faculty" => "FCI",
@@ -142,9 +142,9 @@ class DatabaseSeeder extends Seeder
         ]);
 
         student::create([
-            "stud_id" => "12212003",
+            "id" => "12212003",
             "stud_name" => "Lisa Black",
-            "stud_password" => bcrypt('Lisa003'),
+            "password" => bcrypt('Lisa003'),
             "stud_email" => "12212003@student.mmu.edu.my",
             "programme" => "Diploma in Information Technology",
             "faculty" => "FCI",
@@ -153,9 +153,9 @@ class DatabaseSeeder extends Seeder
         ]);
 
         student::create([
-            "stud_id" => "12212004",
+            "id" => "12212004",
             "stud_name" => "Jisoo Black",
-            "stud_password" => bcrypt('Jisoo004'),
+            "password" => bcrypt('Jisoo004'),
             "stud_email" => "12212004@student.mmu.edu.my",
             "programme" => "Diploma in Information Technology",
             "faculty" => "FCI",
@@ -164,9 +164,9 @@ class DatabaseSeeder extends Seeder
         ]);
 
         student::create([
-            "stud_id" => "12212005",
+            "id" => "12212005",
             "stud_name" => "Jennie Black",
-            "stud_password" => bcrypt('Jennie005'),
+            "password" => bcrypt('Jennie005'),
             "stud_email" => "12212005@student.mmu.edu.my",
             "programme" => "Diploma in Information Technology",
             "faculty" => "FCI",
@@ -175,9 +175,9 @@ class DatabaseSeeder extends Seeder
         ]);
 
         student::create([
-            "stud_id" => "12212006",
+            "id" => "12212006",
             "stud_name" => "Rose Black",
-            "stud_password" => bcrypt('Rose006'),
+            "password" => bcrypt('Rose006'),
             "stud_email" => "12212006@student.mmu.edu.my",
             "programme" => "Diploma in Information Technology",
             "faculty" => "FCI",
@@ -213,84 +213,14 @@ class DatabaseSeeder extends Seeder
         question::create([
             "id" => "1",
             "question" => "2 + 4 = ?",
-            "marks" => 2,
+            "marks" => 1,
             "picture" => "",
             "correct_ans" => "ans_b",
             "ans_a" => "0",
             "ans_b" => "6",
             "ans_c" => "8",
             "ans_d" => "7",
-	        "feedback" => "",
-            "qs_id" => "1"
-        ]);
-
-        question::create([
-            "id" => "2",
-            "question" => "4 + 4 = ?",
-            "marks" => 2,
-            "picture" => "",
-            "correct_ans" => "ans_c",
-            "ans_a" => "0",
-            "ans_b" => "6",
-            "ans_c" => "8",
-            "ans_d" => "7",
-	        "feedback" => "",
-            "qs_id" => "1"
-        ]);
-
-        question::create([
-            "id" => "3",
-            "question" => "What is C++",
-            "marks" => 2,
-            "picture" => "",
-            "correct_ans" => "ans_d",
-            "ans_a" => "I don't know",
-            "ans_b" => "C++ is C++",
-            "ans_c" => "C++ is same as C",
-            "ans_d" => "C++ is an object-oriented language.",
-	        "feedback" => "",
-            "qs_id" => "2"
-        ]);
-
-        stud_ans::create([
-            "id" => "1",
-            "answer" => "ans_b",
-            "feedback" => "good",
-            "marks" => 2,
-            "stud_id" => "12212001",
-            "ques_id" => "1"
-        ]);
-
-        stud_ans::create([
-            "id" => "2",
-            "answer" => "ans_b",
-            "feedback" => "good",
-            "marks" => 2,
-            "stud_id" => "12212002",
-            "ques_id" => "1"
-        ]);
-
-        stud_ans::create([
-            "id" => "3",
-            "answer" => "ans_c",
-            "feedback" => "",
-            "stud_id" => "12212001",
-            "ques_id" => "2"
-        ]);
-
-        stud_grade::create([
-            "id" => "1",
-            "grade" => "A",
-            "score" => "100",
-            "stud_id" => "12212001",
-            "qs_id" => "1"
-        ]);
-
-        stud_grade::create([
-            "id" => "2",
-            "grade" => "A",
-            "score" => "100",
-            "stud_id" => "12212002",
+	    "feedback" => "",
             "qs_id" => "1"
         ]);
 
@@ -312,7 +242,5 @@ class DatabaseSeeder extends Seeder
             "stud_id" => "12212002",
             "sub_id" => "CMA4223"
         ]);
-
-
     }
 }

@@ -3,14 +3,19 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Notifications\Notifiable;
 
-class student extends Model
+class student extends Authenticatable
 {
-    protected $fillable =[
-        'stud_id', 
+
+    use HasApiTokens, HasFactory, Notifiable;
+
+    protected $fillable = [
+        'id', 
         'stud_name',
-        'stud_password',
+        'password',
         'stud_email',
         'programme',
         'faculty',
@@ -19,7 +24,7 @@ class student extends Model
     ];
 
     protected $hidden = [
-        'stud_password'
+        'password'
     ];
 
     public function subject_taken()
@@ -27,7 +32,23 @@ class student extends Model
         return $this->hasMany(subject_taken::class, 'stud_id');
     }
 
+    public function stud_grade()
+    {
+        return $this->hasMany(student::class, 'id');
+    }
+
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::deleting(function ($student) {
+            $student->subject_taken()->delete();
+        });
+    }
+
+
     use HasFactory;
-    protected $primaryKey = 'stud_id';
+    // protected $primaryKey = 'stud_id';
     public $timestamps = false;
 }

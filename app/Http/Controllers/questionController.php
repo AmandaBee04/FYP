@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\question;
 use App\Models\question_set;
+use App\Models\stud_ans;
 
 
 class questionController extends Controller
@@ -13,37 +14,25 @@ class questionController extends Controller
     //display all question by question set
     public function getQuestion($qs_id)
     {
-        $ques = DB::table('questions')
+        $questions = DB::table('questions')
         ->where('qs_id', $qs_id)
-        ->select('id', 'question', 'marks', 'picture', 'correct_ans', 'ans_a', 'ans_b', 'ans_c', 'ans_d')
         ->get();
 
-        if ($ques->isEmpty()) 
+        if ($questions->isEmpty()) 
         {
             return response()->json(['message' => 'No question found, please add new question']);
         } 
 
         else 
         {
-            return response()->json($ques, 200);
+            return response()->json([$questions], 200);
         }
     }
 
     //lecturer add question
-    public function addQues(Request $req, $qs_id)
+    public function addQues(Request $req)
     {
-        // $validatedData = $req->validate([
-        //     'id' => 'required|integer',
-        //     'question' => 'required|string|max:255',
-        //     'marks' => 'required|integer|max:255',
-        //     'picture' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-        //     'correct_ans' => 'required|string|max:255',
-        //     'ans_a' => 'required|string|max:255',
-        //     'ans_b' => 'required|string|max:255',
-        //     'ans_c' => 'required|string|max:255',
-        //     'ans_d' => 'required|string|max:255',
-        //     'qs_id' => 'required|exists:question_sets,id',
-        // ]);
+        
 
         $ques = new question;
         $ques->id = $req->id;
@@ -56,14 +45,14 @@ class questionController extends Controller
         $ques->ans_c = $req->ans_c;
         $ques->ans_d = $req->ans_d;
         $ques->feedback = $req->feedback;
-        $ques->qs_id = $qs_id;
+        $ques->qs_id = $req->qs_id;
 
         if ($req->hasFile('picture')) {
             $file = $req->file('questions');
             $filePath = $file->store('question/pictures', 'public'); 
         }
 
-        $existingQS = question_set::find($qs_id);
+        $existingQS = question_set::find($req->qs_id);
         if (!$existingQS) {
             return response()->json(['message' => 'Question set not found!'], 404);
         }
@@ -77,23 +66,33 @@ class questionController extends Controller
     }
 
     //lecturer update question
-    public function updateQues(Request $req, $qs_id)
+    public function updateQues(Request $req)
     {
-        $ques = question::find($qs_id);
-        if (!$ques) {
-            return response()->json(['message' => 'Question not found!'], 404);
-        }
+        $questions = $req->input('questions');
 
-        $ques->question = $req->question;
-        $ques->marks = $req->marks;
-        $ques->picture = $req->picture ?? $ques->picture; // Keep the existing picture if a new one isn't uploaded
-        $ques->correct_ans = $req->correct_ans;
-        $ques->ans_a = $req->ans_a;
-        $ques->ans_b = $req->ans_b;
-        $ques->ans_c = $req->ans_c;
-        $ques->ans_d = $req->ans_d;
-        $ques->feedback = $req->feedback;
-        $ques->qs_id = $qs_id;
+        foreach ($questions as $questionData) {
+            if (isset($questionData['id']) && strpos($questionData['id'], 'new-') === 0) {
+                // This is a new question
+                $question = new Question;
+            } else {
+                // This is an existing question
+                $question = Question::find($questionData['id']);
+                if (!$question) {
+                    return response()->json(['message' => 'Question not found!'], 404);
+                }
+            }
+    
+            $question->question = $questionData['question'] ?? '';
+            $question->marks = $questionData['marks'] ?? 1;
+            $question->picture = $questionData['picture'] ?? null;
+            $question->correct_ans = $questionData['correct_ans'] ?? '';
+            $question->ans_a = $questionData['ans_a'] ?? '';
+            $question->ans_b = $questionData['ans_b'] ?? '';
+            $question->ans_c = $questionData['ans_c'] ?? '';
+            $question->ans_d = $questionData['ans_d'] ?? '';
+            $question->feedback = $questionData['feedback'] ?? '';
+            $question->qs_id = $questionData['qs_id'];
+    
 
         if ($req->hasFile('picture')) {
             $file = $req->file('questions');
@@ -101,33 +100,53 @@ class questionController extends Controller
             $ques->picture = $filePath;
         }
 
-        $existingQS = question_set::find($qs_id);
+        $existingQS = question_set::find($question['qs_id']);
         if (!$existingQS) {
             return response()->json(['message' => 'Question set not found!'], 404);
         }
         
-        $result = $ques->save();
-
-        if($result)
-            return response()->json(['message' => 'Question updated successfully!'], 201);
-        else
-            return response()->json(['message' => 'Question not updated! Please try again!'], 400);
+        $question->save();
     }
 
+    return response()->json(['message' => 'Questions updated successfully!'], 200);
+}
+
     //lecturer delete question
-    public function deleteQues($id)
+    public function deleteQues(Request $request)
     {
-        $ques = question::find($id);
-
-        if (!$ques) {
-            return response()->json(['message' => 'Question not found!'], 404);
+        $questionIds = $request->input('questionsToDelete');
+    
+        if (empty($questionIds)) {
+            return response()->json(['message' => 'No questions to delete'], 400);
         }
+    
+        $result = question::whereIn('id', $questionIds)->delete();
+    
+        if ($result) {
+            return response()->json(['message' => 'Questions deleted successfully'], 200);
+        } else {
+            return response()->json(['message' => 'Questions not deleted! Please try again!'], 400);
+        }
+    }
+    
 
-        $result = $ques->delete();
-
-        if($result)
-            return response()->json(['message' => 'Question deleted successfully!'], 200);
-        else
-            return response()->json(['message' => 'Question not deleted! Please try again!'], 400);
+    public function saveAnswer(Request $request) {
+        $validatedData = $request->validate([
+            'stud_id' => 'required',
+            'ques_id' => 'required',
+            'answer' => 'required',
+            'marks' => 'required',
+            // Add other fields to validate if needed...
+        ]);
+    
+        $studAns = stud_ans::create([
+            'stud_id' => $validatedData['stud_id'],
+            'ques_id' => $validatedData['ques_id'],
+            'answer' => $validatedData['answer'],
+            'marks' => $validatedData['marks'],
+            'remark' => $validatedData['marks'] > 0 ? 'Correct' : 'Incorrect'
+        ]);
+    
+        return response()->json($studAns, 201);
     }
 }

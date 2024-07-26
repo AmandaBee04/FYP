@@ -18,17 +18,17 @@ class question extends Model
         'ans_c',
         'ans_d',
         'feedback',
-        'qs_id'
+        'qs_id',
     ];
 
     public function questionSet()
     {
-        return $this->belongsTo(question_set::class);
+        return $this->belongsTo(question_set::class, 'qs_id');
     }
 
     public function studAns()
     {
-        return $this->hasMany(stud_ans::class);
+        return $this->hasMany(stud_ans::class, 'id');
     }
 
     use HasFactory;

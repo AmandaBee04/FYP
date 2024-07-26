@@ -67,12 +67,6 @@ class lecturerController extends Controller
     //admin add lecturer
     public function addLec(Request $req)
     {
-        // $validatedData = $req->validate([
-        //     'lec_id' => 'required|string|unique:lecturer',
-        //     'lec_name' => 'required|string|max:255',
-        //     'lec_password' => 'required|string|min:6|max:255',
-        //     'lec_email' => 'required|email|max:255|unique:lecturer',
-        // ]);
         
         $lec = new lecturer;
         $lec->id = $req->id;
@@ -173,4 +167,43 @@ class lecturerController extends Controller
             return response()->json(['message' => 'Lecturer not deleted! Please try again!'], 400);
     }
 
+    public function uploadProfilePicture(Request $request, $id)
+{
+    $request->validate([
+        'profile_picture' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+    ]);
+
+    $lecturer = Lecturer::find($id);
+
+    if ($request->hasFile('profile_picture')) {
+        $file = $request->file('profile_picture');
+        $filePath = $file->store('profile_pictures/lecturers', 'public'); 
+
+        // Generate a URL to the stored picture
+        $imgName = basename($filePath);
+        $linkToImg = asset('/storage/profile_pictures/lecturers/'.$imgName);
+
+        // Store the URL in the lecturer model
+        $lecturer->profile_picture = $linkToImg;
+        $lecturer->save();
+
+        return response()->json(['message' => 'Profile picture uploaded successfully!', 'profile_picture' => $linkToImg], 200);
+    }
+
+    return response()->json(['message' => 'Profile picture upload failed!'], 400);
 }
+
+public function getLecturerProfilePicture($id)
+{
+    $lecturer = Lecturer::find($id);
+
+    if ($lecturer && $lecturer->profile_picture) {
+        return response()->json(['profile_picture' => $lecturer->profile_picture], 200);
+    }
+
+    return response()->json(['message' => 'Profile picture not found'], 404);
+}
+
+}
+
+

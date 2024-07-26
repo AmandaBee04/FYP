@@ -14,8 +14,9 @@ return new class extends Migration
         Schema::create('subjects', function (Blueprint $table) {
             $table->string('id')->primary();
             $table->string('name')->nullable();
-            $table->string('lec_id');
-            $table->foreign('lec_id')->references('id')->on('lecturers')->onDelete('cascade')->onUpdate('cascade');
+            $table->string('lec_id')->nullable();
+            // $table->foreign('lec_id')->references('id')->on('lecturers')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('lec_id')->references('id')->on('lecturers')->onDelete('set null');
         });
     }
 

@@ -21,6 +21,6 @@ class subject_taken extends Model
 
     public function subject()
     {
-        return $this->belongsTo(subject::class, 'sub_id');
+        return $this->belongsTo(subject::class, 'sub_id', 'id');
     }
 }

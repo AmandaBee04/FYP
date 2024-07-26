@@ -7,7 +7,8 @@ use Illuminate\Support\Facades\DB;
 use App\Models\subject;
 use App\Models\lecturer;
 use App\Models\student;
-use App\Models\lec_sub_takens;
+use App\Models\subject_taken;
+use Illuminate\Support\Facades\Log;
 
 class subjectController extends Controller
 {
@@ -113,18 +114,65 @@ class subjectController extends Controller
 
     //admin delete subject
     public function deleteSub($id)
-    {
-        $sub = subject::find($id);
+        {
+            $sub = subject::find($id);
 
-        if (!$sub) {
-            return response()->json(['message' => 'Subject not found!'], 404);
+            if (!$sub) {
+                return response()->json(['message' => 'Subject not found!'], 404);
+            }
+
+            // Handle the relationship manually if needed
+            subject_taken::where('sub_id', $id)->delete();
+            student::where('sub_id', $id)->update(['sub_id' => null]);
+
+            $result = $sub->delete();
+
+            if($result) {
+                return response()->json(['message' => 'Subject deleted successfully!'], 200);
+            } else {
+                return response()->json(['message' => 'Subject not deleted! Please try again!'], 400);
+            }
         }
 
-        $result = $sub->delete();
 
-        if($result)
-            return response()->json(['message' => 'Subject deleted successfully!'], 200);
-        else
-            return response()->json(['message' => 'Subject not deleted! Please try again!'], 400);
+    public function getSubjectsAndStudentCount($lecturerId)
+    {
+        $subjects = subject::withCount('subject_taken')
+            ->where('lec_id', $lecturerId)
+            ->get();
+
+            \Log::info($subjects);
+
+        return response()->json($subjects);
     }
+
+    public function addStudentToSubject(Request $request)
+    {
+
+        // Logic to insert into subject_taken table
+        subject_taken::create([
+            'stud_id' => $request->input('student_id'),
+            'sub_id' => $request->input('subject_id'),
+        ]);
+
+        return response()->json(['message' => 'Student added to subject successfully']);
+    }
+
+    public function removeStudent($sub_id, $stud_id)
+{
+    // Find the subject_taken record
+    $subjectTaken = subject_taken::where('sub_id', $sub_id)
+                                 ->where('stud_id', $stud_id)
+                                 ->first();
+
+    if (!$subjectTaken) {
+        return response()->json(['message' => 'Student not found in this subject'], 404);
+    }
+
+    // Delete the record
+    $subjectTaken->delete();
+
+    return response()->json(['message' => 'Student removed from subject successfully']);
+}
+
 }

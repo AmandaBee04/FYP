@@ -3,12 +3,17 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Notifications\Notifiable;
 
-class lecturer extends Model
+class lecturer extends Authenticatable
 {
-    protected $fillable =[
-        'id', 
+
+    use HasApiTokens, HasFactory, Notifiable;
+    
+    protected $fillable = [
+        'id',  
         'name',
         'password',
         'profile_picture',
@@ -21,7 +26,7 @@ class lecturer extends Model
 
     public function subjects()
     {
-        return $this->hasMany(Subject::class);
+        return $this->hasMany(Subject::class, 'id');
     }
 
     public function lecRequest()
@@ -36,5 +41,4 @@ class lecturer extends Model
     
     use HasFactory;
     public $timestamps = false;
-
 }

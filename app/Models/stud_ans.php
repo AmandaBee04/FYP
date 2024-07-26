@@ -19,7 +19,7 @@ class stud_ans extends Model
 
     public function question()
     {
-        return $this->belongsTo(question::class, 'id');
+        return $this->belongsTo(question::class, 'ques_id');
     }
 
     public function grade()

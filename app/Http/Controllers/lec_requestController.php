@@ -5,34 +5,22 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\lec_request;
 use App\Models\lecturer;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\NewRequestEmail;
+use Illuminate\Support\Facades\DB;
 
 class lec_requestController extends Controller
 {
     //admin get all request
     public function getLecRequest()
-    {
-        return lec_request::all();
-    }
+{
+    $requests = DB::table('lec_requests')
+        ->join('lecturers', 'lec_requests.lec_id', '=', 'lecturers.id')
+        ->select('lec_requests.*', 'lecturers.name as lecturer_name')
+        ->get();
 
-    //lecturer get sent request
-    public function getRequest($id)
-    {
-        $lec_req = null;
-
-        $lec_req = DB::table('lec_requests')->where('lec_id' , $id)->get();
-        
-        if($lec_req->isEmpty())
-        {
-            return response()->json(['message' => 'No request yet..'], 200);
-        }
-        else
-        {
-            return response()->json($lec_req, 200);
-        }
-    }
+    return response()->json($requests, 200);
+}
 
     //lecturer add request
     public function addLecReq(Request $req)
@@ -52,11 +40,19 @@ class lec_requestController extends Controller
         $result = $lec_req->save();
         
         if($result) {
-            Mail::to('AM0001@mmu.edu.my')->send(new NewRequestEmail($lec_req));
+            // Mail::to('AM0001@mmu.edu.my')->send(new NewRequestEmail($lec_req));
             return response()->json(['message' => 'Request sent!'], 201);
         } else {
             return response()->json(['message' => 'Request not sent! Please try again!'], 400);
         }
     }
 
+    public function getLecRequestByLecId($lec_id)
+    {
+        $requests = lec_request::where('lec_id', $lec_id)->get();
+        return response()->json($requests);
+    }
+
 }
+
+

@@ -25,6 +25,16 @@ body {
     display: flex;
     flex-direction: column;
     align-self: center;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: slideUp 1s forwards;
+}
+
+@keyframes slideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .las-container

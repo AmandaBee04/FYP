@@ -49,9 +49,17 @@ body {
     background-size: 180vh;
     background-position: center;
     background-repeat: no-repeat;
-
+    opacity: 0;
+    transform: translateX(-1%);
+    animation: slideInFromLeft 1s forwards;
 }
 
+@keyframes slideInFromLeft {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
 .lus-rightside h2
 {
     font-family: 'Times New Roman', Times, serif;

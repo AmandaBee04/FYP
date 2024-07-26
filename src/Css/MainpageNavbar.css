@@ -1,0 +1,109 @@
+body {
+    background-image: url(../assets/Admin_Images/MainpageBackground2.png);
+    background-size: cover;
+    align-self: center;
+}
+
+@font-face {
+    font-family: "Zootopia";
+    src: url(../Fonts/ZootopiaJposterscomar-qJ80.ttf);
+}
+
+@font-face {
+    font-family: "Pacifico";
+    src: url(../Fonts/Pacifico-Regular.ttf);
+}
+
+@font-face {
+    font-family: "Caveat";
+    src: url(../Fonts/Caveat-VariableFont_wght.ttf);
+}
+
+.navbar {
+    position: absolute;
+    width: 100vw;
+    height: 8vh;
+    left: 0vw;
+    top: 0vh;
+    background: #FFFFFF;
+    box-shadow: 0vh 1vw 5vh rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.leftside {
+    display: flex;
+    gap: 1.5vw;
+    flex-direction: row;
+    align-items: center;
+}
+
+.rightside {
+    display: flex;
+    gap: 2vw;
+    flex-direction: row;
+    align-items: center;
+    padding-right: 1.5vw;
+    
+}
+
+.bigC
+{
+    display: flex;
+    flex-direction: row;
+}
+
+.mp-Logo {
+    color: #f7af86;
+    font-family: "Zootopia";
+    font-size: 2rem;
+}
+
+.leftside img {
+    padding-left: 1vw;
+    height: 8vh;
+    width: 4vw;
+}
+
+.rightside img {
+    height: 4vh;
+    width: 2vw;
+}
+
+.space {
+    width: 100vw;
+}
+
+.navbarbtn input
+{
+    background-color: #f7af86;
+    color: black;
+    height: 4.5vh;
+    width: 5vw;
+    border: none;
+    border-radius: 0.5vw;
+    font-weight: bold;
+    font-size: 2vh;
+    font-family: 'Times New Roman', Times, serif;
+    
+}
+
+.btnCont
+{
+    align-items: center;
+    text-align: center;
+}
+
+.navbarbtn input:hover
+{
+    background-color: #f18e55;
+}
+
+#Info_Icon
+{
+    height: 3.8vh;
+    width: 2vw;
+    margin-top: 0.35vh;
+    color: #f18e55;
+}

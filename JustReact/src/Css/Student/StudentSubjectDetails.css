@@ -1,0 +1,205 @@
+body {
+    background-image: url(../../assets/Admin_Images/MainpageBackground2.png);
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+}
+
+@font-face {
+    font-family: 'Caveat';
+    src: url(../../Fonts/Caveat-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: 'Zootopia';
+    src: url(../../Fonts/ZootopiaJposterscomar-qJ80.ttf);
+}
+
+@font-face {
+    font-family: 'Pacifico';
+    src: url(../../Fonts/Pacifico-Regular.ttf);
+}
+
+.ssd-holder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ssd-container {
+    display: flex;
+    flex-direction: column;
+    height: 87.9vh;
+    transition: transform 0.5s ease-in-out;
+}
+
+.ssd-upper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 3.5vh;
+    height: 30vh;
+    background-image: url(../../assets/Lecturer_Images/background.png);
+    background-size: contain;
+    background-size: 44vw;
+    background-position: center;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+}
+
+.ssd-SubjectName {
+    display: flex;
+    margin: 20vh 0vw 0vh 2vw;
+}
+
+.ssd-SubjectName h2 {
+    color: black;
+    font-family: 'Zootopia';
+}
+
+.ssd-lower {
+    display: flex;
+    flex-direction: column;
+}
+
+.ssd-lower-header {
+    margin-top: -3vh;
+    text-decoration: underline;
+    text-decoration-color: black;
+    font-family: 'Gill Sans';
+    display: flex;
+    flex-direction: row;
+}
+
+.ssd-lower-header h2 {
+    font-family: 'Times New Roman', Times, serif;
+    width: 10vw;
+}
+
+.ssd-lecturercontainer {
+    display: flex;
+    flex-direction: column;
+    margin-top: -3vh;
+    align-self: center;
+    width: 67.1vw;
+    height: 46.4vh;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    padding-bottom: 1vh;
+}
+
+.ssd-tags {
+    display: flex;
+    flex-direction: row;
+    color: black;
+    height: 7vh;
+    font-size: 1.1rem;
+    font-family: 'Times New Roman', Times, serif;
+    padding-left: 5vh;
+    width: 64.7vw;
+    box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.ssd-tag1, .ssd-tag2, .ssd-tag3, .ssd-tag4, .ssd-tag5 {
+    display: flex;
+}
+
+.ssd-tag1 { width: 10vw; }
+.ssd-tag2 { width: 14vw; }
+.ssd-tag3 { width: 16vw; }
+.ssd-tag4 { width: 15vw; }
+.ssd-tag5 { width: 15vw; }
+
+.ssd-lecturerbox {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: 49vh;
+    color: black;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    white-space: nowrap;
+    scrollbar-color: lightgrey white;
+}
+
+.ssd-box {
+    display: flex;
+    flex-direction: row;
+    height: 6.5vh;
+    box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.25);
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.ssd-ID { width: 10vw; text-align: left; padding-left: 2.3vw;}
+.ssd-name { width: 14vw; text-align: left;}
+.ssd-email { width: 15vw; text-align: left;}
+.ssd-programme { width: 15vw; text-align: left;}
+.ssd-faculty { width: 6.45vw; text-align: left;}
+
+@keyframes slideIn {
+    from {
+        right: -25vw;
+    }
+    to {
+        right: 1.5vw;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        right: 1.5vw;
+    }
+    to {
+        right: -25vw;
+    }
+}
+
+.ssd-rightside {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 10vh;
+    height: 84vh;
+    width: 25vw;
+    border-radius: 10px;
+    color: black;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+    animation: slideIn 0.5s forwards;
+}
+
+.ssd-rightside.hide {
+    animation: slideOut 0.5s forwards;
+}
+
+.ssd-rightside.hidden {
+    display: none;
+}
+
+.ssd-lecprofile {
+    height: 10vh;
+    font-size: 15vh;
+    padding-bottom: 10vh;
+}
+
+.ssd-lecprofilemini {
+    position: absolute;
+    color: black;
+    right: 0;
+    font-size: 30px;
+    top: 8vh;
+    margin-top: 1vh;
+    height: 5vh;
+    width: 50px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    background-color: #FFFFFF;
+}
+
+.ssd-container.move-left {
+    transform: translateX(-13vw);
+}

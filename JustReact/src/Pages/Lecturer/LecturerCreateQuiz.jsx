@@ -9,7 +9,7 @@ export default function LecturerCreateQuiz() {
   const handleSubmit = (event) => {
     event.preventDefault();
     // Perform login logic here
-    navigate('/Lecturer/Quiz_Creation/Written_Question'); // Navigate to the desired route after login
+    navigate('/Lecturer/Quiz_Creation/Multiple_Choice_Question'); // Navigate to the desired route after login
   };
 
 
@@ -29,10 +29,7 @@ export default function LecturerCreateQuiz() {
                   <div className='Options'>
                   <select name="cars" id="cars">
                     <option value="Please Choose" default>Please Choose</option>
-                    <option value="volvo">Volvo</option>
-                    <option value="saab">Saab</option>
-                    <option value="opel">Opel</option>
-                    <option value="audi">Audi</option>
+                    <option value="volvo">Ur mum</option>
                   </select>
                   </div>
                 </div>

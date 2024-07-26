@@ -10,6 +10,7 @@ export default function ChangePassword({ onClose }) {
   const [oldPassword, setOldPassword] = useState('');
   const [newPassword, setNewPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+  const [isClosing, setIsClosing] = useState(false);
 
   const toggleOldPasswordVisibility = () => {
     setOldPasswordVisible(!oldPasswordVisible);
@@ -31,6 +32,14 @@ export default function ChangePassword({ onClose }) {
     setShowThumbsUp(false);
   };
 
+  const handleClose = () => {
+    setIsClosing(true);
+    setTimeout(() => {
+      onClose();
+      setIsClosing(false);
+    }, 500); // 500ms duration of the fade-out animation
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (oldPassword.length < 8 || newPassword.length < 8) {
@@ -44,14 +53,14 @@ export default function ChangePassword({ onClose }) {
 
   return (
     <>
-      <div className="popup-overlay show-popup">
-        <div className="popup" onClick={(e) => e.stopPropagation()}>
+      <div className={`cp-popup-overlay ${isClosing ? 'fade-out' : 'cp-show-popup'}`}>
+        <div className="cp-popup" onClick={(e) => e.stopPropagation()}>
           <form action="" className='cp-form' onSubmit={handleSubmit}>
-            <button className="close" onClick={onClose}>X</button>
+            <button className="cp-close" onClick={handleClose}>X</button>
             <h2>Change Password</h2>
-            <div className="form-element">
-              <label className="Password">Enter Old Password: </label>
-              <div className="password-container">
+            <div className="cp-form-element">
+              <label className="cp-Password">Enter Old Password: </label>
+              <div className="cp-password-container">
                 <input 
                   type={oldPasswordVisible ? "text" : "password"} 
                   id="OldPassword" 
@@ -60,14 +69,14 @@ export default function ChangePassword({ onClose }) {
                   minLength="8"
                   required 
                 />
-                <div className="password-toggle" onClick={toggleOldPasswordVisibility}>
+                <div className="cp-password-toggle" onClick={toggleOldPasswordVisibility}>
                   {oldPasswordVisible ? <FaRegEyeSlash /> : <FaRegEye />}
                 </div>
               </div>
             </div>
-            <div className="form-element">
-              <label className="Password">Enter New Password: </label>
-              <div className="password-container">
+            <div className="cp-form-element">
+              <label className="cp-Password">Enter New Password: </label>
+              <div className="cp-password-container">
                 <input 
                   type={newPasswordVisible ? "text" : "password"} 
                   id="NewPassword" 
@@ -76,13 +85,13 @@ export default function ChangePassword({ onClose }) {
                   minLength="8"
                   required 
                 />
-                <div className="password-toggle" onClick={toggleNewPasswordVisibility}>
+                <div className="cp-password-toggle" onClick={toggleNewPasswordVisibility}>
                   {newPasswordVisible ? <FaRegEyeSlash /> : <FaRegEye />}
                 </div>
               </div>
             </div>
-            {errorMessage && <div className="error-message">{errorMessage}</div>}
-            <div className="form-element">
+            {errorMessage && <div className="cp-error-message">{errorMessage}</div>}
+            <div className="cp-form-element">
               <button 
                 type="submit" 
                 onMouseEnter={handleMouseEnter} 

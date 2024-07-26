@@ -1,0 +1,299 @@
+body {
+    background-image: url(../../assets/Admin_Images/MainpageBackground2.png);
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+}
+
+@font-face {
+    font-family: 'Caveat';
+    src: url(../../Fonts/Caveat-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: 'Zootopia';
+    src: url(../../Fonts/ZootopiaJposterscomar-qJ80.ttf);
+}
+
+@font-face {
+    font-family: 'Pacifico';
+    src: url(../../Fonts/Pacifico-Regular.ttf);
+}
+
+
+.ld-holder
+{
+    display: flex;
+    align-self: center;
+}
+
+.ld-container
+{
+    display: flex;
+    flex-direction: row;
+
+}
+
+.ld-bigcontainer
+{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 5vw;
+    top: 23vh;
+    height: 70vh;
+    width: 90vw;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    white-space: nowrap;
+    scrollbar-color: lightgrey transparent;
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transform: translateX(-100%);
+    animation: slideInFromLeft 1s forwards;
+}
+
+@keyframes slideInFromLeft {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.ld-header
+{
+    display: flex;
+    flex-direction: row;
+    color: black;
+    font-family: 'Gill Sans';
+    font-size: 2rem;
+    position: absolute;
+    top: 12vh;
+    left: 5vw;
+    gap: 1.5vw;
+    opacity: 0;
+    transform: translateX(-100%);
+    animation: slideInFromLeft 1s forwards;
+}
+
+@keyframes slideInFromLeft {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+.Icon
+{
+    margin-top: -2vh;
+    color: black;
+    height: 85px;
+    width: 85px;
+}
+
+
+.ld-mysubjects
+{
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+    padding: 5vh;
+    height: 60vh;
+    border-radius: 15px;
+}
+
+.ld-subjectholder
+{
+    display: flex;
+    flex-direction: row;
+    gap: 15vh;
+    width: 85vw;
+    height: 70vh;
+    padding-top: 1vh;
+    padding-left: 2vw;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    scrollbar-color: lightgrey transparent;
+    border-radius: 15px;
+
+
+}
+
+.ld-mysubjects-header 
+{
+    display: flex;
+    margin-top: -2vh;
+    margin-bottom: -4vh;
+    padding-left: 5vh;
+}
+
+.ld-mysubjects-header h2
+{
+    font-family: 'Gill Sans';
+}
+
+.ld-subjects
+{
+    display: flex;
+    flex-direction: column;
+    padding: 2vh;
+    width: 20vw;
+    height: 44vh;
+    background: #FFFFFF;
+    border: 0px solid #000000;
+    border-radius: 10px;
+    box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.5);
+}
+
+.ld-CoverPage
+{
+    display: flex;
+    height: 23vh;
+    width: 20vw;
+    background-image: url(../../assets/Lecturer_Images/HtmlBackground.png);
+    background-size: contain;
+
+    flex-direction: column;
+    border-radius: 15px;
+
+}
+
+.ld-Class 
+{
+    color: black;
+    font-family: 'Gill Sans';
+    margin: 1vh 0vw 0vh 0vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.ld-classCode
+{
+
+    text-align: left;
+    padding-left: 1vh;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.ld-classname
+{
+    text-align: left;
+    padding-left: 1vh;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.ld-howmany
+{
+    display: flex;
+    flex-direction: row;
+    margin: 8vh 0vw 0vh 0vw;
+    padding-left: 1vh;
+    color: grey;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    gap: 1vh;
+    font-size: 1rem;
+}
+
+.ld-MyQuizzes
+{
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+    padding: 5vh;
+    height: 60vh;
+    border-radius: 15px;
+
+}
+
+.ld-MyQuizzes-header
+{
+    display: flex;
+    margin-top: -2vh;
+    margin-bottom: -4vh;
+    padding-left: 5vh;
+}
+
+.ld-MyQuizzes-header h2
+{
+    font-family: 'Gill Sans';
+}
+
+.ld-MyQuizzes-holder
+{
+    display: flex;
+    flex-direction: row;
+    gap: 15vh;
+    width: 85vw;
+    height: 70vh;
+    padding-top: 1vh;
+    padding-left: 2vw;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    scrollbar-color: lightgrey transparent;
+    border-radius: 15px;
+
+
+}
+
+
+.ld-classCode
+{
+    font-family: 'Times New Roman', Times, serif;
+
+}
+
+.ld-classtype
+{
+    position: relative;
+    height: 0;
+    margin: auto;
+    right: -30%;
+    top: -80%;
+}
+
+.ld-nameofclass
+{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: 1.5rem;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    scrollbar-width: none;
+}
+
+
+/* HTML: <div class="loader"></div> */
+.sd-loader {
+    width: 50px;
+    aspect-ratio: 1;
+    display: grid;
+    border: 4px solid #0000;
+    border-radius: 50%;
+    border-right-color: #25b09b;
+    animation: l15 1s infinite linear;
+  }
+  .sd-loader::before,
+  .sd-loader::after {    
+    content: "";
+    grid-area: 1/1;
+    margin: 2px;
+    border: inherit;
+    border-radius: 50%;
+    animation: l15 2s infinite;
+  }
+  .sd-loader::after {
+    margin: 8px;
+    animation-duration: 3s;
+  }
+  @keyframes l15{ 
+    100%{transform: rotate(1turn)}
+  }

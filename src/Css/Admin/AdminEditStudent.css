@@ -1,0 +1,344 @@
+body {
+    background-image: url(../../assets/Admin_Images/MainpageBackground2.png);
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+}
+
+@font-face {
+    font-family: 'Caveat';
+    src: url(../../Fonts/Caveat-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: 'Zootopia';
+    src: url(../../Fonts/ZootopiaJposterscomar-qJ80.ttf);
+}
+
+@font-face {
+    font-family: 'Pacifico';
+    src: url(../../Fonts/Pacifico-Regular.ttf);
+}
+
+h1
+{
+    display: flex;
+    color:black;
+    font-family: Caveat;
+    align-items: center;
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+    margin-bottom: 0;
+}
+
+.aewss-container
+{
+    display: flex;
+    flex-direction: column;
+    gap: 3vh;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: slideUp 1s forwards;
+}
+
+@keyframes slideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.aewss-form
+{
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+    padding: 4vh;
+    background-color: white;
+    height: 60vh;
+    width: 60vw;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 1vh;
+
+}
+
+.aewss-leftside
+{
+    display: flex;
+    flex-direction: column;
+    width: 15vw;
+}
+
+.aewss-rightside
+{
+    display: flex;
+    flex-direction: column;
+    padding: 1.4vh;
+    width: 45vw;
+}
+
+.aewss-label
+{
+    padding-bottom: 1.5vh;
+}
+
+.aewss-inputs
+{
+    padding-left: 2vw;
+    padding-bottom: 3.5vh;
+}
+
+.aewss-ID
+{
+    display: flex;
+    flex-direction: column;
+    font-size: 1.3rem;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 2.7vh 0vw 1vh 1vw;
+}
+
+.aewss-i-ID
+{
+    display: flex;
+    background-color: white;
+    color: black;
+    padding-top: 0.4vh;
+    height: 5vh;
+    width: 40vw;
+    font-size: 1.5rem;
+    font-family: 'Times New Roman', Times, serif;
+    border: none;
+    outline: none;
+}
+
+.aewss-i-ID:focus
+{
+    outline: none;
+}
+
+.aewss-Name
+{
+    display: flex;
+    flex-direction: column;
+    font-size: 1.3rem;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 2vh 0vw 2vh 1vw;
+}
+
+.aesws-i-Name
+{
+    display: flex;
+    background-color: white;
+    color: black;
+    padding-left: 1vw;
+    height: 5vh;
+    width: 40vw;
+    font-size: 1rem;
+    border-radius: 0.8vh;
+    border-style: solid;
+    border-color: #D1D1D1;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
+    outline: none;
+}
+
+.aewss-i-Name:focus
+{
+    outline: none;
+}
+
+.aewss-Email
+{
+    display: flex;
+    flex-direction: column;
+    font-size: 1.3rem;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 2vh 0vw 2vh 1vw;
+}
+
+.aewss-i-Email
+{
+    display: flex;
+    background-color: white;
+    color: black;
+    padding-left: 1vw;
+    height: 5vh;
+    width: 40vw;
+    font-size: 1rem;
+    border-radius: 0.8vh;
+    border-style: solid;
+    border-color: #D1D1D1;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
+    outline: none;
+}
+
+.aes-i-Email:focus
+{
+    outline: none;
+}
+
+.aewss-Password
+{
+    display: flex;
+    flex-direction: column;
+    font-size: 1.3rem;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 2vh 1vw 1.9vh 1vw;
+
+}
+
+.aewss-i-Password
+{
+    display: flex;
+    background-color: white;
+    color: black;
+    padding-left: 1vw;
+    height: 5vh;
+    width: 10vw;
+    font-size: 1rem;
+    border-radius: 0.8vh;
+    border-style: solid;
+    border-color: #D1D1D1;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
+    outline: none;
+}
+
+.aewss-i-Password:focus
+{
+    outline: none;
+}
+
+.aewss-Programme
+{
+    display: flex;
+    flex-direction: column;
+    font-size: 1.3rem;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 1.8vh 1vw 0.4vh 1vw;
+
+}
+
+.aewss-i-Programme
+{
+    display: flex;
+    background-color: white;
+    color: black;
+    padding-left: 1vw;
+    height: 5vh;
+    width: 40vw;
+    font-size: 1rem;
+    border-radius: 0.8vh;
+    border-style: solid;
+    border-color: #D1D1D1;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
+    outline: none;
+}
+
+.aewss-i-Programme:focus
+{
+    outline: none;
+}
+
+.aewss-SubjectCode
+{
+    display: flex;
+    flex-direction: column;
+    font-size: 1.3rem;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 2vh;
+}
+
+.aewss-i-SubjectCode
+{
+    display: flex;
+    background-color: white;
+    color: black;
+    padding-left: 2vw;
+    height: 5vh;
+    width: 10vw;
+    font-size: 1rem;
+    border-radius: 0.8vh;
+    border-style: solid;
+    border-color: #D1D1D1;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
+    outline: none;
+}
+
+.aewss-i-SubjectCode:focus
+{
+    outline: none;
+}
+.aewss-btn 
+{
+    display: flex;
+    text-align: right;
+    position: absolute;
+    right: 4.7%;
+    bottom: 6%;
+}
+
+.aewss-btn button
+{
+    border: 1px solid #000000;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
+    border-radius: 7px;
+    width: 10vw;
+    outline: none;
+    border: none;
+    margin: -12;
+    background-color: black;
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.aewss-btn button:focus
+{
+    outline: none;
+    border: none;
+}
+
+
+.aewss-subjects-container
+{
+    margin-left: 2vw;
+    padding-top: 2.5vw;
+    padding-left: 1vw;
+    width: 30vw;
+    overflow-y: scroll;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+
+}
+
+.aewss-subject
+{
+    width: 20vw;
+    display: flex;
+    flex-direction: row;
+    height: 4vh;
+    margin: -4vh 2vw 1vh 0vw;
+    padding-bottom: 5vh;
+
+
+}
+
+.aewss-removebtn
+{
+    position: relative;
+
+    margin: auto;
+
+}
+
+.aewss-addsubject
+{
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    margin: auto;
+
+}
+
+.aewss-word
+{
+    margin: -2vh 1vw 1vh 1vw;
+}

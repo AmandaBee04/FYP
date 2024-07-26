@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../../Css/Admin/AdminEditLecturerReject.css';
 import { FaThumbsUp } from "react-icons/fa";
@@ -6,7 +6,14 @@ import { FaThumbsUp } from "react-icons/fa";
 export default function AdminEditLecturerReject({ onClose }) {
 
   const [showThumbsUp, setShowThumbsUp] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
   const thumbsUpTimeoutRef = useRef(null);
+
+  useEffect(() => {
+    return () => {
+      clearTimeout(thumbsUpTimeoutRef.current);
+    };
+  }, []);
 
   const handleMouseEnterYes = () => {
     thumbsUpTimeoutRef.current = setTimeout(() => {
@@ -19,11 +26,18 @@ export default function AdminEditLecturerReject({ onClose }) {
     setShowThumbsUp(false);
   };
 
+  const handleClose = () => {
+    setIsVisible(false);
+    setTimeout(() => {
+      onClose();
+    }, 300); // Match this duration with the CSS transition duration
+  };
+
   return (
     <>
-      <div className="aelr-popup-overlay aelr-show-popup">
-        <div className="aelr-popup">
-          <button className="aelr-close" onClick={onClose}>X</button>
+      <div className={`aelr-popup-overlay ${isVisible ? 'aelr-show-popup' : 'aelr-hide-popup'}`}>
+        <div className={`aelr-popup ${isVisible ? 'popup-enter' : 'popup-exit'}`}>
+          <button className="aelr-close" onClick={handleClose}>X</button>
           <h2>Lecturer Not Edited. Please Try Again!</h2>
           <div className="aelr-buttons">
             <div className="aelr-yes-btn">
@@ -31,7 +45,7 @@ export default function AdminEditLecturerReject({ onClose }) {
                 <button
                   onMouseEnter={handleMouseEnterYes}
                   onMouseLeave={handleMouseLeaveYes}
-                  onClick={onClose} // Close the popup when Confirm is clicked 
+                  onClick={handleClose} // Close the popup when Confirm is clicked 
                 >
                   {showThumbsUp ? <FaThumbsUp /> : 'Confirm'}
                 </button>

@@ -29,7 +29,27 @@ h1
 .lqb-holder
 {
     display: flex;
+    position:absolute;
     align-self: center;
+    align-items: center;
+    align-content: center;
+    align-self: center;
+    justify-content: center;
+    justify-items: center;
+    justify-self: center;
+    top: 10%;
+    left: 14%;
+    align-self: center;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideUp 1s forwards;
+}
+
+@keyframes slideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .lqb-container
@@ -37,14 +57,26 @@ h1
     display: flex;
     flex-direction: column;
     align-self: center;
+    align-items: center;
+    align-content: center;
+    align-self: center;
+    justify-content: center;
+    justify-items: center;
+    justify-self: center;
     height: 85vh;
-    width: 70vw;
 }
 
 .lqb-header
 {
+    align-self: center;
+    align-items: center;
+    align-content: center;
+    align-self: center;
+    justify-content: center;
+    justify-items: center;
+    justify-self: center;
     text-align: center;
-    height: 8vh;
+    height: 6vh;
 }
 
 .lqb-above
@@ -203,4 +235,92 @@ h1
     text-align: right;
     color: #A6A6A6;
     padding-right: 0.5vw;
+}
+
+.dropdown-content 
+{
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    align-self: center;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 2vh;
+    border: 1pt solid lightgrey;
+}
+
+.dropdown-content a, .dropdown-content a:hover
+{
+    color: black;
+    padding: 1vh 1vw 1vh 0.4vw;
+    text-decoration: none;
+    display: block;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+.closing
+{
+    display: flex;
+    flex-direction: column;
+    padding: 1vh;
+    gap: 0.1vw;
+}
+
+
+.link1
+{
+    display: flex;
+    flex-direction: row;
+    background-color:#68E475;
+    border-radius: 2vh;
+    border: 1pt solid grey;
+}
+
+.link1 .img
+{
+    height: 2.5vh;
+    width: 1.5vw;
+    margin: 1vh 0vw 0vh 1vw;
+    color: black;
+}
+
+.link2
+{
+    display: flex;
+    flex-direction: row;
+    background-color: #E1E468;
+    border-radius: 2vh;
+    border: 1pt solid grey;
+}
+
+.link2 .img
+{
+    height: 2.5vh;
+    width: 1.5vw;
+    margin: 1vh 0vw 0vh 1vw;
+    color: black;
+}
+
+.link3
+{
+    display: flex;
+    flex-direction: row;
+    background-color: #e14b4b;
+    border-radius: 2vh;
+    border: 1pt solid grey;
+}
+
+.link3 .img
+{
+    height: 2.5vh;
+    width: 1.5vw;
+    margin: 1vh 0vw 0vh 1vw;
+    color: black;
+}
+
+.word
+{
+    font-family:'Times New Roman', Times, serif;
 }

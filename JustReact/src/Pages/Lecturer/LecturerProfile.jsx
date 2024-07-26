@@ -6,6 +6,7 @@ import '../../Css/Lecturer/LecturerProfile.css'
 
 export default function LecturerProfile() {
 
+
   const inputRef = useRef(null);
   const [image, setImage] = useState(null);
   const [isChangePasswordVisible, setIsChangePasswordVisible] = useState(false);
@@ -57,7 +58,7 @@ export default function LecturerProfile() {
               <br />
               
               <div onClick={handleImageClick}>
-                { image ? <img src={image} alt="Lecturer"/> : < FaUserTie className='LecIcon' alt="Lecturer Icon"/> }
+                { image ? <img src={image} className='profile-image' alt="Lecturer"/> : < FaUserTie id='img' alt="Lecturer Icon"/> }
                 <input type="file" ref={inputRef} onChange={handleImageChange} style={{display:'none'}} />
               </div>
               <span>Mr.Mike Oxmall</span>

@@ -1,0 +1,259 @@
+body {
+    background-image: url(../../assets/Admin_Images/MainpageBackground2.png);
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+}
+
+@font-face {
+    font-family: 'Caveat';
+    src: url(../../Fonts/Caveat-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: 'Zootopia';
+    src: url(../../Fonts/ZootopiaJposterscomar-qJ80.ttf);
+}
+
+@font-face {
+    font-family: 'Pacifico';
+    src: url(../../Fonts/Pacifico-Regular.ttf);
+}
+
+.ar-holder
+{
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+}
+
+.ar-leftside
+{
+    display: flex;
+    flex-direction: column;
+    height: 92vh;
+    width: 25vw;
+    top: 8vh;
+    left: 0vh;
+    gap: 4vh;
+    align-items: center;
+    scrollbar-color: white transparent;
+    position: absolute;
+    background: rgba(191, 191, 191, 0.26);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    overflow-x: hidden;
+    overflow-y: scroll;
+    white-space: nowrap;
+    flex-shrink: 0;
+    opacity: 0;
+    transform: translateX(-100%);
+    animation: slideInFromLeft 1s forwards;
+}
+
+@keyframes slideInFromLeft {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.ar-header h2
+{
+    display: flex;
+    padding-right: 13vw;
+    height: 1vh;
+    text-align: left;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.Profile
+{
+    height: 20vh;
+    width: 20vw;
+}
+
+.requestslider
+{
+    display: flex;
+    flex-direction: column;
+    gap: 4vh;
+}
+
+.ar-requests
+{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    width: 16vw;
+    height: 10vh;
+    background: #ffffff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+}
+
+.ar-requests-left
+{
+    background-color: #1266A1;
+    width: 1vw;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.ar-requests-middle
+{
+    display: flex;
+    flex-direction: column;
+    width: 11vw;
+}
+
+.ar-requestName
+{
+    display: flex;
+    color: black;
+    padding-left: 2vh;
+    padding-top: 1.5vh;
+    font-size: 1.2rem;
+    font-family:'Times New Roman', Times, serif;
+}
+
+.ar-requestsubject
+{
+    display: flex;
+    color: grey;
+    padding-left: 2vh;
+    padding-top: 1vh;
+    font-size: 0.9rem;
+    font-family:'Times New Roman', Times, serif;
+}
+
+.ar-requests-right
+{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    color:#3985B6;
+    font-size: 0.9rem;
+    font-family:'Times New Roman', Times, serif;
+}
+
+.ar-rightside
+{
+    display: flex;
+    flex-direction: column;
+    height: 92vh;
+    width: 70vw;
+    top: 8vh;
+    left: 51.5vh;
+    align-items: center;
+    position: absolute;
+    opacity: 0;
+    transform: translateX(3%);
+    animation: slideInFromLeft 1s forwards;
+}
+
+@keyframes slideInFromLeft {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.ar-rightside-top
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2vh;
+    width: 40vw;
+    color: black;
+}
+
+.ar-rightside-top img
+{
+    height: 20vh;
+    width: 10vw;
+    padding-bottom: 1vh;
+    border-radius: 100%;
+}
+
+.ar-rightside-top-text
+{
+    font-size: 1.7rem;
+    font-family: 'Times New Roman', Times, serif;
+    padding-bottom: 2vh;
+}
+
+.ar-rightside-top-lecID
+{
+    display: flex;
+    flex-direction: row;
+    gap: 1vh;
+    font-family: 'Times New Roman', Times, serif;
+    padding-bottom: 2vh;
+    font-size: 1.2rem;
+}
+
+hr
+{
+    width: 70vw;
+}
+
+.ar-rightside-bottom
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.ar-rightside-bottom-text
+{
+    display: flex;
+    color: black;
+    gap: 2vw;
+
+}
+
+.ar-subject
+{   
+    display: flex;
+    font-size: 1.5rem;
+    position: fixed;
+    left: 0;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.ar-subjecttext
+{
+    display: flex;
+    font-size: 1.4rem;
+    position: fixed;
+    left: 10%;
+    padding-top: 0.2vh;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.ar-rightside-lowest
+{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 43%;
+    left: 0%;
+    padding-top: 5vh;
+    color: black;
+}
+
+.ar-message
+{
+    display: flex;
+    font-size: 2rem;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+
+.ar-textbox
+{
+    display: flex;
+    font-size: 1.2rem;
+    padding-top: 1vh;
+    text-align: justify;
+}

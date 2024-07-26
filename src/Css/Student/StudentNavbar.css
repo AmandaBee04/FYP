@@ -1,0 +1,100 @@
+@font-face {
+    font-family: "Zootopia";
+    src: url(../../Fonts/ZootopiaJposterscomar-qJ80.ttf);
+}
+
+@font-face {
+    font-family: "Pacifico";
+    src: url(../../Fonts/Pacifico-Regular.ttf);
+}
+
+@font-face {
+    font-family: "Caveat";
+    src: url(../../Fonts/Caveat-VariableFont_wght.ttf);
+}
+
+.s-navbar {
+    position: absolute;
+    width: 100vw;
+    height: 8vh;
+    left: 0vw;
+    top: 0vh;
+    background: #FFFFFF;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.s-leftside {
+    display: flex;
+    gap: 4vw;
+    flex-direction: row;
+    align-items: center;
+}
+
+.s-rightside {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-right: 1vw;
+}
+
+.s-Logo {
+    color: #f7af86;
+    font-family: "Zootopia";
+    font-size: 1.8rem;
+    padding-left: 2.2vw;
+}
+
+.s-linkers a
+{
+    font-size: 1.7rem;
+    font-family:'Times New Roman', Times, serif;
+    font-style: none;
+    text-decoration: none;
+    color: black;
+    display: inline-block; /* Display inline block */
+    position: relative; /* Set position relative */
+    
+}
+  
+.s-linkers a:after 
+{
+    content: ''; /* Add content after the element */
+    position: absolute; /* Position absolute for pseudo-element */
+    width: 100%; /* Full width */
+    transform: scaleX(0); /* Initial scale of 0 for underline effect */
+    height: 0.35vh; /* Height of the underline */
+    bottom: 0.5vh; /* Align to bottom */
+    left: 0; /* Align to left */
+    color: #f89962;
+    background-color: #f89962; /* Background color of the underline */
+    transform-origin: bottom left; /* Set transform origin */
+    transition: transform 0.3s ease-out; /* Transition effect for the underline */
+}
+  
+.s-linkers a:hover:after 
+{
+    transform: scaleX(0.9999); /* Scale the underline on hover */
+    transform-origin: bottom left; /* Set transform origin */
+    color: #f89962;
+}
+
+.s-linkers a:hover
+{
+    color:#f89962;
+}
+
+.s-space {
+    width: 100vw;
+}
+
+.s-rightside a .NavbarStuIcon
+{
+    color: #f7af86;
+    width: 2vw;
+    height: 3.5vh;
+    padding-left: 1vw;
+    padding-right: 1vw;
+}

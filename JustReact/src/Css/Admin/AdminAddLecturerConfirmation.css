@@ -1,3 +1,25 @@
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+}
+
 .aalc-popup-overlay {
     position: fixed;
     top: 0;
@@ -6,34 +28,49 @@
     height: 100vh;
     background: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(5px);
-    display: none;
+    display: flex;
     justify-content: center;
     align-items: center;
     z-index: 999;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
 }
 
 .aalc-popup {
     display: flex;
     flex-direction: column;
     position: fixed;
-    top: 50%;
-    left: 50%;
     transform: translate(-50%, -50%);
     width: 25vw;
     height: 30vh;
     background: white;
     border-radius: 10px;
     padding-top: 0;
-    z-index: 1000; /* Ensure the popup is above the overlay */
+    z-index: 1000;
+    opacity: 0;
+    transform: scale(0.9);
 }
 
 .aalc-show-popup {
-    display: flex; /* Use flex to show the overlay and center the popup */
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.aalc-hide-popup {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.popup-enter {
+    animation: fadeIn 0.3s forwards;
+}
+
+.popup-exit {
+    animation: fadeOut 0.3s forwards;
 }
 
 .aalc-close {
     position: absolute;
-    top: -60px;
     right: 0px;
     display: flex;
     justify-content: center;
@@ -65,7 +102,6 @@
     background-color: red;
 }
 
-
 .aalc-popup h2 {
     font-family: 'Times New Roman', Times, serif;
     padding-top: 4vh;
@@ -77,10 +113,22 @@
     position: absolute;
     font-family: 'Times New Roman', Times, serif;
     left: 30%;
-    top: 10vh;
-    margin: auto;
+    top: 20vh;
+
     border: none;
     outline: none;
+    justify-content: center;
+}
+
+.aalc-buttons button
+{
+  background: black;
+  color: white;
+  cursor: pointer;
+  width: 10vw;
+  align-self: center;
+  font-family: 'Times New Roman', Times, serif;
+  
 }
 
 .aalc-buttons button,
@@ -89,7 +137,7 @@
     outline: none;
 }
 
-.aalc-yes-btn{
+.aalc-yes-btn {
     width: 10vw;
     font-size: 1.5rem;
 }
@@ -98,5 +146,4 @@
     background: #db8341;
     transition: ease-in 0.3s;
     color: white;
-  }
-  
+}

@@ -1,0 +1,736 @@
+body {
+    background-image: url(../../assets/Admin_Images/MainpageBackground2.png);
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+}
+
+@font-face {
+    font-family: 'Caveat';
+    src: url(../../Fonts/Caveat-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: 'Zootopia';
+    src: url(../../Fonts/ZootopiaJposterscomar-qJ80.ttf);
+}
+
+@font-face {
+    font-family: 'Pacifico';
+    src: url(../../Fonts/Pacifico-Regular.ttf);
+}
+
+
+.lq-holqer
+{
+    display: flex;
+    align-self: center;
+}
+
+.lq-container
+{
+    display: flex;
+    flex-direction: row;
+}
+
+.lq-leftside
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.lq-header h2
+{
+    display: flex;
+    flex-direction: row;
+    color: black;
+    font-family: 'Gill Sans';
+    font-size: 2.5rem;
+    position: absolute;
+    top: -1vh;
+    left: 34vw;
+}
+
+.lq-bigcontainer
+{
+    display: flex;
+    flex-direction: column;
+    width: 72.3vw;
+    height: 82vh;
+    padding: 5vh;
+    left: 0vw;
+    top: 8vh;
+    gap: 2vh;
+    position: absolute;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    white-space: nowrap;
+    scrollbar-color: lightgrey transparent;
+    opacity: 0;
+    transform: translateX(-100%);
+    animation: slideInFromLeft 1s forwards;
+}
+
+@keyframes slideInFromLeft {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+.lq-mysubjects
+{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 67.5vw;
+    height: 40vh;
+    left: 3vw;
+    top: 20vh;
+    border-radius: 15px;
+
+}
+
+.lq-subjectholder
+{
+    display: flex;
+    flex-direction: row;
+    gap: 10vh;
+    width: 66vw;
+    height: 40vh;
+    padding-top: 1vh;
+    padding-left: 2.4vw;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    scrollbar-color: lightgrey transparent;
+    border-radius: 15px;
+
+
+}
+
+.lq-mysubjects-header 
+{
+    display: flex;
+    margin-top: -2vh;
+    margin-bottom: -4vh;
+    padding-left: 5vh;
+}
+
+.lq-mysubjects-header h2
+{
+    font-family: 'Gill Sans';
+}
+
+.lq-subjects
+{
+    display: flex;
+    flex-direction: column;
+    padding: 2.3vh;;
+    width: 12vw;
+    height: 22.5vh;
+    background: #FFFFFF;
+    border: 0px solid #000000;
+    border-radius: 10px;
+    box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.5);
+}
+
+.lq-CoverPage
+{
+    display: flex;
+    height: 15vh;
+    width: 12vw;
+    background-image: url(../../assets/Lecturer_Images/HtmlBackground.png);
+    background-size: cover;
+    flex-direction: column;
+    border-radius: 15px;
+
+}
+
+.lq-Class 
+{
+    color: black;
+    font-family: 'Gill Sans';
+    margin: 0.7vh 0vw 0vh 0vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.lq-classCode
+{
+
+    text-align: left;
+    padding-left: 1vh;
+    font-weight: bolq;
+    font-size: 1.1rem;
+}
+
+.lq-classname
+{
+    text-align: left;
+    padding-left: 1vh;
+    font-weight: bolq;
+}
+
+.lq-howmany
+{
+    display: flex;
+    flex-direction: row;
+    margin: 2vh 0vw 0vh 0vw;
+    padding-left: 1vh;
+    color: grey;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    gap: 1vh;
+}
+
+.lq-MyQuizzes
+{
+    display: flex;
+    flex-direction: column;
+    width: 68.5vw;
+    height: 3vh;
+    left: 3vw;
+    top: 55vh;
+    border-radius: 15px;
+
+
+}
+
+.lq-MyQuizzes-header
+{
+    display: flex;
+    margin-top: -2vh;
+    margin-bottom: -4vh;
+    padding-left: 5vh;
+}
+
+.lq-MyQuizzes-header h2
+{
+    font-family: 'Gill Sans';
+}
+
+.lq-MyQuizzes-holder
+{
+    display: flex;
+    flex-direction: row;
+    gap: 1vh;
+    width: 66vw;
+    height: 37vh;
+    padding-top: 1vh;
+    padding-left: 2.5vw;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    scrollbar-color: lightgrey transparent;
+    border-radius: 15px;
+}
+
+.lq-quizzes
+{
+    display: flex;
+    flex-direction: column;
+    height: 28vh;
+    width: 17.5vw;
+    border: 1pt solid grey;
+    flex-shrink: 0;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+
+.lq-quizupper
+{
+    display: flex;
+    flex-direction: column;
+    height: 15vh;
+    align-items: end;
+    padding-right: 0.5vw;
+    padding-top: 1vh;
+    background-image: url(../../assets/Lecturer_Images/HtmlBackground.png);
+    background-size: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.lq-quizupper img
+{
+    cursor: pointer;
+    height: 1.2vh;
+    width: 2vw;
+}
+
+.lq-quizupper img:hover
+{
+    cursor: pointer;
+}
+
+
+.lq-quizlower
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.lq-quizchaptername
+{
+    text-align: left;
+    padding-left: 0.5vw;
+    color: black;
+    font-size: 2.5vh;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.lq-quizAuthor
+{
+    text-align: left;
+    color: #A6A6A6;
+    padding-left: 0.5vw;
+}
+
+.lq-QuiznoQuestions
+{
+    text-align: right;
+    color: #A6A6A6;
+    padding-right: 0.5vw;
+}
+
+.lq-rightside
+{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 23vw;
+    height: 91.80vh;
+    right: 0vh;
+    top: 8.2vh;
+    background: #f4eded;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+    opacity: 0;
+    transform: translateX(0%);
+    animation: slideInFromLeft 1s forwards;
+}
+
+@keyframes slideInFromLeft {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.lq-rightside-header
+{
+    display: flex;
+    margin-top: -3vh;
+    margin-bottom: -4vh;
+    justify-content: center;
+
+}
+
+.lq-rightside-header h2
+{
+    font-family: 'Gill Sans';
+}
+
+.lq-rightside-holqer
+{
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+    width: 20vw;
+    height: 80.5vh;
+    padding-top: 2vh;
+    padding-left: 3vw;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    white-space: nowrap;
+    scrollbar-color: lightgrey transparent;
+
+}
+
+.lq-assignquizzes
+{
+    display: flex;
+    flex-direction: column;
+    height: 30vh;
+    width: 16vw;
+    border: 1pt solid grey;
+    flex-shrink: 0;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+
+.lq-assignquizupper
+{
+    display: flex;
+    flex-direction: column;
+    height: 18vh;
+    align-items: end;
+    padding-right: 0.5vw;
+    padding-top: 1vh;
+    background-image: url(../../assets/Lecturer_Images/HtmlBackground.png);
+    background-size: contain;
+    background-position: center;
+    background-size: 25vw;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.lq-assignquizlower
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.lq-assignquizchaptername
+{
+    text-align: left;
+    padding-left: 0.5vw;
+    color: black;
+    font-size: 2.5vh;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.lq-assignquizAuthor
+{
+    text-align: left;
+    color: #A6A6A6;
+    padding-left: 0.5vw;
+}
+
+.lq-assignQuiznoQuestions
+{
+    text-align: right;
+    color: #A6A6A6;
+    padding-right: 0.5vw;
+}
+
+
+.lq-assignduedate
+{
+    text-align: left;
+    color: #c72828;
+    font-weight: bolq;
+    padding-left: 0.5vw;
+}
+
+
+.lq-MarkedQuizzes
+{
+    display: flex;
+    flex-direction: column;
+    width: 68.5vw;
+    height: 38vh;
+    left: 3vw;
+    top: 55vh;
+    border-radius: 15px;
+
+}
+
+
+.lq-MarkedQuizzes-header
+{
+    display: flex;
+    margin-top: -2vh;
+    margin-bottom: -4vh;
+    padding-left: 5vh;
+}
+
+.lq-MarkedQuizzes-header h2
+{
+    font-family: 'Gill Sans';
+}
+
+.lq-MarkedQuizzes-holder
+{
+    display: flex;
+    flex-direction: row;
+    gap: 5vh;
+    width: 66vw;
+    height: 37vh;
+    padding-top: 1vh;
+    padding-left: 2.4vw;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    scrollbar-color: lightgrey transparent;
+    border-radius: 15px;
+}
+
+.lq-MarkedQuizzes-quizzes
+{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 14.5vw;
+    border: 1pt solid grey;
+    flex-shrink: 0;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+
+.lq-MarkedQuizzes-quizupper
+{
+    display: flex;
+    flex-direction: column;
+    height: 15vh;
+    align-items: end;
+    padding-right: 0.5vw;
+    padding-top: 1vh;
+    background-image: url(../../assets/Lecturer_Images/HtmlBackground.png);
+    background-size: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.lq-MarkedQuizzes-quizlower
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.lq-MarkedQuizzes-quizchaptername
+{
+    text-align: left;
+    padding-left: 0.5vw;
+    color: black;
+    font-size: 2.5vh;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.lq-MarkedQuizzes-quizAuthor
+{
+    text-align: left;
+    color: #A6A6A6;
+    padding-left: 0.5vw;
+}
+
+.lq-MarkedQuizzes-QuiznoQuestions
+{
+    text-align: right;
+    color: #A6A6A6;
+    padding-right: 0.5vw;
+}
+
+
+.lq-UnMarkedQuizzes
+{
+    display: flex;
+    flex-direction: column;
+    width: 68.5vw;
+    height: 38vh;
+    left: 3vw;
+    top: 55vh;
+    border-radius: 15px;
+
+}
+
+
+.lq-UnMarkedQuizzes-header
+{
+    display: flex;
+    margin-top: -2vh;
+    margin-bottom: -4vh;
+    padding-left: 5vh;
+}
+
+.lq-UnMarkedQuizzes-header h2
+{
+    font-family: 'Gill Sans';
+}
+
+.lq-UnMarkedQuizzes-holder
+{
+    display: flex;
+    flex-direction: row;
+    gap: 5vh;
+    width: 66vw;
+    height: 37vh;
+    padding-top: 1vh;
+    padding-left: 2.4vw;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    scrollbar-color: lightgrey transparent;
+    border-radius: 15px;
+}
+
+.lq-UnMarkedQuizzes-quizzes
+{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 14.5vw;
+    border: 1pt solid grey;
+    flex-shrink: 0;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+
+.lq-UnMarkedQuizzes-quizupper
+{
+    display: flex;
+    flex-direction: column;
+    height: 15vh;
+    align-items: end;
+    padding-right: 0.5vw;
+    padding-top: 1vh;
+    background-image: url(../../assets/Lecturer_Images/HtmlBackground.png);
+    background-size: contain;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.lq-UnMarkedQuizzes-quizlower
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.lq-UnMarkedQuizzes-quizchaptername
+{
+    text-align: left;
+    padding-left: 0.5vw;
+    color: black;
+    font-size: 2.5vh;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.lq-UnMarkedQuizzes-quizAuthor
+{
+    text-align: left;
+    color: #A6A6A6;
+    padding-left: 0.5vw;
+}
+
+.lq-UnMarkedQuizzes-QuiznoQuestions
+{
+    text-align: right;
+    color: #A6A6A6;
+    padding-right: 0.5vw;
+}
+
+.img1
+{
+    display: inline;
+    color: black;
+    height: 4vh;
+    width: 4vw;
+}
+
+.ld-dropdown
+{
+    position: relative;
+    height: auto;
+    margin: -1vh 13vw 1vh 1vw;
+}
+
+.ld-dropdown-content 
+{
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    align-self: center;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    border-radius: 2vh;
+    z-index: 1;
+    border: 1pt solid lightgrey;
+    
+}
+
+.ld-dropdown-content a, .ld-dropdown-content a:hover
+{
+    color: black;
+    padding: 1vh 1vw 1vh 0.4vw;
+    text-decoration: none;
+    display: block;
+    
+}
+
+/* Show the dropdown menu on hover */
+.ld-dropdown:hover .ld-dropdown-content {display: block;}
+
+.closing
+{
+    display: flex;
+    flex-direction: column;
+    padding: 1vh;
+    gap: 0.1vw;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+.ld-link1
+{
+    display: flex;
+    flex-direction: row;
+    background-color:#68E475;
+    font-family: 'Times New Roman', Times, serif;
+    border-radius: 2vh;
+    border: 1pt solid grey;
+}
+
+.ld-link1 span, .ld-link2 span, .ld-link3 span
+{
+    display: flex;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1rem;
+    padding-top: 0vh;
+    margin: 0.7vh 0.5vw 0vh 0.5vw;
+}
+
+.ld-link1 .ld-img
+{
+    height: 2.5vh;
+    width: 1.5vw;
+    margin: 1vh 0vw 0vh 1vw;
+    color: black;
+}
+
+.ld-link2
+{
+    display: flex;
+    flex-direction: row;
+    background-color: #E1E468;
+    font-family: 'Times New Roman', Times, serif;
+    border-radius: 2vh;
+
+    border: 1pt solid grey;
+}
+
+.ld-img2
+{
+    padding-right: 0.7vw;
+    padding-left: 0.8vw;
+}
+
+.ld-link3
+{
+    display: flex;
+    flex-direction: row;
+    background-color: #e14b4b;
+    font-family: 'Times New Roman', Times, serif;
+    border-radius: 2vh;
+    border: 1pt solid grey;
+}
+
+.ld-link3 .ld-img
+{
+    height: 2.5vh;
+    width: 1.5vw;
+    margin: 1vh 0vw 0vh 1vw;
+    color: black;
+}
+
+.ld-word
+{
+    font-family:'Times New Roman', Times, serif;
+}
+
+.clicker{
+    width:1vw;
+}

@@ -1,8 +1,27 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import LecturerAssignDueDate from '../../Components/Lecturer/LecturerAssignDueDate';
+import { Link } from 'react-router-dom'
+import { MdAssignmentAdd } from "react-icons/md";
+import { FiEdit } from "react-icons/fi";
+import { IoMdTrash } from "react-icons/io";
+import { HiDotsHorizontal } from "react-icons/hi";
 import '../../Css/Lecturer/LecturerQuizBank.css';
 
 export default function LecturerQuizBank() {
+  
+  const [showPopup, setShowPopup] = useState(false); // State to control popup visibility
+
+  const handleConfirmClick = (event) => {
+    event.preventDefault(); // Prevent form submission
+    setShowPopup(true); // Show the popup
+  };
+
+  const handleClosePopup = () => {
+    setShowPopup(false); // Close the popup
+  };
+
+
   return (
     <>
       <div className="lqb-holder">
@@ -33,7 +52,24 @@ export default function LecturerQuizBank() {
 
                 <Link to={'/Lecturer/Quiz_Bank/View_Written_Question_Set'}>
                   <div className="lqb-quizzes">
-                    <div className="lqb-quizupper"/>    
+                    <div className="lqb-quizupper">  
+                      <div class="dropdown">
+                          <HiDotsHorizontal className='img1'/>
+                          <div class="dropdown-content">
+                            <div className="closing">
+                              <div className="link1" onClick={handleConfirmClick}>
+                                <div><MdAssignmentAdd className='img'/></div><div className='word'><a>Assign Quiz</a></div>
+                              </div>
+                              <div className="link2">
+                                <div><FiEdit className='img'/></div><div className='word'><a>Edit Quiz</a></div>
+                              </div>
+                              <div className="link3">
+                                <div><IoMdTrash className='img'/></div><div className='word'><a>Delete Quiz</a></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     <div className="lqb-quizlower">
                       <div className="lqb-quizchaptername">
                         Introduction to Internet
@@ -55,6 +91,8 @@ export default function LecturerQuizBank() {
           </div>
         </div>
       </div>
+      {showPopup && <LecturerAssignDueDate onClose={handleClosePopup} />} {/* Show popup conditionally */}
+
     </>
   );
 }

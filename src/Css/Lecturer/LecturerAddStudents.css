@@ -1,0 +1,253 @@
+body {
+    background-image: url(../../lassets/Admin_Images/MainpageBackground2.png);
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+}
+
+@font-face {
+    font-family: 'Caveat';
+    src: url(../../Fonts/Caveat-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: 'Zootopia';
+    src: url(../../Fonts/ZootopiaJposterscomar-qJ80.ttf);
+}
+
+@font-face {
+    font-family: 'Pacifico';
+    src: url(../../Fonts/Pacifico-Regular.ttf);
+}
+
+.las-holder
+{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: slideUp 1s forwards;
+}
+
+@keyframes slideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.las-container
+{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    height: 70vh;
+    width: 70vw;
+
+}
+
+.las-upper
+{
+    display: flex;
+    flex-direction: row;
+    background-color: #ffff ;
+    position: relative;
+    border: 0.6px solid #919191;
+    border-radius: 25px;
+    height: 3vh;
+    gap: 10vh;
+    width: 69vw;
+    padding: 1.2vh 0vw 1vh 1vw;
+}
+
+.las-upper input, .las-upper input:hover
+{
+    height: 3vh;
+    width: 30vw;
+    font-size: 1rem;
+    background-color: #ffff;
+    color:black;
+    border: none;
+    outline-style: none;
+}
+
+.las-upper img
+{
+    height: 20px;
+    width: 20px;
+}
+
+
+.las-lecturercontainer
+{
+    display: flex;
+    flex-direction: column;
+    /* Rectangle 68 */
+
+    position: relative;
+    width: 70vw;
+    top: 1.5vh;
+    height: 70vh;
+
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    padding-bottom: 2.7vh;
+
+}
+
+.las-tags
+{
+    display: flex;
+    flex-direction: row;
+    color: black;
+    height: 7vh;
+    font-size: 1.15rem;
+    font-family: 'Times New Roman', Times, serif;
+    padding-left: 5vh;
+    width: 67.3vw;
+    box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.las-tag1
+{
+    width: 10vw;
+    text-align: left;
+}
+
+.las-tag2
+{
+    width: 12vw;
+    text-align: left;
+}
+
+
+
+.las-tag4
+{
+    width: 17vw;
+    text-align: left;
+}
+
+.las-tag5
+{
+    width: 17vw;
+    text-align: left;
+}
+
+.las-tag6
+{
+    width: 11.7vw;
+    text-align: left;
+}
+
+
+
+.las-lecturerbox
+{
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: 60vh;
+    color: black;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    white-space: nowrap;
+    scrollbar-color: lightgrey white;
+}
+
+.las-box
+{
+    display: flex;
+    flex-direction: row;
+    height: 6.5vh;
+    box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.25);
+
+}
+
+.las-ID
+{
+    text-align: left;
+    padding-left: 2.3vw;
+
+    width: 10vw;
+
+}
+
+.las-name
+{
+    text-align: left;
+    width: 12vw;
+}
+
+
+.las-email
+{
+    text-align: left;
+    width: 17vw;
+}
+
+.las-programme
+{
+    text-align: left;
+    width: 17vw;
+}
+
+.las-faculty
+{
+    text-align: left; 
+    width: 6vw;
+
+}
+
+
+.las-btn 
+{
+
+    background-color: #4DD964;
+    font-size: 13px;
+    width: auto;
+    height: auto;
+    color: white;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    text-align: justify;
+    justify-self: center;
+    margin: auto;
+    box-shadow: none;
+    outline: none;
+    border: none;
+}
+
+.las-btn:focus
+{
+
+    background-color: #4DD964;
+    font-size: 13px;
+    width: auto;
+    height: auto;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    text-align: justify;
+    justify-self: center;
+    margin: auto;
+    box-shadow: none;
+    outline: none;
+    border: none;
+}
+
+.plussign
+{
+    height: 1.9vh;
+    width: 1vw;
+    margin: auto;
+}
+
+
+
+

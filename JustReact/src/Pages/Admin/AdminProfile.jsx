@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react'
-import { Link } from 'react-router-dom'
 import { FaUserSecret } from "react-icons/fa";
 import ChangePassword from '../../Components/ChangePassword';
+
 import '../../Css/Admin/AdminProfile.css'
 
 export default function AdminProfile() {
@@ -59,7 +59,7 @@ export default function AdminProfile() {
                 <br />
                 <br />
                 <div onClick={handleImageClick}>
-                  { image ? <img src={image} alt="Lecturer"/> : < FaUserSecret id='img' alt="Lecturer Icon"/> }
+                  { image ? <img src={image} className='profile-image' alt="Lecturer"/> : < FaUserSecret id='img' alt="Lecturer Icon"/> }
                   <input type="file" ref={inputRef} onChange={handleImageChange} style={{display:'none'}} />
                 </div>
                 <br />

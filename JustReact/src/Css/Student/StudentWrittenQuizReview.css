@@ -1,0 +1,221 @@
+body {
+    background-image: url(../../lassets/Admin_Images/MainpageBackground2.png);
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+}
+
+@font-face {
+    font-family: 'Caveat';
+    src: url(../../Fonts/Caveat-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: 'Zootopia';
+    src: url(../../Fonts/ZootopiaJposterscomar-qJ80.ttf);
+}
+
+@font-face {
+    font-family: 'Pacifico';
+    src: url(../../Fonts/Pacifico-Regular.ttf);
+}
+
+.swqr-holder {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+
+.swqr-container {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+
+.swqr-rightside {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    position: absolute;
+    top: 8vh;
+    left: 25vw;
+    width: 75vw;
+    height: 92vh;
+    background-image: url(../../assets/Lecturer_Images/FromBackGround.png);
+    background-size: cover;
+    background-size: 180vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    white-space: nowrap;
+    scrollbar-color: lightgrey transparent;
+    opacity: 0;
+    transform: translateX(-5%);
+    animation: slideInFromLeft 1s forwards;
+}
+
+@keyframes slideInFromLeft {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+.swqr-questioncontainer {
+    display: flex;
+    flex-direction: column;
+    padding-top: 6vh;
+    padding-left: 5vw;
+    gap: 10vh;
+}
+
+.swqr-question {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 60vw;
+    height: 60vh;
+    background: #FFFFFF;
+    border-width: 1px 1px 1px 1px;
+    border-style: solid;
+    border-color: lightgrey;
+    border-radius: 7px 7px 7px 7px;
+}
+
+.swqr-questionNo {
+    color: black;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    width: auto;
+    height: auto;
+    padding: 2vh;
+    gap: 0.4vw;
+    font-size: 2rem;
+    font-family: 'Times New Roman', Times, serif;
+    border-bottom: 1pt solid lightgrey;
+    padding-left: 3vw;
+}
+
+.questionName
+{
+    color: black;
+    padding-top: 0vh;
+    font-size: 2rem;
+    font-family: 'Times New Roman', Times, serif;
+    padding-left: 3vw;
+}
+
+.swqr-answers {
+    display: flex;
+    flex-direction: column;
+    padding: 0vh 1vw 0vh 3vw;
+}
+
+.swqr-Answer label{
+    display: flex;
+    padding: 1.4vh;
+    width: 35vw;
+    font-size: 1.5rem;
+    font-family: 'Times New Roman', Times, serif;
+    box-shadow: 1px 1px 5px 0.4px black;
+}
+
+.swqr-answerdiv {
+    display: flex;
+    flex-direction: row;
+    padding: 4vh;
+    gap: 10vh;
+}
+
+.swqr-textarea
+{
+    position: relative;
+    width: 908px;
+    height: 298px;
+    margin-top: 3vh;
+    padding: 4vh;
+    background: #FFFFFF;
+    border: 1px solid #CBCBCB;
+    font-family: 'Times New Roman', Times, serif;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    color: black;
+    font-size: 1.8rem;
+
+}
+
+.swqr-feedback
+{
+    position: absolute;
+    width: 874px;
+    height: 4.5vh;
+    padding: 2vh;
+    font-size: 1.5rem;
+    top: 62vh;
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+    background: #FFFFFF;
+    border: 1px solid #CBCBCB;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    text-align: left;
+
+}
+
+.swqr-TotalMarks
+{
+    display: flex;
+    flex-direction: row;
+    gap: 1vh;
+    position: absolute;
+    bottom: 0%;
+    right: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+
+.swqr-ProvidedMarks
+{
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    bottom: -16.7%;
+    color: black;
+    right: 10px;
+    margin: auto;
+    width: 6vw;
+    height: 7vh;
+    font-size: 1.2rem;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    background: #FFFFFF;
+    border: 1px solid #CBCBCB;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+}
+
+
+.swqr-AllotedMarks
+{
+    font-size: 2rem;
+    font-family: 'Times New Roman', Times, serif;
+    margin: 1vh 0.9vw 1vh 0vw;
+}
+
+.swqr-TotalQuestionMarks
+{
+    font-size: 2rem;
+    font-family: 'Times New Roman', Times, serif;
+    margin: 1vh 0.5vw 1vh 0vw;
+}
+
+.swqr-slash
+{
+    font-size: 2rem;
+    margin: 1.2vh 0.2vw 1vh 0vw;
+}

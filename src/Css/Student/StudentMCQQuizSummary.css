@@ -1,0 +1,374 @@
+@font-face {
+    font-family: "Zootopia";
+    src: url(../../Fonts/ZootopiaJposterscomar-qJ80.ttf);
+}
+
+@font-face {
+    font-family: "Pacifico";
+    src: url(../../Fonts/Pacifico-Regular.ttf);
+}
+
+.sqs-Quizholder {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    left: 0vw;
+    top: 0vh;
+    background-color: #484848;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+}
+  
+.sqs-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    animation: slide-in 1s ease-out;
+}
+
+@keyframes slide-in {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.sqs-upperheader {
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+}
+
+.sqs-quizlogo {
+    font-family: Zootopia;
+    color: coral;
+    font-size: 3rem;
+    position: relative;
+    justify-self: center;;
+
+}
+
+.sqs-summarybox {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-self: center;
+    width: 60vw;
+    height: 84vh;
+    top: 1vh;
+    border-radius: 50px;
+    border: 1px solid #473f3f;
+    filter: drop-shadow(0px 4px 100px rgba(0, 0, 0, 0.64));
+    background-image: url(../../assets/Student_Images/FromBackGround.png);
+    background-size: cover;
+    opacity: 0.8;
+}
+
+.sqs-summaryheader {
+    position: relative;
+    width: 190px;
+    height: 41px;
+    left: 24vw;
+    top: 1vh;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 45px;
+    line-height: 41px;
+    color: #000000;
+}
+
+.sqs-StudentIDName {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    left: 18.5vw;
+    top: 1vw;
+    width: 30vw;
+}
+
+.sqs-ProfilePic {
+    font-size: 6rem;
+    margin: 0vh 1vw;
+    color: black;
+}
+
+.sqs-StudentName {
+    margin: 4vh 1vw;
+    font-size: 2.5rem;
+    font-family: 'Times New Roman', Times, serif;
+    color: black;
+}
+
+.sqs-subjectname {
+    position: relative;
+    width: 352px;
+    height: 46px;
+    left: 18.5vw;
+    top: 1vh;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 38px;
+    line-height: 46px;
+    display: flex;
+    letter-spacing: 0.03em;
+    color: #000000;
+}
+
+.sqs-topicname {
+    position: relative;
+    width: 258px;
+    height: 27px;
+    left: 1vw;
+    top: 4.3vh;
+    justify-content: center;
+    justify-items: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 27px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.03em;
+
+    color: #000000;
+}
+
+.sqs-typeofquiz {
+    position: relative;
+    width: 258px;
+    height: 27px;
+    left: 42.5vw;
+    justify-content: center;
+    top: 1vh;
+    justify-self: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 27px;
+    display: flex;
+    align-items: center;
+
+    letter-spacing: 0.03em;
+    color: #000000;
+}
+
+.sqs-scoreslider {
+    align-items: center;
+    position: relative;
+    top: -32vh;
+    left: 3vw;
+    align-self: left;
+    height: 8vh;
+    stroke-width: 1vh;
+}
+
+.sqs-word {
+    position: relative;
+    width: 79px;
+    height: 28px;
+    left: 7.5vw;
+    top: -32vh;
+    font-family: 'Comfortaa';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.03em;
+    color: #868585;
+}
+
+.sqs-quizsummary {
+    display: flex;
+    flex-direction: column;
+    color: black;
+}
+
+.sqs-quizsummaryheader {
+    position: relative;
+    width: 241px;
+    height: 30px;
+    left: 24vw;
+    top: -9vh;
+    font-family:'Times New Roman', Times, serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.03em;
+    color: #000000;
+}
+
+.sqs-quizsummarycontent {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    width: 50vw;
+    height: 20vh;
+    left: 5.5vw;
+    top: -7vh;
+    gap: 10vh;
+}
+
+.sqs-quizsummarycontent1 {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5vh;
+    font-family: 'League Spartan';
+    font-style: normal;
+    font-size: 30px;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: #000000;
+    position: relative;
+    width: 13vw;
+    height: 15vh;
+    background: #68E475;
+    border: 1px solid #CBCBCB;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    padding-top: 2vh;
+}
+
+.sqs-quizsummarycontent2 {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5vh;
+    font-family: 'League Spartan';
+    font-style: normal;
+    font-size: 30px;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: #000000;
+    position: relative;
+    width: 13vw;
+    height: 15vh;
+    background: #FF7B71;
+    border: 1px solid #CBCBCB;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    padding-top: 2vh;
+}
+
+.sqs-quizsummarycontent3 {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5vh;
+    font-family: 'League Spartan';
+    font-style: normal;
+    font-size: 30px;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: #000000;
+    position: relative;
+    width: 13vw;
+    height: 15vh;
+    background: #71DDFF;
+    border: 1px solid #CBCBCB;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    padding-top: 2vh;
+}
+
+.sqs-IncorrectIcon {
+    color: red;
+    font-size: 40px;
+    margin-top: -0.5vh;
+}
+
+.sqs-CorrectIcon {
+    color: green;
+    font-size: 45px;
+    margin-top: -0.6vh;
+}
+
+.sqs-TimeIcon {
+    font-size: 45px;
+    margin-top: -0.6vh;
+}
+
+.sqs-QuizSubmitted
+{
+    position: relative;
+    bottom: 6vh;
+    font-size: 2rem;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+.sqs-Exitbtn
+{
+    width: 10vw;
+    height: 6vh;
+    color: white;
+    font-size: 1.2rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: black;
+    position: relative;
+    border-radius: 5px;
+    justify-content: center;
+    justify-self: center;
+    align-self: center;
+    align-items: center;
+    bottom: 2vh;
+    outline: none;
+    border: none;
+}
+
+.sqs-Exitbtn:hover, .swqs-Exitbtn:focus
+{
+    outline: none;
+    border: none;
+}
+
+
+/* HTML: <div class="loader"></div> */
+.sd-loader {
+    width: 50px;
+    aspect-ratio: 1;
+    display: grid;
+    border: 4px solid #0000;
+    border-radius: 50%;
+    border-right-color: coral;
+    animation: l15 1s infinite linear;
+  }
+  .sd-loader::before,
+  .sd-loader::after {    
+    content: "";
+    grid-area: 1/1;
+    margin: 2px;
+    border: inherit;
+    border-radius: 50%;
+    animation: l15 2s infinite;
+  }
+  .sd-loader::after {
+    margin: 8px;
+    animation-duration: 3s;
+  }
+  @keyframes l15{ 
+    100%{transform: rotate(1turn)}
+  }

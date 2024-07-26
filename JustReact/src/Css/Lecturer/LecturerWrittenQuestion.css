@@ -54,8 +54,16 @@ body {
     overflow-x: hidden;
     white-space: nowrap;
     scrollbar-color: lightgrey transparent;
+    opacity: 0;
+    transform: translateX(-1%);
+    animation: slideInFromLeft 1s forwards;
+}
 
-
+@keyframes slideInFromLeft {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 .lwq-questioncontainer
@@ -163,7 +171,7 @@ body {
     display: flex;
     position: relative;
     padding: auto;
-    margin: -10vh 30vw;
+    margin: -7vh 30vw;
 
 }
 
@@ -191,4 +199,17 @@ body {
     border: 4px solid #FC9F6A;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)) drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     border-radius: 7px;
+    outline: none;
+}
+
+
+.lwq-lower button:focus
+{
+    outline: none;
+}
+
+.delbtn
+{
+    margin: 1vh 1vw 1vh 44.9vw;
+    color: red;
 }

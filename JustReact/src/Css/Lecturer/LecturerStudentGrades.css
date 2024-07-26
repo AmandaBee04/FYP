@@ -49,7 +49,16 @@ body {
     background-size: 180vh;
     background-position: center;
     background-repeat: no-repeat;
+    opacity: 0;
+    transform: translateX(-5%);
+    animation: slideInFromLeft 1s forwards;
+}
 
+@keyframes slideInFromLeft {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 .lsg-rightside h2
@@ -93,13 +102,13 @@ body {
 .lsg-tag1
 {
     padding-left: 1.5vw;
-    width: 8vw;
+    width: 10vw;
     display: flex;
 }
 
 .lsg-tag2
 {
-    width: 10vw;
+    width: 13vw;
     display: flex;
 }
 
@@ -117,14 +126,22 @@ body {
 
 .lsg-tag5
 {
-    width: 7vw;
+    width: 10vw;
     display: flex;
 }
 
 .lsg-tag6
 {
-    width: auto;
+    width: 11vw;
     display: flex;
+}
+
+.lsg-tag7
+{
+    font-size: 25px;
+    display: flex;
+    margin: auto;
+    color: black;
 }
 
 .lsg-lower-row
@@ -153,14 +170,14 @@ body {
 .lsg-studentid
 {
     padding-left: 1.5vw;
-    width: 8vw;
+    width: 10vw;
     display: flex;;
 }
 
 
 .lsg-studentname
 {
-    width: 10vw;
+    width: 13vw;
     display: flex;
 }
 
@@ -178,7 +195,7 @@ body {
 
 .lsg-studentfaculty
 {
-    width: 7vw;
+    width: 10vw;
     display: flex;
 }
 
@@ -186,13 +203,22 @@ body {
 {
     width: auto;
     display: flex;
-    padding-right: 3vw;
+    padding-right: 6.5vw;
 }
 
 .lsg-view 
 {
     font-size: 25px;
     display: flex;
+    margin: auto;
+
+}
+
+.lsg-delete
+{
+    font-size: 25px;
+    display: flex;
+    color: red;
     margin: auto;
 
 }

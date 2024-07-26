@@ -66,7 +66,16 @@ body {
     overflow-x: hidden;
     white-space: nowrap;
     scrollbar-color: lightgrey transparent;
+    opacity: 0;
+    transform: translateX(-100%);
+    animation: slideInFromLeft 1s forwards;
+}
 
+@keyframes slideInFromLeft {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 
@@ -299,6 +308,16 @@ body {
     top: 8.2vh;
     background: #f4eded;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+    opacity: 0;
+    transform: translateX(0%);
+    animation: slideInFromLeft 1s forwards;
+}
+
+@keyframes slideInFromLeft {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 .lq-rightside-header
@@ -595,10 +614,17 @@ body {
 
 .img1
 {
+    display: inline;
     color: black;
     height: 4vh;
     width: 4vw;
-    margin: -0.5vh -0.5vw 0vh 0vw;
+}
+
+.dropdown
+{
+    position: relative;
+    height: auto;
+    margin: -1vh 10vw 1vh 1vw;
 }
 
 .dropdown-content 
@@ -608,9 +634,10 @@ body {
     background-color: #f1f1f1;
     align-self: center;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
     border-radius: 2vh;
+    z-index: 1;
     border: 1pt solid lightgrey;
+    
 }
 
 .dropdown-content a, .dropdown-content a:hover
@@ -619,6 +646,7 @@ body {
     padding: 1vh 1vw 1vh 0.4vw;
     text-decoration: none;
     display: block;
+    
 }
 
 /* Show the dropdown menu on hover */

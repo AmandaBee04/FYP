@@ -1,0 +1,278 @@
+body {
+    background-image: url(../../assets/Admin_Images/MainpageBackground2.png);
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+}
+
+@font-face {
+    font-family: 'Caveat';
+    src: url(../../Fonts/Caveat-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: 'Zootopia';
+    src: url(../../Fonts/ZootopiaJposterscomar-qJ80.ttf);
+}
+
+@font-face {
+    font-family: 'Pacifico';
+    src: url(../../Fonts/Pacifico-Regular.ttf);
+}
+
+.al-holder
+{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: slideUp 1s forwards;
+}
+
+@keyframes slideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.al-holder h1
+{
+    display: flex;
+    color:black;
+    font-family: Caveat;
+    padding-bottom: 1.5vh;
+    margin-top: -5%;
+}
+
+.al-container
+{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    position: relative;
+    
+    height: 60vh;
+    width: 70vw;
+
+}
+
+.al-upper
+{
+    display: flex;
+    flex-direction: row;
+    background-color: #ffff ;
+    position: relative;
+    border: 0.6px solid #919191;
+    border-radius: 25px;
+    height: 3vh;
+    gap: 7vh;
+    width: 69vw;
+    padding: 1.2vh 0vw 1vh 1vw;
+}
+
+.al-upper input, .al-upper input:hover
+{
+    height: 3vh;
+    width: 30vw;
+    font-size: 1rem;
+    background-color: #ffff;
+    color:black;
+    outline-style: none;
+    border: none;
+}
+
+.al-upper .img
+{   color: black;
+    height: 20px;
+    width: 20px;
+}
+
+
+.al-lecturercontainer
+{
+    display: flex;
+    flex-direction: column;
+    /* Rectangle 68 */
+
+    position: relative;
+    width: 70vw;
+    top: 1.5vh;
+    height: 70vh;
+
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    padding-bottom: 2.7vh;
+
+}
+
+.al-tags
+{
+    display: flex;
+    flex-direction: row;
+    color: black;
+    height: 7vh;
+    font-size: 1.1rem;
+    font-family: 'Times New Roman', Times, serif;
+    padding-left: 5vh;
+    width: 67.3vw;
+    box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.al-tag2
+{
+    width: 20vw;
+}
+
+.al-tag3
+{
+    width: 10.7vw;
+}
+
+.al-tag4
+{
+    width: 5.9vw;
+}
+
+
+.al-lecturerbox
+{
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: 49vh;
+    color: black;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    white-space: nowrap;
+    scrollbar-color: lightgrey white;
+}
+
+.al-box
+{
+    display: flex;
+    flex-direction: row;
+    height: 6.5vh;
+    box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.25);
+}
+
+.al-ID
+{
+    display: flex;
+    padding-left: 2.7vw;
+
+    width: 14vw;
+}
+
+.al-name
+{
+    display: flex;
+
+    width: 15.3vw;
+}
+
+.al-password
+{
+    display: flex;
+    padding-left: 1.3vw;
+    width: 7vw;
+}
+
+.al-email
+{
+    display: flex;
+
+    width: 31vw;
+}
+
+.al-edit
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 2vw;
+
+}
+
+.al-edit #img
+{
+    height: 35px;
+    width: 25px;
+    margin-top: 1vh;
+    border: none;
+    color: black;
+}
+
+.al-delete
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 1vw;
+}
+
+.al-delete #img
+{
+    height: 25px;
+    width: 20px;
+    color:rgb(150, 21, 21);
+    border: none;
+}
+
+.al-btn
+{
+    display: flex;
+    color: black;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border: none;
+    outline: none;
+    position: absolute;
+    bottom: 7%;
+    align-items: flex-start;
+    align-self: flex-start;
+    margin: auto;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: slideUp 1s forwards;
+}
+
+@keyframes slideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.al-btn button
+{
+    background-color: black;
+    color: white;
+    border: none;
+    outline: none;
+}
+
+
+.al-btn button:focus
+{
+    background-color: black;
+    color: white;
+    border: none;
+    outline: none;
+}
+
+.al-btn a, .al-btn a:hover
+{
+    color: white;
+}
+
+.al-btn button .adduser
+{
+    position: relative;
+    padding-right: 0.5vw;
+    padding-top: 0.2vh;
+    left: 0%;
+}

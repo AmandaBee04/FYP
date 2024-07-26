@@ -43,7 +43,7 @@ export default function StudentStartQuiz() {
             </div>
 
             <div className="ssq-lower">
-              <Link to={'Quiz'}>
+              <Link to={'Written_Quiz'}>
                 <button>
                   Start Quiz
                 </button>

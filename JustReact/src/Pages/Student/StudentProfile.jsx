@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react'
+import { Link } from 'react-router-dom';
 import ChangePassword from '../../Components/ChangePassword';
 import { FaUserGraduate } from "react-icons/fa";
 
@@ -46,7 +47,7 @@ export default function StudentProfile() {
               <div className="sp-leftcolumn-up">
                 <br />
                 <div onClick={handleImageClick}>
-                  {image ? <img src={image} alt="Student" /> : <FaUserGraduate className='StuIcon' alt="Student Icon" />}
+                  {image ? <img src={image} className='profile-image' alt="Student" /> : <FaUserGraduate className='StuIcon' id='img' alt="Student Icon" />}
                   <input type="file" ref={inputRef} onChange={handleImageChange} style={{ display: 'none' }} />
                 </div>
                 <span>Mr.Mike Oxmall</span>
@@ -73,10 +74,26 @@ export default function StudentProfile() {
                 <div className="sp-lowerlowerright">
                   <h1>Enrolled Subjects : </h1>
                   <span className="sp-linkstosubjects">
-                    <div>sdasds</div>
-                    <div>sdasds</div>
-                    <div>sdasds</div>
-                    <div>sdasds</div>
+                    <div>
+                      <Link to={'Subject_Details'} >
+                      sdasds
+                      </Link>
+                    </div>
+                    <div>
+                      <Link to={'Subject_Details'} >
+                      sdasds
+                      </Link>
+                    </div>
+                    <div>
+                      <Link to={'Subject_Details'} >
+                      sdasds
+                      </Link>
+                    </div>
+                    <div>
+                      <Link to={'Subject_Details'} >
+                      sdasds
+                      </Link>
+                    </div>
                   </span>
                 </div>
               </div>

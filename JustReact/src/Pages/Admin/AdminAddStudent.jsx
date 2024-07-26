@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import AdminAddStudentConfirmation from '../../Components/Admin/AdminAddStudentConfirmation'; // Ensure the import path is correct
+import AdminAddStudentReject from '../../Components/Admin/AdminAddStudentReject';
 
 import '../../Css/Admin/AdminAddStudent.css';
 
@@ -70,7 +71,7 @@ export default function AdminAddStudent() {
           </div>
         </form>
       </div>
-      {showPopup && <AdminAddStudentConfirmation onClose={handleClosePopup} />} {/* Show popup conditionally */}
+      {showPopup && <AdminAddStudentReject onClose={handleClosePopup} />} {/* Show popup conditionally */}
 
     </>
   );

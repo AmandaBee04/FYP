@@ -1,63 +1,59 @@
-import React, { useState } from 'react';
-import Sloth from '../../assets/Student_Images/Sloth.png';
-import '../../Css/Student/StudentQuiz.css';
+import React, { useState, useRef, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import '../../Css/Admin/AdminEditSubjectReject.css';
+import { FaThumbsUp } from "react-icons/fa";
 
-export default function StudentQuiz() {
-  const [expandedBox, setExpandedBox] = useState(null);
+export default function AdminEditSubjectReject({ onClose }) {
 
-  const handleExpandClick = (boxNumber) => {
-    setExpandedBox(prevBox => (prevBox === boxNumber ? null : boxNumber));
+  const [showThumbsUp, setShowThumbsUp] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const thumbsUpTimeoutRef = useRef(null);
+
+  useEffect(() => {
+    return () => {
+      clearTimeout(thumbsUpTimeoutRef.current);
+    };
+  }, []);
+
+  const handleMouseEnterYes = () => {
+    thumbsUpTimeoutRef.current = setTimeout(() => {
+      setShowThumbsUp(true);
+    }, 500); // 500ms delay before showing the thumbs up icon
+  };
+
+  const handleMouseLeaveYes = () => {
+    clearTimeout(thumbsUpTimeoutRef.current);
+    setShowThumbsUp(false);
+  };
+
+  const handleClose = () => {
+    setIsVisible(false);
+    setTimeout(() => {
+      onClose();
+    }, 300); // Match this duration with the CSS transition duration
   };
 
   return (
-    <div className="sqp-Quizholder">
-      <div className="sqp-container">
-        <div className="sqp-upperheader">
-          <div className="sqp-numberofquestions">
-            <div className="sqp-questionNo">
-              <span>1</span>
+    <>
+      <div className={`aesr-popup-overlay ${isVisible ? 'aesr-show-popup' : 'aesr-hide-popup'}`}>
+        <div className={`aesr-popup ${isVisible ? 'popup-enter' : 'popup-exit'}`}>
+          <button className="aesr-close" onClick={handleClose}>X</button>
+          <h2>Subject Not Edited. Please Try Again!</h2>
+          <div className="aesr-buttons">
+            <div className="aesr-yes-btn">
+              <Link to={'/Admin/Subject/Edit_Subject'}>
+                <button
+                  onMouseEnter={handleMouseEnterYes}
+                  onMouseLeave={handleMouseLeaveYes}
+                  onClick={handleClose} // Close the popup when Confirm is clicked 
+                >
+                  {showThumbsUp ? <FaThumbsUp /> : 'Confirm'}
+                </button>
+              </Link>
             </div>
-            <div className='sqp-midquestionno'>
-              <span>of</span>
-            </div>
-            <div className="sqp-totalquestions">
-              <label>10</label>
-            </div>
-          </div>
-          <div className="sqp-quizlogo">
-            Quiztopia
-          </div>
-          <div className="timer">
-            <div className="sqp-timer">
-              sgfgdf
-            </div>
-          </div>
-        </div>
-        <div className="sqp-lowerupper">
-          <div className="sqp-QuizTopic">
-            <label>Propositional Logic</label>
-            <img src={Sloth} className='Weirdassimage' />
-          </div>
-        </div>
-        <div className="sqp-AnsweringPart">
-          <div className="sqp-leftside">
-            <div className="sqp-Question">
-              <label>Hide Yo Wifes</label>
-            </div>
-          </div>
-          <div className="sqp-rightside">
-            {['AnswerBox1', 'AnswerBox2', 'AnswerBox3', 'AnswerBox4'].map((box, index) => (
-              <div
-                key={index}
-                className={`sqp-AnswerBox sqp-${box} ${expandedBox === index + 1 ? 'expanded' : ''}`}
-                onClick={() => handleExpandClick(index + 1)}
-              >
-                <label>Hide Yo Wifes</label>
-              </div>
-            ))}
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }

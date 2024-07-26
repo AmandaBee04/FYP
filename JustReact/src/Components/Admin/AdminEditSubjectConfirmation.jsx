@@ -6,6 +6,7 @@ import { FaThumbsUp } from "react-icons/fa";
 export default function AdminEditSubjectConfirmation({ onClose }) {
 
   const [showThumbsUp, setShowThumbsUp] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
   const thumbsUpTimeoutRef = useRef(null);
 
   const handleMouseEnterYes = () => {
@@ -19,11 +20,18 @@ export default function AdminEditSubjectConfirmation({ onClose }) {
     setShowThumbsUp(false);
   };
 
+  const handleClose = () => {
+    setIsVisible(false);
+    setTimeout(() => {
+      onClose();
+    }, 300); // Match this duration with the CSS transition duration
+  };
+
   return (
     <>
-      <div className="aeasc-popup-overlay aeasc-show-popup">
-        <div className="aeasc-popup">
-          <button className="aeasc-close" onClick={onClose}>X</button>
+      <div className={`aeasc-popup-overlay ${isVisible ? 'aeasc-show-popup' : 'aeasc-hide-popup'}`}>
+        <div className={`aeasc-popup ${isVisible ? 'popup-enter' : 'popup-exit'}`}>
+          <button className="aeasc-close" onClick={handleClose}>X</button>
           <h2>Subject Successfully Edited!</h2>
           <div className="aeasc-buttons">
             <div className="aeasc-yes-btn">
@@ -31,7 +39,7 @@ export default function AdminEditSubjectConfirmation({ onClose }) {
                 <button
                   onMouseEnter={handleMouseEnterYes}
                   onMouseLeave={handleMouseLeaveYes}
-                  onClick={onClose} // Close the popup when Confirm is clicked 
+                  onClick={handleClose} // Close the popup when Confirm is clicked 
                 >
                   {showThumbsUp ? <FaThumbsUp /> : 'Confirm'}
                 </button>

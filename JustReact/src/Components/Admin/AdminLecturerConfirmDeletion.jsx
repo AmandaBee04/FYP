@@ -6,6 +6,7 @@ import { FaThumbsDown, FaThumbsUp } from "react-icons/fa";
 export default function AdminLecturerConfirmDeletion({ onClose }) {
   const [showThumbsUp, setShowThumbsUp] = useState(false);
   const [showThumbsDown, setShowThumbsDown] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
   const thumbsUpTimeoutRef = useRef(null);
   const thumbsDownTimeoutRef = useRef(null);
 
@@ -31,11 +32,18 @@ export default function AdminLecturerConfirmDeletion({ onClose }) {
     setShowThumbsDown(false);
   };
 
+  const handleClose = () => {
+    setIsVisible(false);
+    setTimeout(() => {
+      onClose();
+    }, 300); // Match this duration with the CSS transition duration
+  };
+
   return (
     <>
-      <div className="alcd-popup-overlay alcd-show-popup">
-        <div className="alcd-popup">
-          <button className="alcd-close" onClick={onClose}>X</button>
+      <div className={`alcd-popup-overlay ${isVisible ? 'alcd-show-popup' : 'alcd-hide-popup'}`}>
+        <div className={`alcd-popup ${isVisible ? 'popup-enter' : 'popup-exit'}`}>
+          <button className="alcd-close" onClick={handleClose}>X</button>
           <h2>Confirm Delete?</h2>
           <div className="alcd-buttons">
             <div className="alcd-yes-btn">

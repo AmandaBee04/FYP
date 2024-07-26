@@ -25,6 +25,16 @@ body {
     display: flex;
     flex-direction: column;
     align-self: center;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: slideUp 1s forwards;
+}
+
+@keyframes slideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .ass-holder h1
@@ -32,10 +42,10 @@ body {
     display: flex;
     color:black;
     font-family: Caveat;
-    align-items: center;
-    text-align: center;
-    align-content: center;
-    justify-content: center;
+
+
+    margin: auto;
+    margin-top: -5%;
     align-self: center;
     padding-bottom: 1.5vh;
 }
@@ -45,6 +55,7 @@ body {
     display: flex;
     flex-direction: column;
     align-self: center;
+    position: relative;
     height: 60vh;
     width: 70vw;
 
@@ -183,8 +194,8 @@ body {
 
 .ass-edit #img
 {
-    height: 2.8vh;
-    width: 1.3vw;
+    height: 35px;
+    width: 25px;
     border: none;
     color: black;
 }
@@ -199,8 +210,8 @@ body {
 
 .ass-delete #img
 {
-    height: 2.8vh;
-    width: 1.3vw;
+    height: 25px;
+    width: 20px;
     border: none;
     color:rgb(150, 21, 21);
 }
@@ -212,17 +223,21 @@ body {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     border: none;
     outline: none;
-    
+    position: absolute;
+    bottom: -20%;
+    align-items: flex-start;
+    align-self: flex-start;
+    margin: auto;
 }
 
 .ass-btn button
 {
-    
     background-color: black;
     color: white;
     border: none;
     outline: none;
 }
+
 
 
 .ass-btn button:focus
@@ -247,5 +262,6 @@ body {
     position: relative;
     padding-right: 0.5vw;
     padding-top: 0.2vh;
+    left: 0%;
 
 }

@@ -1,0 +1,316 @@
+body {
+    background-image: url(../../lassets/Admin_Images/MainpageBackground2.png);
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+}
+
+@font-face {
+    font-family: 'Caveat';
+    src: url(../../Fonts/Caveat-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: 'Zootopia';
+    src: url(../../Fonts/ZootopiaJposterscomar-qJ80.ttf);
+}
+
+@font-face {
+    font-family: 'Pacifico';
+    src: url(../../Fonts/Pacifico-Regular.ttf);
+}
+
+.lmcq-holder
+{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+
+.lmcq-container
+{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+
+
+.lmcq-rightside
+{
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    position: absolute;
+    top: 8vh;
+    left: 25vw;
+    width: 75vw;
+    height: 92vh;
+    background-image: url(../../assets/Lecturer_Images/FromBackGround.png);
+    background-size: cover;
+    background-size: 180vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    white-space: nowrap;
+    scrollbar-color: lightgrey transparent;
+    opacity: 0;
+    transform: translateX(-1%);
+    animation: slideInFromLeft 1s forwards;
+}
+
+@keyframes slideInFromLeft {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.lmcq-questioncontainer
+{
+    display: flex;
+    flex-direction: column;
+    padding-top: 6vh;
+    padding-left: 5vw;
+    gap: 10vh;
+
+}
+
+.lmcq-question
+{
+    display: flex;
+    flex-direction: column;
+
+    position: relative;
+    width: 60vw;
+    height: 70vh;
+
+
+    background: #FFFFFF;
+    border-width: 1px 1px 1px 1px;
+    border-style: solid;
+    border-color: lightgrey;
+    border-radius: 7px 7px 7px 7px;
+}
+
+.lmcq-questionNo
+{
+    color: black;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    width: auto;
+    height: auto;
+    padding: 2vh;
+    gap: 0.4vw;
+    font-size: 2rem;
+    font-family: 'Times New Roman', Times, serif;
+    border-bottom: 1pt solid lightgrey;
+    padding-left: 3vw;
+}
+
+.lmcq-questionNo input
+{
+    padding: 1vh;
+    color: black;
+    width: 35vw;
+    font-size: 1.3rem;
+    font-family: 'Times New Roman', Times, serif;
+    background: #FFFFFF;
+    border: 1px solid #CBCBCB;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    outline: none;
+
+}
+
+
+
+.Necromonicon
+{
+    margin: 1vh 1vw 1vh 9vw;
+    cursor: pointer;
+    color: red;
+}
+
+.lmcq-answers
+{
+    display: flex;
+    flex-direction: column;
+    padding: 2vh;
+}
+
+.lmcq-answerdiv
+{
+    display: flex;
+    flex-direction: row;
+    padding: 4vh;
+    gap: 10vh;
+}
+
+
+.Answer input
+{
+    height: 6vh;
+    width: 30vw;
+    background: #FFFFFF;
+    color: black;
+    display: flex;
+    border: 1px solid #CBCBCB;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    outline: none;
+    padding-left: 2vw;
+    font-size: 1.3rem;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.lmcq-solution
+{
+    display: flex;
+    position: absolute;
+    top: 15.8vh;
+    left: 44vw;
+}
+
+.lmcq-solution textarea
+{
+    width: 12vw;
+    height: 46vh;
+    padding: 2vh;
+    font-size: 1.2rem;
+    font-family: 'Times New Roman', Times, serif;
+    color: black;
+    background: #FFFFFF;
+    border: 1px solid #CBCBCB;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    outline: none;
+
+}
+
+
+
+
+.lmcq-lower
+{
+    display: flex;
+    position: relative;
+    padding: auto;
+    margin: 3vh 30vw;
+
+}
+
+.lmcq-lower button
+{
+    height: 7vh;
+    width: 15vw;
+    background-color: white;
+    color: #FC9F6A;
+    font-size: 1.3rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border: 4px solid #FC9F6A;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)) drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 7px;
+}
+
+.lmcq-lower button:hover
+{
+    height: 7vh;
+    width: 15vw;
+    background-color: white;
+    color: #FC9F6A;
+    font-size: 1.3rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border: 4px solid #FC9F6A;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)) drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 7px;
+}
+
+
+
+
+
+
+
+
+
+
+.container {
+    display: block;
+    position: relative;
+    padding-left: 45px;
+    width: 1vw;
+    margin-bottom: px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    
+  }
+  
+  /* Hide the browser's default checkbox */
+  .container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: 1.3vh;
+    left: 0;
+    height: 35px;
+    width: 35px;
+    background-color: #eee;
+    
+    border-radius: 25px;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .container:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  
+  /* When the checkbox is checked, add a blue background */
+  .container input:checked ~ .checkmark {
+    background-color: green;
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .container input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .container .checkmark:after {
+    left: 13px;
+    top: 10px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+ .lmcq-deletebtn
+ {
+    margin: auto;
+    padding-left: 7vw;
+    color: red;
+ }
+  

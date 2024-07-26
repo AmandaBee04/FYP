@@ -1,0 +1,263 @@
+body {
+    background-image: url(../../assets/Admin_Images/MainpageBackground2.png);
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+}
+
+@font-face {
+    font-family: 'Caveat';
+    src: url(../../Fonts/Caveat-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: 'Zootopia';
+    src: url(../../Fonts/ZootopiaJposterscomar-qJ80.ttf);
+}
+
+@font-face {
+    font-family: 'Pacifico';
+    src: url(../../Fonts/Pacifico-Regular.ttf);
+}
+
+h1
+{
+    display: flex;
+    color:black;
+    font-family: Caveat;
+    align-items: center;
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.ael-container
+{
+    display: flex;
+    flex-direction: column;
+    gap: 3vh;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: slideUp 1s forwards;
+}
+
+@keyframes slideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.ael-form
+{
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    padding: 4vh;
+    background-color: white;
+    height: 60vh;
+    width: 60vw;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 1vh;
+    gap: 0;
+
+}
+
+.ael-leftside
+{
+    display: flex;
+    flex-direction: column;
+    width: 15vw;
+}
+
+.ael-rightside
+{
+    display: flex;
+    flex-direction: column;
+    padding: 1.5vh;
+    width: 47vw;
+}
+
+.ael-label
+{
+    padding-bottom: 1.6vh;
+}
+
+.ael-inputs
+{
+    padding-left: 2vw;
+    padding-bottom: 3.5vh;
+}
+
+.ael-ID
+{
+    display: flex;
+    flex-direction: column;
+    font-size: 1.3rem;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 3vh 0vw 1vh 1vw;
+}
+
+.ael-i-ID
+{
+    display: flex;
+    background-color: white;
+    color: black;
+    padding-top: 0.7vh;
+    height: 5vh;
+    width: 42vw;
+    font-size: 1.5rem;
+    font-family: 'Times New Roman', Times, serif;
+    border: none;
+    outline: none;
+}
+
+.ael-i-ID:focus
+{
+    outline: none;
+}
+
+
+.ael-Name
+{
+    display: flex;
+    flex-direction: column;
+    font-size: 1.3rem;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 2vh;
+}
+
+.ael-i-Name
+{
+    display: flex;
+    background-color: white;
+    color: black;
+    padding-left: 1vw;
+    height: 5vh;
+    width: 43vw;
+    font-size: 1rem;
+    border-radius: 0.8vh;
+    border-style: solid;
+    border-color: #D1D1D1;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
+    outline: none;
+}
+
+.ael-i-Name:focus
+{
+    outline: none;
+}
+
+.ael-Email
+{
+    display: flex;
+    flex-direction: column;
+    font-size: 1.3rem;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 2vh;
+}
+
+.ael-i-Email
+{
+    display: flex;
+    background-color: white;
+    color: black;
+    padding-left: 1vw;
+    height: 5vh;
+    width: 43vw;
+    font-size: 1rem;
+    border-radius: 0.8vh;
+    border-style: solid;
+    border-color: #D1D1D1;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
+    outline: none;
+}
+
+.ael-i-Email:focus
+{
+    outline: none;
+}
+
+.ael-Password
+{
+    display: flex;
+    flex-direction: column;
+    font-size: 1.3rem;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 2vh;
+
+}
+
+.ael-i-Password
+{
+    display: flex;
+    background-color: white;
+    color: black;
+    padding-left: 1vw;
+    height: 5vh;
+    width: 45vw;
+    font-size: 1rem;
+    border-radius: 0.8vh;
+    border-style: solid;
+    border-color: #D1D1D1;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
+    outline: none;
+}
+
+.ael-i-Password:focus
+{
+    outline: none;
+}
+.ael-btn 
+{
+    display: inline;
+    text-align: right;
+    margin-top: 25vh;
+
+}
+
+.ael-btn button
+{
+    border: 1px solid #000000;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
+    border-radius: 7px;
+    width: 10vw;
+    outline: none;
+    border: none;
+    background-color: black;
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.ael-btn button:focus
+{
+    outline: none;
+    border: none;
+}
+
+/* HTML: <div class="loader"></div> */
+.sd-loader {
+    width: 50px;
+    aspect-ratio: 1;
+    display: grid;
+    border: 4px solid #0000;
+    border-radius: 50%;
+    border-right-color: coral;
+    animation: l15 1s infinite linear;
+  }
+  .sd-loader::before,
+  .sd-loader::after {    
+    content: "";
+    grid-area: 1/1;
+    margin: 2px;
+    border: inherit;
+    border-radius: 50%;
+    animation: l15 2s infinite;
+  }
+  .sd-loader::after {
+    margin: 8px;
+    animation-duration: 3s;
+  }
+  @keyframes l15{ 
+    100%{transform: rotate(1turn)}
+  }

@@ -1,0 +1,150 @@
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: scale(0.7);
+  }
+  to {
+      opacity: 1;
+      transform: scale(1);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+      opacity: 1;
+      transform: scale(1);
+  }
+  to {
+      opacity: 0;
+      transform: scale(0.9);
+  }
+}
+
+.aelc-popup-overlay {
+  align-self: center;
+  position: absolute;
+  top: -11%;
+  left: -27.8%;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999999;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.aelc-popup {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  width: 30vw;
+  height: 30vh;
+  background: white;
+  border-radius: 10px;
+  padding-top: 0;
+  z-index: 9999;
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+.aelc-show-popup {
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.aelc-hide-popup {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.popup-enter {
+  animation: fadeIn 0.3s forwards;
+}
+
+.popup-exit {
+  animation: fadeOut 0.3s forwards;
+}
+
+.aelc-close {
+  position: absolute;
+  right: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 35px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  background-color: black;
+  font-size: 20px;
+  cursor: pointer;
+  color: white;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 0px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 0px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border: none;
+  outline: none;
+}
+
+.aelc-close:focus {
+  border: none;
+  outline: none;
+}
+
+.aelc-close:hover {
+  border: none;
+  outline: none;
+  background-color: red;
+}
+
+.aelc-popup h2 {
+  font-family: 'Times New Roman', Times, serif;
+  padding-top: 4vh;
+}
+
+.aelc-buttons {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  font-family: 'Times New Roman', Times, serif;
+  left: 34%;
+  top: 20vh;
+
+  border: none;
+  outline: none;
+  justify-content: center;
+}
+
+.aelc-buttons button
+{
+background: black;
+color: white;
+cursor: pointer;
+width: 10vw;
+align-self: center;
+font-family: 'Times New Roman', Times, serif;
+
+}
+
+.aelc-buttons button,
+.aelc-buttons button:focus {
+  border: none;
+  outline: none;
+}
+
+.aelc-yes-btn {
+  width: 10vw;
+  font-size: 1.5rem;
+}
+
+.aelc-buttons button:hover {
+  background: #db8341;
+  transition: ease-in 0.3s;
+  color: white;
+}

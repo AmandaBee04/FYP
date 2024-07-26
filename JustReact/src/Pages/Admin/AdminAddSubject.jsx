@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '../../Css/Admin/AdminAddSubject.css';
 import AdminAddSubjectConfirmation from '../../Components/Admin/AdminAddSubjectConfirmation'; // Ensure the import path is correct
+import AdminAddSubjectReject from '../../Components/Admin/AdminAddSubjectReject';
 
 
 export default function AdminAddSubject() {

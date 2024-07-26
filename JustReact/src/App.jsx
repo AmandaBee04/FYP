@@ -4,6 +4,8 @@ import './App.css';
 
 import Mainpage from './Pages/Mainpage';
 import Login from './Pages/Login';
+import ForgotPassword from './Pages/ForgotPassword';
+import ResetPassword from './Pages/ResetPassword';
 
 // Admin Imports
 import AdminNavbarLayout from './Components/Admin/AdminNavbarLayout';
@@ -45,9 +47,14 @@ import StudentDashboard from './Pages/Student/StudentDashboard';
 import StudentProfile from './Pages/Student/StudentProfile';
 import StudentQuizzes from './Pages/Student/StudentQuizzes';
 import StudentStartQuiz from './Pages/Student/StudentStartQuiz';
-import StudentQuiz from './Pages/Student/StudentQuiz';
+import StudentMCQQuiz from './Pages/Student/StudentMCQQuiz';
+import StudentWrittenQuiz from './Pages/Student/StudentWrittenQuiz';
 import StudentGrades from './Pages/Student/StudentGrades';
-import StudentQuizReview from './Pages/Student/StudentQuizReview';
+import StudentMCQQuizReview from './Pages/Student/StudentMCQQuizReview';
+import StudentWrittenQuizReview from './Pages/Student/StudentWrittenQuizReview';
+import StudentSubjectDetails from './Pages/Student/StudentSubjectDetails';
+import StudentMCQQuizSummary from './Pages/Student/StudentMCQQuizSummary';
+import StudentWrittenQuizSummary from './Pages/Student/StudentWrittenQuizSummary';
 
 function App() {
   return (
@@ -57,6 +64,7 @@ function App() {
           {/* Public Routes */}
           <Route path="/" element={<Mainpage />} />
           <Route path="/Login" element={<Login />} />
+          <Route path="/Login/Forgot_Password" element={<ForgotPassword />} />
 
           {/* Admin Routes */}
           <Route path="/Admin" element={<AdminNavbarLayout />}>
@@ -101,12 +109,18 @@ function App() {
             <Route index element={<Navigate to="Dashboard" />} />
             <Route path="Dashboard" element={<StudentDashboard />} />
             <Route path="Dashboard/Start_Quiz" element={<StudentStartQuiz />} />
+            <Route path="Dashboard/Start_Quiz/MCQ_Quiz" element={<StudentMCQQuiz/>} />
+            <Route path="Dashboard/Start_Quiz/Written_Quiz" element={<StudentWrittenQuiz/>} />
             <Route path="Quizzes" element={<StudentQuizzes />} />
             <Route path="Quizzes/Start_Quiz" element={<StudentStartQuiz />} />
             <Route path="Grades" element={<StudentGrades />} />
             <Route path="Profile" element={<StudentProfile />} />
-            <Route path="Grades/Review_Marks" element={<StudentQuizReview />} />
-            <Route path="Quizzes/Start_Quiz/Quiz" element={<StudentQuiz/>} />
+            <Route path="Grades/Review_MCQ_Marks" element={<StudentMCQQuizReview />} />
+            <Route path="Grades/Review_Written_Marks" element={<StudentWrittenQuizReview/>} />
+            <Route path="Quizzes/Start_Quiz/MCQ_Quiz" element={<StudentMCQQuiz/>} />
+            <Route path="Quizzes/Start_Quiz/Written_Quiz" element={<StudentWrittenQuiz/>} />
+            <Route path="Profile/Subject_Details" element={<StudentSubjectDetails/>} />
+
           </Route>
         </Routes>
       </BrowserRouter>

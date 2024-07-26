@@ -45,7 +45,18 @@ body {
     overflow-y: scroll;
     white-space: nowrap;
     flex-shrink: 0;
+    opacity: 0;
+    transform: translateX(-100%);
+    animation: slideInFromLeft 1s forwards;
 }
+
+@keyframes slideInFromLeft {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
 
 .lr-header h2
 {
@@ -65,8 +76,8 @@ body {
 
 .Profile
 {
-    height: 20vh;
-    width: 20vw;
+    height: 180px;
+    width: 180px;
 }
 
 .lr-btn
@@ -162,13 +173,24 @@ body {
 {
     display: flex;
     flex-direction: column;
-    height: 92vh;
+    height: 90vh;
     width: 70vw;
     top: 8vh;
     left: 56.5vh;
     align-items: center;
     position: absolute;
+    opacity: 0;
+    transform: translateX(4%);
+    animation: slideInFromLeft 1s forwards;
 }
+
+@keyframes slideInFromLeft {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
 
 .lr-rightside-top
 {
@@ -180,13 +202,6 @@ body {
     color: black;
 }
 
-.lr-rightside-top img
-{
-    height: 20vh;
-    width: 10vw;
-    padding-bottom: 1vh;
-    border-radius: 100%;
-}
 
 .lr-rightside-top-text
 {

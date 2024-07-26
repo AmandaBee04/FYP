@@ -10,14 +10,12 @@
     justify-content: center;
     align-items: center;
     z-index: 999;
-}
-
-.aesc-popup {
+  }
+  
+  .aesc-popup {
     display: flex;
     flex-direction: column;
     position: fixed;
-    top: 50%;
-    left: 50%;
     transform: translate(-50%, -50%);
     width: 25vw;
     height: 30vh;
@@ -25,15 +23,29 @@
     border-radius: 10px;
     padding-top: 0;
     z-index: 1000; /* Ensure the popup is above the overlay */
-}
-
-.aesc-show-popup {
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Add transition for smooth fade */
+  }
+  
+  .aesc-show-popup {
     display: flex; /* Use flex to show the overlay and center the popup */
-}
-
-.aesc-close {
+  }
+  
+  .aesc-hide-popup {
+    display: flex; /* Use flex to keep the overlay while fading out */
+  }
+  
+  .popup-enter {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+  
+  .popup-exit {
+    opacity: 0;
+    transform: translate(-50%, -40%);
+  }
+  
+  .aesc-close {
     position: absolute;
-    top: -60px;
     right: 0px;
     display: flex;
     justify-content: center;
@@ -52,49 +64,58 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border: none;
     outline: none;
-}
-
-.aesc-close:focus {
+  }
+  
+  .aesc-close:focus {
     border: none;
     outline: none;
-}
-
-.aesc-close:hover {
+  }
+  
+  .aesc-close:hover {
     border: none;
     outline: none;
     background-color: red;
-}
-
-
-.aesc-popup h2 {
+  }
+  
+  .aesc-popup h2 {
     font-family: 'Times New Roman', Times, serif;
     padding-top: 4vh;
-}
-
-.aesc-buttons {
+  }
+  
+  .aesc-buttons {
     display: flex;
     flex-direction: row;
     position: absolute;
     font-family: 'Times New Roman', Times, serif;
     left: 30%;
-    top: 10vh;
+    top: 17vh;
     margin: auto;
     border: none;
     outline: none;
-}
+  }
 
-.aesc-buttons button,
-.aesc-buttons button:focus {
+  .aesc-buttons button
+  {
+    background: black;
+    color: white;
+    cursor: pointer;
+    width: 10vw;
+    align-self: center;
+    font-family: 'Times New Roman', Times, serif;
+  }
+  
+  .aesc-buttons button,
+  .aesc-buttons button:focus {
     border: none;
     outline: none;
-}
-
-.aesc-yes-btn{
+  }
+  
+  .aesc-yes-btn {
     width: 10vw;
     font-size: 1.5rem;
-}
-
-.aesc-buttons button:hover {
+  }
+  
+  .aesc-buttons button:hover {
     background: #db8341;
     transition: ease-in 0.3s;
     color: white;

@@ -1,5 +1,7 @@
 import React from 'react'
 import { SiQuicklook } from "react-icons/si";
+import { MdDelete } from "react-icons/md";
+import { TiExport } from "react-icons/ti";
 import LecturerQuizDetails from '../../Components/Lecturer/LecturerQuizDetails'
 import '../../Css/Lecturer/LecturerStudentGrades.css'
 
@@ -22,17 +24,17 @@ export default function LecturerStudentGrades() {
                             <div className="lsg-tag2">
                                 Name
                             </div>
-                            <div className="lsg-tag3">
-                                Email
-                            </div>
                             <div className="lsg-tag4">
                                 Programme
                             </div>
                             <div className="lsg-tag5">
-                                Faculty
+                                Score
                             </div>
                             <div className="lsg-tag6">
-                                Score
+                                Grades
+                            </div>
+                            <div className="lsg-tag7">
+                                <TiExport/>
                             </div>
                         </div>
 
@@ -46,20 +48,21 @@ export default function LecturerStudentGrades() {
                                 <div className="lsg-studentname">
                                     Way Tu Yung
                                 </div>
-                                <div className="lsg-studentemail">
-                                    WayTY@gmail.com
-                                </div>
+
                                 <div className="lsg-studentprogramme">
                                     Diploma in IT
                                 </div>
                                 <div className="lsg-studentfaculty">
-                                    FCI
+                                    10/14
                                 </div>
                                 <div className="lsg-studentscore">
-                                    10/14
+                                    1500%
                                 </div>
                                 <div className="lsg-view">
                                         <SiQuicklook/>
+                                </div>
+                                <div className="lsg-delete">
+                                        < MdDelete />
                                 </div>
                             </div>
 

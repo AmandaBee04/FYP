@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '../../Css/Admin/AdminAddLecturer.css';
 import AdminAddLecturerConfirmation from '../../Components/Admin/AdminAddLecturerConfirmation'; // Ensure the import path is correct
+import AdminAddLecturerReject from '../../Components/Admin/AdminAddLecturerReject';
 
 export default function AdminAddLecturer() {
   const [showPopup, setShowPopup] = useState(false); // State to control popup visibility
@@ -35,16 +36,16 @@ export default function AdminAddLecturer() {
           </div>
           <div className="adl-rightside">
             <div className="adl-inputs">
-              <input type="name" className='adl-i-ID' placeholder='Enter Lecturer ID' />
+              <input type="text" className='adl-i-ID' placeholder='Enter Lecturer ID' />
             </div>
             <div className="adl-inputs">
-              <input type="name" className='adl-i-Name' placeholder='Enter Lecturer Name' />
+              <input type="text" className='adl-i-Name' placeholder='Enter Lecturer Name' />
             </div>
             <div className="adl-inputs">
               <input type="email" className='adl-i-Email' placeholder='Enter Email' />
             </div>
             <div className="adl-inputs">
-              <input type="password" className='adl-i-Password' placeholder='Enter Password' />
+              <input type="text" className='adl-i-Password' placeholder='Enter Password' />
             </div>
             <div className="adl-btn">
               <button onClick={handleConfirmClick}>

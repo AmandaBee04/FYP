@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
 import AdminEditStudentConfirmation from '../../Components/Admin/AdminEditStudentConfirmation'; // Ensure the import path is correct
+import AdminEditStudentReject from '../../Components/Admin/AdminEditStudentReject';
 import '../../Css/Admin/AdminEditStudent.css'
 
 export default function AdminEditStudent() {

@@ -1,7 +1,8 @@
 import React from 'react'
+import { MdDelete } from "react-icons/md";
 import { Link } from 'react-router-dom'
 import '../../Css/Lecturer/LecturerWrittenQuestion.css'
-import Image from '../../assets/Lecturer_Images/ImageUploader.png'
+
 import LecturerQuizDetails from '../../Components/Lecturer/LecturerQuizDetails'
 
 export default function LecturerWrittenQuestion() {
@@ -21,6 +22,7 @@ export default function LecturerWrittenQuestion() {
                             <div className="lwq-questionNo">
                                 <div>Question</div>
                                 <div className="questionNo">1</div>
+                                <MdDelete className='delbtn'/>
                             </div>
                             <div className="lwq-questiontext">
                                 <textarea placeholder='Write question and instructions here...'></textarea>

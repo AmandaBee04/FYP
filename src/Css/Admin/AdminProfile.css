@@ -1,0 +1,255 @@
+body
+{
+    background-image: url('../../assets/Admin_Images/MainpageBackground2.png');
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+}
+
+@font-face {
+    font-family: "Zootopia";
+    src: url(../../Fonts/ZootopiaJposterscomar-qJ80.ttf);
+}
+
+@font-face {
+    font-family: "Caveat";
+    src: url(../../Fonts/Caveat-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: "Pacifico";
+    src: url(../../Fonts/Pacifico-Regular.ttf);
+}
+
+
+
+.ap-container
+{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    height: 84vh;
+    opacity: 0;
+    transform: translateY(-190px);
+    animation: slideUp 1s forwards;
+}
+
+@keyframes slideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.ap-upper
+{
+    color: black;
+    font-family: Caveat;
+    font-size: 4rem;
+    display: flex;
+    padding-bottom: 1vh;
+
+}
+
+.ap-lower
+{
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    width: 70.91vw;   
+    gap: 5vw;
+}
+
+.ap-leftcolumn-up hr
+{
+    width: 12vw;
+    box-shadow: 0px 2px 4px black;
+}
+
+.ap-leftcolumn-down
+{
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    height: 14vh;
+
+}
+
+.ap-leftcolumn-down span
+{
+    font-size: 2rem;
+}
+
+.ap-lowerleft
+{
+    border: 0.5pt grey solid;
+    border-radius: 1vh;
+    width: 23vw;
+    height: 44vh;
+    box-shadow: 0px 2px 4px black;
+}
+
+.ap-lowerleft #img
+{
+    height: 100px;
+    width: 100px;
+    color: #FEAE6F;
+    border-radius: 100px;
+}
+
+.profile-image-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+.profile-image {
+    border-radius: 100px;
+    width: 100px; 
+    height: 100px;
+  }
+  
+
+.ap-lowerright
+{   
+    display: flex;
+    flex-direction: column;
+    width: 90vw;
+}
+
+.ap-lowerupperright
+{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    border-radius: 1vh;
+    box-shadow: 0px 2px 4px black;
+}
+
+.ap-lowerupperright h1
+{
+    padding-right: 37vw;
+    padding-bottom: 1vh;
+    width: 20vw;
+}
+
+.ap-emailaddress 
+{
+    display: flex;
+    flex-direction: column;
+    padding-left: 15vw;
+    font-size: 2rem; 
+}
+
+.ap-lowerupperright button
+{
+    width: 15vw;
+    height: 5vh;
+    margin: 0vh 0vw 2vh 35vw;
+    background-color: black;
+    color: white;
+    justify-content: center;
+    box-shadow: 3px 3px 8px 0px black;
+    font-size: 1rem;
+}
+
+.ap-lowerupperright button:hover
+{
+    width: 15vw;
+    height: 5vh;
+    margin: 0vh 0vw 2vh 35vw;
+    background-color: white;
+    justify-content: center;
+    box-shadow: 3px 3px 8px 0px black;
+    font-size: 1rem;
+    color:black;
+}
+
+
+.holder 
+{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+
+.ap-lowerupperright button
+{
+    width: 15vw;
+    height: 5vh;
+    margin: 0vh 0vw 3vh 40vw;
+    background-color: #FEAE6F;
+    border: none;
+    color: black;
+    justify-content: center;
+    font-size: 1rem;
+    outline: none;
+}
+
+.ap-lowerupperright button:hover
+{
+    margin: 0vh 0vw 3vh 40vw;
+    background-color:black;
+    font-size: 1rem;
+    color:  #FEAE6F;
+    transition: ease-in 0.35s;
+    outline: none;
+}
+
+.ap-leftcolumn-down button
+{
+    width: 10vw;
+    background-color: #FEAE6F;
+    margin-left: 1vw;
+    margin-top: 2vh;
+    color: black;
+    margin-left: 1vw;
+    border-radius: 0px;
+    box-shadow: none;
+    border: none;
+}
+
+.ap-leftcolumn-down button:hover
+{
+    width: 10vw;
+    background-color: #FFF;
+    color: black;
+    margin-left: 1vw;
+    border-radius: 0px;
+    box-shadow: 2px 2px;
+    border: none;
+    outline: none;
+}
+
+.ap-leftcolumn-down button:focus
+{
+    border: none;
+    outline: none;
+}
+
+
+/* HTML: <div class="loader"></div> */
+.sd-loader {
+    width: 50px;
+    aspect-ratio: 1;
+    display: grid;
+    border: 4px solid #0000;
+    border-radius: 50%;
+    border-right-color: coral;
+    animation: l15 1s infinite linear;
+  }
+  .sd-loader::before,
+  .sd-loader::after {    
+    content: "";
+    grid-area: 1/1;
+    margin: 2px;
+    border: inherit;
+    border-radius: 50%;
+    animation: l15 2s infinite;
+  }
+  .sd-loader::after {
+    margin: 8px;
+    animation-duration: 3s;
+  }
+  @keyframes l15{ 
+    100%{transform: rotate(1turn)}
+  }

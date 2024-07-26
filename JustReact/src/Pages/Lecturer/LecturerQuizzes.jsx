@@ -1,4 +1,6 @@
 import React from 'react'
+import { useState } from 'react';
+import LecturerAssignDueDate from '../../Components/Lecturer/LecturerAssignDueDate';
 import { Link } from 'react-router-dom'
 import { MdAssignmentAdd } from "react-icons/md";
 import { FiEdit } from "react-icons/fi";
@@ -7,6 +9,18 @@ import { HiDotsHorizontal } from "react-icons/hi";
 import '../../Css/Lecturer/LecturerQuizzes.css'
 
 export default function LecturerQuizzes() {
+  
+  const [showPopup, setShowPopup] = useState(false); // State to control popup visibility
+
+  const handleConfirmClick = (event) => {
+    event.preventDefault(); // Prevent form submission
+    setShowPopup(true); // Show the popup
+  };
+
+  const handleClosePopup = () => {
+    setShowPopup(false); // Close the popup
+  };
+
   return (
     <>
               <div className="lq-holqer">
@@ -29,12 +43,12 @@ export default function LecturerQuizzes() {
                 <Link>
                     <div className="lq-quizzes">
                       <div className="lq-quizupper">
-                        <div class="dropdown">
+                        <div className="dropdown">
                           <HiDotsHorizontal className='img1'/>
-                          <div class="dropdown-content">
+                          <div className="dropdown-content">
                             <div className="closing">
                               <div className="link1">
-                                <div><MdAssignmentAdd className='img'/></div><div className='word'><a>Assign Quiz</a></div>
+                                <div onClick={handleConfirmClick}><MdAssignmentAdd className='img'/></div><div className='word'><a>Assign Quiz</a></div>
                               </div>
                               <div className="link2">
                                 <div><FiEdit className='img'/></div><div className='word'><a>Edit Quiz</a></div>
@@ -60,6 +74,181 @@ export default function LecturerQuizzes() {
                       </div>
                     </div>
                   </Link>
+
+                  <Link>
+                    <div className="lq-quizzes">
+                      <div className="lq-quizupper">
+                        <div className="dropdown">
+                          <HiDotsHorizontal className='img1'/>
+                          <div className="dropdown-content">
+                            <div className="closing">
+                              <div className="link1">
+                                <div onClick={handleConfirmClick}><MdAssignmentAdd className='img'/></div><div className='word'><a>Assign Quiz</a></div>
+                              </div>
+                              <div className="link2">
+                                <div><FiEdit className='img'/></div><div className='word'><a>Edit Quiz</a></div>
+                              </div>
+                              <div className="link3">
+                                <div><IoMdTrash className='img'/></div><div className='word'><a>Delete Quiz</a></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="lq-quizlower">
+                        <div className="lq-quizchaptername">
+                          Introduction to Internet
+                        </div>
+                        <div className="lq-quizAuthor">
+                          By: Dr. John Doe
+                        </div>
+                        <div className="lq-QuiznoQuestions">
+                          10 Qs
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+                  <Link>
+                    <div className="lq-quizzes">
+                      <div className="lq-quizupper">
+                        <div className="dropdown">
+                          <HiDotsHorizontal className='img1'/>
+                          <div className="dropdown-content">
+                            <div className="closing">
+                              <div className="link1">
+                                <div onClick={handleConfirmClick}><MdAssignmentAdd className='img'/></div><div className='word'><a>Assign Quiz</a></div>
+                              </div>
+                              <div className="link2">
+                                <div><FiEdit className='img'/></div><div className='word'><a>Edit Quiz</a></div>
+                              </div>
+                              <div className="link3">
+                                <div><IoMdTrash className='img'/></div><div className='word'><a>Delete Quiz</a></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="lq-quizlower">
+                        <div className="lq-quizchaptername">
+                          Introduction to Internet
+                        </div>
+                        <div className="lq-quizAuthor">
+                          By: Dr. John Doe
+                        </div>
+                        <div className="lq-QuiznoQuestions">
+                          10 Qs
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+
+                  <Link>
+                    <div className="lq-quizzes">
+                      <div className="lq-quizupper">
+                        <div className="dropdown">
+                          <HiDotsHorizontal className='img1'/>
+                          <div className="dropdown-content">
+                            <div className="closing">
+                              <div className="link1">
+                                <div onClick={handleConfirmClick}><MdAssignmentAdd className='img'/></div><div className='word'><a>Assign Quiz</a></div>
+                              </div>
+                              <div className="link2">
+                                <div><FiEdit className='img'/></div><div className='word'><a>Edit Quiz</a></div>
+                              </div>
+                              <div className="link3">
+                                <div><IoMdTrash className='img'/></div><div className='word'><a>Delete Quiz</a></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="lq-quizlower">
+                        <div className="lq-quizchaptername">
+                          Introduction to Internet
+                        </div>
+                        <div className="lq-quizAuthor">
+                          By: Dr. John Doe
+                        </div>
+                        <div className="lq-QuiznoQuestions">
+                          10 Qs
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+
+                  <Link>
+                    <div className="lq-quizzes">
+                      <div className="lq-quizupper">
+                        <div className="dropdown">
+                          <HiDotsHorizontal className='img1'/>
+                          <div className="dropdown-content">
+                            <div className="closing">
+                              <div className="link1">
+                                <div onClick={handleConfirmClick}><MdAssignmentAdd className='img'/></div><div className='word'><a>Assign Quiz</a></div>
+                              </div>
+                              <div className="link2">
+                                <div><FiEdit className='img'/></div><div className='word'><a>Edit Quiz</a></div>
+                              </div>
+                              <div className="link3">
+                                <div><IoMdTrash className='img'/></div><div className='word'><a>Delete Quiz</a></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="lq-quizlower">
+                        <div className="lq-quizchaptername">
+                          Introduction to Internet
+                        </div>
+                        <div className="lq-quizAuthor">
+                          By: Dr. John Doe
+                        </div>
+                        <div className="lq-QuiznoQuestions">
+                          10 Qs
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+
+                  <Link>
+                    <div className="lq-quizzes">
+                      <div className="lq-quizupper">
+                        <div className="dropdown">
+                          <HiDotsHorizontal className='img1'/>
+                          <div className="dropdown-content">
+                            <div className="closing">
+                              <div className="link1">
+                                <div onClick={handleConfirmClick}><MdAssignmentAdd className='img'/></div><div className='word'><a>Assign Quiz</a></div>
+                              </div>
+                              <div className="link2">
+                                <div><FiEdit className='img'/></div><div className='word'><a>Edit Quiz</a></div>
+                              </div>
+                              <div className="link3">
+                                <div><IoMdTrash className='img'/></div><div className='word'><a>Delete Quiz</a></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="lq-quizlower">
+                        <div className="lq-quizchaptername">
+                          Introduction to Internet
+                        </div>
+                        <div className="lq-quizAuthor">
+                          By: Dr. John Doe
+                        </div>
+                        <div className="lq-QuiznoQuestions">
+                          10 Qs
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+
 
                  
 
@@ -168,94 +357,7 @@ export default function LecturerQuizzes() {
                   </div>
                 </Link>
 
-                <Link>
-                  <div className="lq-assignquizzes">
-                    <div className="lq-assignquizupper"/>   
-                    <div className="lq-assignquizlower">
-                      <div className="lq-assignquizchaptername">
-                        Introduction to Internet
-                      </div>
-                      <div className="lq-assignquizAuthor">
-                        By: Dr. John Doe
-                      </div>
-                      <div className="lq-assignlower">
-                        <div className="lq-assignduedate">
-                          Due 16th April  
-                        </div>
-                        <div className="lq-assignQuiznoQuestions">
-                          10 Qs
-                        </div> 
-                      </div>
-                    </div>
-                  </div>
-                </Link>
-
-                <Link>
-                  <div className="lq-assignquizzes">
-                    <div className="lq-assignquizupper"/>   
-                    <div className="lq-assignquizlower">
-                      <div className="lq-assignquizchaptername">
-                        Introduction to Internet
-                      </div>
-                      <div className="lq-assignquizAuthor">
-                        By: Dr. John Doe
-                      </div>
-                      <div className="lq-assignlower">
-                        <div className="lq-assignduedate">
-                          Due 16th April  
-                        </div>
-                        <div className="lq-assignQuiznoQuestions">
-                          10 Qs
-                        </div> 
-                      </div>
-                    </div>
-                  </div>
-                </Link>
-
-                <Link>
-                  <div className="lq-assignquizzes">
-                    <div className="lq-assignquizupper"/>   
-                    <div className="lq-assignquizlower">
-                      <div className="lq-assignquizchaptername">
-                        Introduction to Internet
-                      </div>
-                      <div className="lq-assignquizAuthor">
-                        By: Dr. John Doe
-                      </div>
-                      <div className="lq-assignlower">
-                        <div className="lq-assignduedate">
-                          Due 16th April  
-                        </div>
-                        <div className="lq-assignQuiznoQuestions">
-                          10 Qs
-                        </div> 
-                      </div>
-                    </div>
-                  </div>
-                </Link>
-
-                <Link>
-                  <div className="lq-assignquizzes">
-                    <div className="lq-assignquizupper"/>   
-                    <div className="lq-assignquizlower">
-                      <div className="lq-assignquizchaptername">
-                        Introduction to Internet
-                      </div>
-                      <div className="lq-assignquizAuthor">
-                        By: Dr. John Doe
-                      </div>
-                      <div className="lq-assignlower">
-                        <div className="lq-assignduedate">
-                          Due 16th April  
-                        </div>
-                        <div className="lq-assignQuiznoQuestions">
-                          10 Qs
-                        </div> 
-                      </div>
-                    </div>
-                  </div>
-                </Link>
-
+  
               </div>
             </div>
 
@@ -263,6 +365,8 @@ export default function LecturerQuizzes() {
           </div>
         </div>
       </div>
+      {showPopup && <LecturerAssignDueDate onClose={handleClosePopup} />} {/* Show popup conditionally */}
+
     </>
   )
 }

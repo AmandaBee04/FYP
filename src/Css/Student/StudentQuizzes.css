@@ -1,0 +1,168 @@
+body {
+    background-image: url(../../assets/Admin_Images/MainpageBackground2.png);
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+}
+
+@font-face {
+    font-family: 'Caveat';
+    src: url(../../Fonts/Caveat-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: 'Zootopia';
+    src: url(../../Fonts/ZootopiaJposterscomar-qJ80.ttf);
+}
+
+@font-face {
+    font-family: 'Pacifico';
+    src: url(../../Fonts/Pacifico-Regular.ttf);
+}
+
+.sq-header h1
+{
+    color:black;
+    font-family: Caveat;
+    padding-bottom: 4vh;
+}
+
+.sq-holder
+{   
+    align-self: center;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: slideUp 1s forwards;
+}
+
+@keyframes slideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.sq-container
+{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-self: center;
+    height: 80vh;
+
+}
+
+.sq-header h1
+{
+    text-align: center;
+    align-self: center;
+    height: 3.9vh;
+}
+
+.sq-bank
+{
+    position: relative;
+    align-self: center;
+    height: 80vh;
+    width: 69vw;
+    padding-left: 1.5vw;
+    padding-top: 1vh;
+    padding-right: 1.5vw;
+    background: #FFFFFF;
+    border: 1px solid #ACACAC;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    white-space: nowrap;
+    scrollbar-width: none;
+    scrollbar-color: #D1D8C5 #F1F1F1;
+
+}
+
+.sq-subjectcontainer
+{
+    display: flex;
+    flex-direction: column;
+    padding: 1vh;
+    height: 30vh;
+    width: max-content;
+    padding-bottom: 2vh;
+}
+
+.sq-subjectname, .sq-SubjectNameCode
+{
+    text-align: left;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2.3vh;
+    padding-bottom: 1vh;
+}
+
+.sq-QuizChapters
+{
+    display: flex;
+    flex-direction: row;
+    width: 68vw;
+    gap: 3vw;
+    height: 26vh;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    padding-bottom: 0.5vh;
+    scrollbar-color: lightgrey white;
+}
+
+.sq-quizzes
+{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 14.5vw;
+    border: 1pt solid grey;
+    flex-shrink: 0;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+
+.sq-quizupper
+{
+    display: flex;
+    flex-direction: column;
+    height: 12vh;
+    align-items: end;
+    padding-right: 0.5vw;
+    padding-top: 1vh;
+    background-image: url(../../assets/Lecturer_Images/HtmlBackground.png);
+    background-size: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.sq-quizlower
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.sq-quizchaptername
+{
+    text-align: left;
+    padding-left: 0.5vw;
+    color: black;
+    font-size: 2.5vh;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.sq-quizAuthor
+{
+    text-align: left;
+    color: #A6A6A6;
+    padding-left: 0.5vw;
+}
+
+.sq-QuiznoQuestions
+{
+    text-align: right;
+    color: #A6A6A6;
+    padding-right: 0.5vw;
+}

@@ -1,0 +1,256 @@
+body {
+    background-image: url(../../assets/Admin_Images/MainpageBackground2.png);
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+}
+
+@font-face {
+    font-family: 'Caveat';
+    src: url(../../Fonts/Caveat-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: 'Zootopia';
+    src: url(../../Fonts/ZootopiaJposterscomar-qJ80.ttf);
+}
+
+@font-face {
+    font-family: 'Pacifico';
+    src: url(../../Fonts/Pacifico-Regular.ttf);
+}
+
+.lsd-holder
+{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+
+.lsd-container
+{
+    display: flex;
+    flex-direction: column;
+    height: 83.9vh;
+    align-self: center;
+}
+
+.lsd-upper
+{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 64vw;
+    height: 30vh;
+    left: 38.4vh;
+    top: 10vh;
+    background-image: url(../../assets/Lecturer_Images/HtmlBackground.png);
+    background-size: cover;
+    background-size: 42vw;
+    background-position: center;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideUp 1s forwards;
+}
+
+@keyframes slideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.lsd-SubjectName
+{
+    display: flex;
+    margin: 20vh 0vw 0vh 2vw;
+}
+
+.lsd-SubjectName h2
+{
+    color: white;
+    font-family: 'Caveat';
+}
+
+.lsd-lower 
+{
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideUp 1s forwards;
+}
+
+@keyframes slideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.lsd-lower-header button
+{
+    margin: 3.6vh 0vw 0vh -12vw;
+    width: 11vw;
+    outline: none;
+    border: none;
+
+}
+
+.lsd-lower-header 
+{
+    margin-top: 29vh;
+    margin-left: 2vw;
+    text-decoration: underline;
+    text-decoration-color: black;
+    font-family: 'Gill Sans';
+    display: flex;
+    flex-direction: row;
+}
+
+.lsd-lower-header h2
+{
+    font-family:'Times New Roman', Times, serif;
+    display: flex;
+    width: 15vw;
+    padding-right: 50vw;
+}
+
+.lsd-lower-container
+{
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+}
+
+
+.lsd-lecturercontainer
+{
+    display: flex;
+    flex-direction: column;
+    /* Rectangle 68 */
+    align-self: center;
+    position: absolute;
+    width: 64.1vw;
+    left: 6%;
+    top: 38vh;
+    height: 46.4vh;
+
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    padding-bottom: 2.7vh;
+
+}
+
+.lsd-tags
+{
+    display: flex;
+    flex-direction: row;
+    color: black;
+    height: 7vh;
+    font-size: 1.1rem;
+    font-family: 'Times New Roman', Times, serif;
+    padding-left: 5vh;
+    width: 61.4vw;
+    box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.lsd-tag1
+{
+    display: flex;
+    width: 10vw;
+}
+
+.lsd-tag2
+{
+    display: flex;
+    width: 12vw;
+}
+
+.lsd-tag4
+{
+    display: flex;
+    width: 14vw;
+}
+
+.lsd-tag5
+{
+    display: flex;
+    width: 16vw;
+}
+
+.lsd-lecturerbox
+{
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: 49vh;
+    color: black;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    white-space: nowrap;
+    scrollbar-color: lightgrey white;
+}
+
+.lsd-btn button
+{
+    background-color: black;
+    color: #FFFFFF;
+    width: 12vw;
+}
+
+.lsd-box
+{
+    display: flex;
+    flex-direction: row;
+    height: 6.5vh;
+    box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.25);
+    font-family: 'Times New Roman', Times, serif;
+
+}
+
+.lsd-ID
+{
+    display: flex;
+    padding-left: 2.6vw;    
+    width: 10vw;
+
+}
+
+.lsd-name
+{
+    display: flex;
+    width: 12vw;
+}
+
+.lsd-email
+{
+    display: flex;
+    width: 14vw;
+}
+
+.lsd-programme
+{
+    display: flex;
+    width: 16vw;
+}
+
+.lsd-faculty
+{
+    display: flex;
+    width: 4.3vw;
+}
+
+.deadbook
+{
+    margin : 1vh 1vw;
+    cursor: pointer;
+    color: rgb(189, 22, 22);
+    font-size: 35px;
+}

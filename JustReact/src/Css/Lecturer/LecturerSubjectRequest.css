@@ -20,22 +20,48 @@ body {
     src: url(../../Fonts/Pacifico-Regular.ttf);
 }
 
+.lsr-holder
+{
+    align-self: center;
+    position: fixed;
+    top: 15%;
+    left: 20%;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+    justify-self: center;
+}
+
 .lsr-container h1
 {
     color:black;
     font-family: Caveat;
+    align-self: center;
     margin-top: 0%;
     margin-bottom: 3vh;
 }
 
 .lsr-container
 {
-    display: flex;
+    position: relative;
+    align-self: center;
     flex-direction: column;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: slideUp 1s forwards;
+}
+
+@keyframes slideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .lsr-form
 {
+    align-self: center;
     display: flex;
     flex-direction: column;
     padding: 4vh;
@@ -93,6 +119,7 @@ body {
     border-radius: 0.8vh;
     border-style: solid;
     border-color: #D1D1D1;
+    outline: none;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
 }
 
@@ -109,6 +136,7 @@ body {
     border-style: solid;
     border-color: #D1D1D1;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25); 
+    outline: none;
 }
 
 .lsr-message
@@ -131,6 +159,7 @@ textarea
 {
     padding: 2vh 0vw 0vw 0vh;
     resize: none;
+    outline: none;
 
 }
 
@@ -138,7 +167,6 @@ textarea
 {
     text-align: right;
     padding-right: 0.4vw;
-    margin-top: -7vh;
 }
 
 .lsr-btn button

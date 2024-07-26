@@ -10,14 +10,12 @@
     justify-content: center;
     align-items: center;
     z-index: 999;
-}
-
-.aelc-popup {
+  }
+  
+  .aelc-popup {
     display: flex;
     flex-direction: column;
     position: fixed;
-    top: 50%;
-    left: 50%;
     transform: translate(-50%, -50%);
     width: 25vw;
     height: 30vh;
@@ -25,15 +23,29 @@
     border-radius: 10px;
     padding-top: 0;
     z-index: 1000; /* Ensure the popup is above the overlay */
-}
-
-.aelc-show-popup {
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Add transition for smooth fade */
+  }
+  
+  .aelc-show-popup {
     display: flex; /* Use flex to show the overlay and center the popup */
-}
-
-.aelc-close {
+  }
+  
+  .aelc-hide-popup {
+    display: flex; /* Use flex to keep the overlay while fading out */
+  }
+  
+  .popup-enter {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+  
+  .popup-exit {
+    opacity: 0;
+    transform: translate(-50%, -40%);
+  }
+  
+  .aelc-close {
     position: absolute;
-    top: -60px;
     right: 0px;
     display: flex;
     justify-content: center;
@@ -52,49 +64,57 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border: none;
     outline: none;
-}
-
-.aelc-close:focus {
+  }
+  
+  .aelc-close:focus {
     border: none;
     outline: none;
-}
-
-.aelc-close:hover {
+  }
+  
+  .aelc-close:hover {
     border: none;
     outline: none;
     background-color: red;
-}
-
-
-.aelc-popup h2 {
+  }
+  
+  .aelc-popup h2 {
     font-family: 'Times New Roman', Times, serif;
     padding-top: 4vh;
-}
-
-.aelc-buttons {
+  }
+  
+  .aelc-buttons {
     display: flex;
     flex-direction: row;
     position: absolute;
     font-family: 'Times New Roman', Times, serif;
     left: 30%;
-    top: 10vh;
+    top: 20vh;
     margin: auto;
     border: none;
     outline: none;
-}
+  }
 
-.aelc-buttons button,
-.aelc-buttons button:focus {
+  .aelc-buttons button
+{
+  background: black;
+  color: white;
+  cursor: pointer;
+  width: 10vw;
+  align-self: center;
+  font-family: 'Times New Roman', Times, serif;
+} 
+  
+  .aelc-buttons button,
+  .aelc-buttons button:focus {
     border: none;
     outline: none;
-}
-
-.aelc-yes-btn{
-    width: 10vw;
+  }
+  
+  .aelc-yes-btn {
     font-size: 1.5rem;
-}
-
-.aelc-buttons button:hover {
+  }
+  
+  .aelc-buttons button:hover {
     background: #db8341;
     transition: ease-in 0.3s;
     color: white;

@@ -35,7 +35,7 @@ export default function StudentGrades() {
                   <div>%</div>
                 </div>
                 <div className="sg-viewbutton">
-                  <Link to={'/Student/Grades/Review_Marks'}>
+                  <Link to={'/Student/Grades/Review_Written_Marks'}>
                     <button>
                       View
                     </button>

@@ -80,23 +80,21 @@ export default function AdminLecturer() {
 
     
 
-          </div> //al-lecturerbox
+          </div> 
 
 
-        </div> //al-lecturercontainer
+        </div>
 
+        
       </div>
+        <div className="al-btn">
+          <Link to={"Add_Lecturer"}>
+            <button>
+              <FaUserPlus className='adduser'/>Add New Lecturer
+            </button>
+          </Link>
+        </div>
     </div>
-
-
-      <div className="al-btn">
-        <Link to={"Add_Lecturer"}>
-          <button>
-            <FaUserPlus className='adduser'/>Add New Lecturer
-          </button>
-        </Link>
-      </div>
-
       {showConfirmation && <AdminLecturerConfirmDeletion onClose={handleClosePopup} />}
     </>
   )

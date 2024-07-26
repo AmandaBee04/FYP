@@ -10,30 +10,42 @@
     justify-content: center;
     align-items: center;
     z-index: 999;
-}
-
-.aasr-popup {
+  }
+  
+  .aasr-popup {
     display: flex;
     flex-direction: column;
     position: fixed;
-    top: 50%;
-    left: 50%;
     transform: translate(-50%, -50%);
-    width: 25vw;
-    height: 30vh;
+    width: 31vw;
+    height: 33vh;
     background: white;
     border-radius: 10px;
     padding-top: 0;
     z-index: 1000; /* Ensure the popup is above the overlay */
-}
-
-.aasr-show-popup {
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Add transition for smooth fade */
+  }
+  
+  .aasr-show-popup {
     display: flex; /* Use flex to show the overlay and center the popup */
-}
-
-.aasr-close {
+  }
+  
+  .aasr-hide-popup {
+    display: flex; /* Use flex to keep the overlay while fading out */
+  }
+  
+  .popup-enter {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+  
+  .popup-exit {
+    opacity: 0;
+    transform: translate(-50%, -40%);
+  }
+  
+  .aasr-close {
     position: absolute;
-    top: -60px;
     right: 0px;
     display: flex;
     justify-content: center;
@@ -52,49 +64,58 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border: none;
     outline: none;
-}
-
-.aasr-close:focus {
+  }
+  
+  .aasr-close:focus {
     border: none;
     outline: none;
-}
-
-.aasr-close:hover {
+  }
+  
+  .aasr-close:hover {
     border: none;
     outline: none;
     background-color: red;
-}
-
-
-.aasr-popup h2 {
+  }
+  
+  .aasr-popup h2 {
     font-family: 'Times New Roman', Times, serif;
-    padding-top: 4vh;
-}
-
-.aasr-buttons {
+    padding-top: 5vh;
+  }
+  
+  .aasr-buttons {
     display: flex;
     flex-direction: row;
     position: absolute;
     font-family: 'Times New Roman', Times, serif;
-    left: 30%;
-    top: 10vh;
+    left: 35%;
+    top: 20vh;
     margin: auto;
     border: none;
     outline: none;
-}
+  }
 
-.aasr-buttons button,
-.aasr-buttons button:focus {
+  .aasr-buttons button
+  {
+    background: black;
+    color: white;
+    cursor: pointer;
+    width: 10vw;
+    align-self: center;
+    font-family: 'Times New Roman', Times, serif;
+  }
+  
+  .aasr-buttons button,
+  .aasr-buttons button:focus {
     border: none;
     outline: none;
-}
-
-.aasr-yes-btn{
+  }
+  
+  .aasr-yes-btn {
     width: 10vw;
     font-size: 1.5rem;
-}
-
-.aasr-buttons button:hover {
+  }
+  
+  .aasr-buttons button:hover {
     background: #db8341;
     transition: ease-in 0.3s;
     color: white;

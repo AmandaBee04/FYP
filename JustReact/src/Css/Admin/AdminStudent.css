@@ -25,6 +25,16 @@ body {
     display: flex;
     flex-direction: column;
     align-self: center;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: slideUp 1s forwards;
+}
+
+@keyframes slideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .as-holder h1
@@ -32,11 +42,8 @@ body {
     display: flex;
     color:black;
     font-family: Caveat;
-    align-items: center;
-    text-align: center;
-    align-content: center;
-    justify-content: center;
-    align-self: center;
+    margin: auto;
+    margin-top: -5%;
     padding-bottom: 1.5vh;
 }
 
@@ -45,6 +52,7 @@ body {
     display: flex;
     flex-direction: column;
     align-self: center;
+    position: relative;
     height: 60vh;
     width: 70vw;
 
@@ -187,7 +195,7 @@ body {
 {
     display: flex;
     padding-left: 1.5vw;
-    width: 10.5vw;
+    width: 11vw;
 }
 
 .as-edit
@@ -201,8 +209,8 @@ body {
 
 .as-edit #img
 {
-    height: 2.8vh;
-    width: 1.3vw;
+    height: 35px;
+    width: 25px;
     color: black;
     border: none;
     
@@ -218,8 +226,8 @@ body {
 
 .as-delete #img
 {
-    height: 2.8vh;
-    width: 1.3vw;
+    height: 25px;
+    width: 20px;
     border: none;
     color:rgb(150, 21, 21);
 }
@@ -231,12 +239,15 @@ body {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     border: none;
     outline: none;
-    
+    position: absolute;
+    bottom: -20%;
+    align-items: flex-start;
+    align-self: flex-start;
+    margin: auto;
 }
 
 .as-btn button
 {
-    
     background-color: black;
     color: white;
     border: none;
@@ -267,5 +278,5 @@ body {
     position: relative;
     padding-right: 0.5vw;
     padding-top: 0.2vh;
-
+    left: 0%;
 }

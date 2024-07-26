@@ -1,6 +1,7 @@
 import React from 'react'
 import '../../Css/Lecturer/LecturerMCQuestion.css'
-import Image from '../../assets/Lecturer_Images/ImageUploader.png'
+import { MdDelete } from "react-icons/md";
+import { FaRegImages } from "react-icons/fa";
 import LecturerQuizDetails from '../../Components/Lecturer/LecturerQuizDetails'
 
 export default function LecturerMCQuestion() {
@@ -21,7 +22,7 @@ export default function LecturerMCQuestion() {
                                     <div>Question</div>
                                     <div className="questionNo">1</div>
                                     <input type="name" className="questionName" placeholder='Question..'/>
-                                    <img src={Image} onClick={''} />
+                                    <MdDelete className='Necromonicon'/>
                                 </div>
                                 <div className="lmcq-answers">
                                     <div className="lmcq-answerdiv">

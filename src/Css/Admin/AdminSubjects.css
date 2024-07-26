@@ -1,0 +1,266 @@
+body {
+    background-image: url(../../assets/Admin_Images/MainpageBackground2.png);
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+}
+
+@font-face {
+    font-family: 'Caveat';
+    src: url(../../Fonts/Caveat-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: 'Zootopia';
+    src: url(../../Fonts/ZootopiaJposterscomar-qJ80.ttf);
+}
+
+@font-face {
+    font-family: 'Pacifico';
+    src: url(../../Fonts/Pacifico-Regular.ttf);
+}
+
+.ass-holder
+{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: slideUp 1s forwards;
+}
+
+@keyframes slideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.ass-holder h1
+{
+    display: flex;
+    color:black;
+    font-family: Caveat;
+
+
+    margin: auto;
+    margin-top: -5%;
+    align-self: center;
+    padding-bottom: 1.5vh;
+}
+
+.ass-container
+{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    position: relative;
+    height: 60vh;
+    width: 70vw;
+
+}
+
+.ass-upper
+{
+    display: flex;
+    flex-direction: row;
+    background-color: #ffff ;
+    position: relative;
+    border: 0.6px solid #919191;
+    border-radius: 25px;
+    height: 3vh;
+    gap: 7vh;
+    width: 69vw;
+    padding: 1.2vh 0vw 1vh 1vw;
+}
+
+.ass-upper input, .ass-upper input:hover, .ass-upper input:active
+{
+    height: 3vh;
+    width: 30vw;
+    font-size: 1rem;
+    background-color: #ffff;
+    color:black;
+    border: none;
+    outline-style: none;
+}
+
+.ass-upper .img
+{
+    height: 20px;
+    width: 20px;
+    color: black;
+}
+
+
+.ass-lecturercontainer
+{
+    display: flex;
+    flex-direction: column;
+    /* Rectangle 68 */
+
+    position: relative;
+    width: 70vw;
+    top: 1.5vh;
+    height: 70vh;
+
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    padding-bottom: 2.7vh;
+
+}
+
+.ass-tags
+{
+    display: flex;
+    flex-direction: row;
+    color: black;
+    height: 7vh;
+    font-size: 1.1rem;
+    font-family: 'Times New Roman', Times, serif;
+    padding-left: 5vh;
+    width: 67.3vw;
+    box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+
+.ass-tag2
+{
+    width: 25vw;
+}
+
+.ass-tag3
+{
+    width: 20vw;
+}
+
+
+.ass-lecturerbox
+{
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: 49vh;
+    color: black;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    white-space: nowrap;
+    scrollbar-color: lightgrey white;
+}
+
+.ass-box
+{
+    display: flex;
+    flex-direction: row;
+    height: 6.5vh;
+    box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.25);
+
+}
+
+.ass-ID
+{
+    display: flex;
+    padding-left: 2.7vw;
+    width: 14.3vw;
+}
+
+.ass-SubjectName
+{
+    display: flex;
+    width: 23vw;
+}
+
+.ass-LecturerID
+{
+    display: flex;
+    width: 23vw;
+}
+
+.ass-edit
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 2vw;
+
+}
+
+.ass-edit #img
+{
+    height: 35px;
+    width: 25px;
+    margin-top: 1vh;
+    border: none;
+    color: black;
+}
+
+.ass-delete
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 1vw;
+}
+
+.ass-delete #img
+{
+    height: 25px;
+    width: 20px;
+    border: none;
+    color:rgb(150, 21, 21);
+}
+
+.ass-btn
+{
+    display: flex;
+    color: black;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border: none;
+    outline: none;
+    position: absolute;
+    bottom: -20%;
+    align-items: flex-start;
+    align-self: flex-start;
+    margin: auto;
+}
+
+.ass-btn button
+{
+    background-color: black;
+    color: white;
+    border: none;
+    outline: none;
+    width: 14vw;
+}
+
+
+
+.ass-btn button:focus
+{
+    background-color: black;
+    color: white;
+    border: none;
+    outline: none;
+}
+.ass-btn 
+{
+    width: 12vw;
+}
+
+.ass-btn a, .ass-btn a:hover
+{
+    color: white;
+}
+
+.ass-btn button .adduser
+{
+    position: relative;
+    padding-right: 0.5vw;
+    padding-top: 0.2vh;
+    left: 0%;
+
+}

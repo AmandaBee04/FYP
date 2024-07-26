@@ -29,8 +29,8 @@ body {
 
 .sd-container
 {
-    display: flex;
     align-self: center;
+
 }
 
 .sd-holder
@@ -38,8 +38,8 @@ body {
     display: flex;
     flex-direction: column;
     align-self: center;
-    height: 83vh;
-    width: 70vw;
+    height: 85vh;
+
 }
 
 .sd-holder h2
@@ -60,7 +60,18 @@ body {
     top: 12vh;
     left: 15vw;
     gap: 1.5vw;
+    opacity: 0;
+    transform: translateX(-15%);
+    animation: slideInFromLeft 1s forwards;
 }
+
+@keyframes slideInFromLeft {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
 
 .Icon
 {
@@ -79,8 +90,18 @@ body {
     white-space: nowrap;
     scrollbar-color: white transparent;
     height: 40vh;
-    width: 68vw;
+    width: 70.3vw;
     padding: 10vh 1vw 5vh 1vw;
+    opacity: 0;
+    transform: translateX(15%);
+    animation: slideInFromLeft 1s forwards;
+}
+
+@keyframes slideInFromLeft {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 .sd-quizzes
@@ -157,28 +178,49 @@ body {
     display: flex;
     flex-direction: column;
     height: 38.5vh;
-}
-
-.sd-bottom h2
-{
-    font-size: 2rem;
-    height: 1vh;
-    padding-left: 1vw;
-    font-family: 'Times New Roman', Times, serif;
-}
-
-.sd-grades
-{
+    gap: 2vh;
+    width: 71.4vw;
+    align-self: center;
     display: flex;
     overflow-y: scroll;
     overflow-x: hidden;
     white-space: nowrap;
     scrollbar-color: white transparent;
+    opacity: 0;
+    transform: translateX(-15%);
+    animation: slideInFromLeft 1s forwards;
+}
+
+@keyframes slideInFromLeft {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.sd-bottom hr
+{
+    font-size: 2rem;
+    margin-top: 0;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.sd-bottom h2
+{
+    margin-top: 0;
+    font-size: 2rem;
+    margin-bottom: 2vh;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+.sd-grades
+{
+    display: flex;
     flex-direction: row;
     color:black ;
-    height: 20vh;
-    gap: 10vw;
-    padding: 2vh;
+    gap: 13vw;
+
     font-size: 1.2rem;
     font-family: 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }

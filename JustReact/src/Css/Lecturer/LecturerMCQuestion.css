@@ -54,8 +54,16 @@ body {
     overflow-x: hidden;
     white-space: nowrap;
     scrollbar-color: lightgrey transparent;
+    opacity: 0;
+    transform: translateX(-1%);
+    animation: slideInFromLeft 1s forwards;
+}
 
-
+@keyframes slideInFromLeft {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 .lmcq-questioncontainer
@@ -105,7 +113,7 @@ body {
 {
     padding: 1vh;
     color: black;
-    width: 40vw;
+    width: 35vw;
     font-size: 1.3rem;
     font-family: 'Times New Roman', Times, serif;
     background: #FFFFFF;
@@ -116,15 +124,14 @@ body {
 
 }
 
-.lmcq-questionNo img
-{
-    display: flex;
-    margin: auto;
-    height: 3vh;
-    width: 1.6vw;
-    cursor: pointer;
-}
 
+
+.Necromonicon
+{
+    margin: 1vh 1vw 1vh 9vw;
+    cursor: pointer;
+    color: red;
+}
 
 .lmcq-answers
 {
@@ -190,7 +197,7 @@ body {
     display: flex;
     position: relative;
     padding: auto;
-    margin: -2vh 30vw;
+    margin: 3vh 30vw;
 
 }
 
@@ -233,6 +240,7 @@ body {
     display: block;
     position: relative;
     padding-left: 45px;
+    width: 1vw;
     margin-bottom: px;
     cursor: pointer;
     font-size: 22px;

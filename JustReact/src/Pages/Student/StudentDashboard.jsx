@@ -16,7 +16,7 @@ export default function StudentDashboard() {
         
         <div className="sd-assignedquizzes">
           <h2>Assigned Quizzes</h2>
-          <hr />  
+          <hr />
   
           <div className="sd-quiz">
           <Link to={'Start_Quiz'}>
@@ -39,6 +39,8 @@ export default function StudentDashboard() {
             </div>
           </Link>  
 
+          
+
 
           </div>
         </div>
@@ -46,6 +48,62 @@ export default function StudentDashboard() {
 
         <div className="sd-bottom">
           <h2>Grades and classes</h2>
+          <hr />
+          <div className="sd-grades">
+              <div className="sd-classcode">DIT5401</div>
+              <div className="sg-classname">Introduction to Web Publishing</div>
+              <div className="sd-classlec">Khairil Imran</div>
+              <div className="allotedgrade">90.3%</div>
+          </div>
+          <div className="sd-grades">
+              <div className="sd-classcode">DIT5401</div>
+              <div className="sg-classname">Introduction to Web Publishing</div>
+              <div className="sd-classlec">Khairil Imran</div>
+              <div className="allotedgrade">90.3%</div>
+          </div>
+          <div className="sd-grades">
+              <div className="sd-classcode">DIT5401</div>
+              <div className="sg-classname">Introduction to Web Publishing</div>
+              <div className="sd-classlec">Khairil Imran</div>
+              <div className="allotedgrade">90.3%</div>
+          </div>
+          <div className="sd-grades">
+              <div className="sd-classcode">DIT5401</div>
+              <div className="sg-classname">Introduction to Web Publishing</div>
+              <div className="sd-classlec">Khairil Imran</div>
+              <div className="allotedgrade">90.3%</div>
+          </div>
+          <div className="sd-grades">
+              <div className="sd-classcode">DIT5401</div>
+              <div className="sg-classname">Introduction to Web Publishing</div>
+              <div className="sd-classlec">Khairil Imran</div>
+              <div className="allotedgrade">90.3%</div>
+          </div>
+          <div className="sd-grades">
+              <div className="sd-classcode">DIT5401</div>
+              <div className="sg-classname">Introduction to Web Publishing</div>
+              <div className="sd-classlec">Khairil Imran</div>
+              <div className="allotedgrade">90.3%</div>
+          </div>
+          <div className="sd-grades">
+              <div className="sd-classcode">DIT5401</div>
+              <div className="sg-classname">Introduction to Web Publishing</div>
+              <div className="sd-classlec">Khairil Imran</div>
+              <div className="allotedgrade">90.3%</div>
+          </div>
+          <div className="sd-grades">
+              <div className="sd-classcode">DIT5401</div>
+              <div className="sg-classname">Introduction to Web Publishing</div>
+              <div className="sd-classlec">Khairil Imran</div>
+              <div className="allotedgrade">90.3%</div>
+          </div>
+          <div className="sd-grades">
+              <div className="sd-classcode">DIT5401</div>
+              <div className="sg-classname">Introduction to Web Publishing</div>
+              <div className="sd-classlec">Khairil Imran</div>
+              <div className="allotedgrade">90.3%</div>
+          </div>
+
           <div className="sd-grades">
               <div className="sd-classcode">DIT5401</div>
               <div className="sg-classname">Introduction to Web Publishing</div>

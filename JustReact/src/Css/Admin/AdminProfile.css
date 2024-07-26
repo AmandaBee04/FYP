@@ -27,6 +27,16 @@ body
     flex-direction: column;
     align-self: center;
     height: 84vh;
+    opacity: 0;
+    transform: translateY(-50px);
+    animation: slideUp 1s forwards;
+}
+
+@keyframes slideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .ap-upper
@@ -82,6 +92,18 @@ body
     color: #FEAE6F;
     border-radius: 100px;
 }
+
+.profile-image-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+.profile-image {
+    border-radius: 100px;
+    width: 100px; /* Adjust the size as needed */
+    height: 100px; /* Adjust the size as needed */
+  }
+  
 
 .ap-lowerright
 {   

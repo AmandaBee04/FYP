@@ -20,10 +20,9 @@ body {
     src: url(../../Fonts/Pacifico-Regular.ttf);
 }
 
-h1
-{
+h1 {
     display: flex;
-    color:black;
+    color: black;
     font-family: Caveat;
     align-items: center;
     text-align: center;
@@ -32,16 +31,23 @@ h1
     margin-bottom: 0;
 }
 
-.adl-container
-{
+.adl-container {
     display: flex;
     flex-direction: column;
     gap: 3vh;
-    
+    opacity: 0;
+    transform: translateY(50px);
+    animation: slideUp 1s forwards;
 }
 
-.adl-form
-{
+@keyframes slideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.adl-form {
     display: flex;
     flex-direction: row;
     align-self: center;
@@ -52,37 +58,34 @@ h1
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 1vh;
     gap: 0;
-
 }
 
-.adl-leftside
-{
+.adl-leftside {
     display: flex;
     flex-direction: column;
     width: 10vw;
 }
 
-.adl-rightside
-{
+.adl-rightside {
     display: flex;
     flex-direction: column;
     padding: 1.5vh;
     width: 50vw;
 }
 
-.adl-label
-{
+.adl-label {
     padding-bottom: 1.6vh;
 }
 
-.adl-inputs
-{
+.adl-inputs {
     padding-left: 2vw;
     padding-bottom: 3.5vh;
 }
 
-.adl-ID
-{
+.adl-ID,
+.adl-Name,
+.adl-Email,
+.adl-Password {
     display: flex;
     flex-direction: column;
     font-size: 1.3rem;
@@ -90,71 +93,10 @@ h1
     padding: 2vh;
 }
 
-.adl-i-ID
-{
-    display: flex;
-    background-color: white;
-    color: black;
-    padding-left: 1vw;
-    height: 5vh;
-    width: 45vw;
-    font-size: 1rem;
-    border-radius: 0.8vh;
-    border-style: solid;
-    border-color: #D1D1D1;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
-    outline: none;
-    
-}
-
-.adl-i-ID:focus
-{
-    outline: none;
-}
-
-
-
-.adl-Name
-{
-    display: flex;
-    flex-direction: column;
-    font-size: 1.3rem;
-    font-family: 'Times New Roman', Times, serif;
-    padding: 2vh;
-}
-
-.adl-i-Name
-{
-    display: flex;
-    background-color: white;
-    color: black;
-    padding-left: 1vw;
-    height: 5vh;
-    width: 45vw;
-    font-size: 1rem;
-    border-radius: 0.8vh;
-    border-style: solid;
-    border-color: #D1D1D1;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);    
-    outline: none;
-}
-
-.adl-i-Name:focus
-{
-    outline: none;
-}
-
-.adl-Email
-{
-    display: flex;
-    flex-direction: column;
-    font-size: 1.3rem;
-    font-family: 'Times New Roman', Times, serif;
-    padding: 2vh;
-}
-
-.adl-i-Email
-{
+.adl-i-ID,
+.adl-i-Name,
+.adl-i-Email,
+.adl-i-Password {
     display: flex;
     background-color: white;
     color: black;
@@ -169,51 +111,21 @@ h1
     outline: none;
 }
 
-.adl-i-Email:focus
-{
+.adl-i-ID:focus,
+.adl-i-Name:focus,
+.adl-i-Email:focus,
+.adl-i-Password:focus {
     outline: none;
 }
 
-.adl-Password
-{
-    display: flex;
-    flex-direction: column;
-    font-size: 1.3rem;
-    font-family: 'Times New Roman', Times, serif;
-    padding: 2vh;
-
-}
-
-.adl-i-Password
-{
-    display: flex;
-    background-color: white;
-    color: black;
-    padding-left: 1vw;
-    height: 5vh;
-    width: 45vw;
-    font-size: 1rem;
-    border-radius: 0.8vh;
-    border-style: solid;
-    border-color: #D1D1D1;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
-    outline: none;
-}
-
-.adl-i-Password:focus
-{
-    outline: none;
-}
-
-.adl-btn 
-{
+.adl-btn {
     display: inline;
     text-align: right;
-    margin-top: 10vh;
+    position: relative;
+    bottom: -25%;
 }
 
-.adl-btn button
-{
+.adl-btn button {
     border: 1px solid #000000;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
     border-radius: 7px;
@@ -223,9 +135,7 @@ h1
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-.adl-btn button:focus
-{
-
+.adl-btn button:focus {
     outline: none;
     border: none;
 }

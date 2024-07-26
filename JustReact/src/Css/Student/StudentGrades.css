@@ -45,6 +45,16 @@ body {
     top: 12vh;
     left: 12vw;
     gap: 1.5vw;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: slideUp 1s forwards;
+}
+
+@keyframes slideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .sg-resultcontainer
@@ -58,7 +68,16 @@ body {
     top: 20vh;
     background: #FFFFFF;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+    opacity: 0;
+    transform: translateY(50px);
+    animation: slideUp 1s forwards;
+}
 
+@keyframes slideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .sg-tags

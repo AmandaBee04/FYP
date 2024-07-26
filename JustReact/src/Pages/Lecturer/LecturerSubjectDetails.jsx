@@ -1,8 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useRef } from 'react';
 import { Link } from 'react-router-dom'
+import { FaBookDead } from "react-icons/fa";
 import '../../Css/Lecturer/LecturerSubjectDetails.css'
+import LecturerConfirmDelete from '../../Components/Lecturer/LecturerConfirmDelete';
 
 export default function LecturerSubjectDetails() {
+
+    const [showPopup, setShowPopup] = useState(false); // State to control popup visibility
+
+    const handleConfirmClick = (event) => {
+      event.preventDefault(); // Prevent form submission
+      setShowPopup(true); // Show the popup
+    };
+  
+    const handleClosePopup = () => {
+      setShowPopup(false); // Close the popup
+    };
+  
   return (
     <>
         <div className="lsd-holder">
@@ -65,6 +80,9 @@ export default function LecturerSubjectDetails() {
                                 <div className="lsd-faculty">
                                     <p>FCI</p>
                                 </div>
+                                <div className="lsd-deleteicon" onClick={handleConfirmClick}>
+                                        <FaBookDead/>
+                                </div>
                             </div>
 
                         </div>
@@ -72,6 +90,7 @@ export default function LecturerSubjectDetails() {
                 </div>
             </div>
         </div>
+        {showPopup && <LecturerConfirmDelete onClose={handleClosePopup} />} {/* Show popup conditionally */}
     </>
   )
 }

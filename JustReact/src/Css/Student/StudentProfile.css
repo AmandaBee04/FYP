@@ -3,7 +3,7 @@
     justify-content: center;
   }
   
-  .profile-image {
+.profile-image {
     border-radius: 100px;
     width: 100px; /* Adjust the size as needed */
     height: 100px; /* Adjust the size as needed */
@@ -37,7 +37,16 @@
       flex-direction: column;
       align-self: center;
       height: 84vh;
+      opacity: 0;
+      transform: translateY(-50px);
+      animation: slideUp 1s forwards;
+  }
   
+  @keyframes slideUp {
+      to {
+          opacity: 1;
+          transform: translateY(0);
+      }
   }
   
   .sp-upper
@@ -96,8 +105,17 @@
       height: 100px;
       width: 100px;
       color: #FEAE6F;
+      border-radius: 100px;
   
   }
+
+  .sp-lowerleft #img
+{
+    height: 100px;
+    width: 100px;
+    color: #FEAE6F;
+    border-radius: 100px;
+}
   
   .sp-lowerleft .StuIcon::after
   {

@@ -24,33 +24,45 @@ body {
 {
     color:black;
     font-family: Caveat;
-    padding-bottom: 5vh;
+    padding-bottom: 3vh;
 }
 
 .sq-holder
-{
-    display: flex;
+{   
     align-self: center;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: slideUp 1s forwards;
+}
+
+@keyframes slideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .sq-container
 {
     display: flex;
+    position: relative;
     flex-direction: column;
     align-self: center;
     height: 80vh;
-    width: 70vw;
+
 }
 
 .sq-header h1
 {
     text-align: center;
+    align-self: center;
     height: 3.9vh;
 }
 
 .sq-bank
 {
     position: relative;
+    align-self: center;
     height: 80vh;
     width: 69vw;
     padding-left: 1.5vw;

@@ -4,8 +4,8 @@ import '../../Css/Admin/AdminAddStudentConfirmation.css';
 import { FaThumbsUp } from "react-icons/fa";
 
 export default function AdminAddStudentConfirmation({ onClose }) {
-
   const [showThumbsUp, setShowThumbsUp] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
   const thumbsUpTimeoutRef = useRef(null);
 
   const handleMouseEnterYes = () => {
@@ -19,11 +19,18 @@ export default function AdminAddStudentConfirmation({ onClose }) {
     setShowThumbsUp(false);
   };
 
+  const handleClose = () => {
+    setIsVisible(false);
+    setTimeout(() => {
+      onClose();
+    }, 300); // Match this duration with the CSS transition duration
+  };
+
   return (
     <>
-      <div className="aasc-popup-overlay aasc-show-popup">
-        <div className="aasc-popup">
-          <button className="aasc-close" onClick={onClose}>X</button>
+      <div className={`aasc-popup-overlay ${isVisible ? 'aasc-show-popup' : 'aasc-hide-popup'}`}>
+        <div className={`aasc-popup ${isVisible ? 'popup-enter' : 'popup-exit'}`}>
+          <button className="aasc-close" onClick={handleClose}>X</button>
           <h2>Student Successfully Added!</h2>
           <div className="aasc-buttons">
             <div className="aasc-yes-btn">
@@ -31,7 +38,7 @@ export default function AdminAddStudentConfirmation({ onClose }) {
                 <button
                   onMouseEnter={handleMouseEnterYes}
                   onMouseLeave={handleMouseLeaveYes}
-                  onClick={onClose} // Close the popup when Confirm is clicked 
+                  onClick={handleClose} // Close the popup when Confirm is clicked 
                 >
                   {showThumbsUp ? <FaThumbsUp /> : 'Confirm'}
                 </button>

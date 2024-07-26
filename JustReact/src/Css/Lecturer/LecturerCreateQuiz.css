@@ -25,13 +25,16 @@ body
 {
     font-family: "Caveat";
     padding-top: 1.5vh;
+    align-self: center;
     padding-bottom: 1.5vh;
 }
 
 .lcq-holder
 {
-    display: flex;
+    position: relative;
     align-self: center;
+    align-items: center;
+    align-content: center;
 }
 
 .lcq-container
@@ -40,7 +43,20 @@ body
     flex-direction: column;
     align-self: center;
     height: 90vh;
-    width: 70vw;
+    position: relative;
+    align-self: center;
+    align-items: center;
+    align-content: center;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideUp 1s forwards;
+}
+
+@keyframes slideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .lcq-form
@@ -156,7 +172,7 @@ input.assigninput
 
 .confirmbtn
 {
-    margin: 3vh 18vw 0vh 1vw;
+    margin: 9vh 20vw 0vh 1vw;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
